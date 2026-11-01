@@ -1,0 +1,168 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors"
+    }
+  },
+  "10": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "stop_at_clip_layer": -2
+    }
+  },
+  "11": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "10",
+        0
+      ],
+      "lora_name": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+      "strength_model": 1.2,
+      "strength_clip": 1.2
+    }
+  },
+  "12": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "11",
+        0
+      ],
+      "clip": [
+        "11",
+        1
+      ],
+      "lora_name": "Species_Transformation_Concept_Illustrious.safetensors",
+      "strength_model": 0.8,
+      "strength_clip": 0.8
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "12",
+        1
+      ],
+      "text": "score_9, blackrat_style, blackrat, source_artwork, species_transformation, transformation, mid transformation, transfur, furry, solo, single character, (adult man:1.25), male, Jack, slim slender build, blue eyes, shaggy medium-length blond hair, thick bangs, opaque purple short-sleeved T-shirt, khaki shorts, intact sneakers, unchanged clothing, clean illustration, a controlled mid-stage human-to-anthro jackal transformation, a short canine muzzle forming while human facial traits remain recognizable, partially lengthened upright ears, charcoal-gray short fur limited to the hands and distal forearms, upper arms and torso retain the human stage, wearing one undamaged pair of black rectangular glasses, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, no visible tail yet"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "12",
+        1
+      ],
+      "text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, costume head, animal costume, horns, wings, crown, necklace, collar, armband, long black hair, huge muscles, different outfit, long trousers, boots, torn clothing, missing clothing, transparent clothing, bare feet, cropped head, cropped feet, text, watermark, multiple panels, collage, complete transformation, fully formed jackal head, completely unchanged human appearance, visible tail, falling glasses, bent glasses, broken glasses"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 832,
+      "height": 1216,
+      "batch_size": 1
+    }
+  },
+  "70": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "OC_advanced/pose_wave.png"
+    }
+  },
+  "71": {
+    "class_type": "ControlNetLoader",
+    "inputs": {
+      "control_net_name": "noobaiXLControlnet_openposeModel.safetensors"
+    }
+  },
+  "72": {
+    "class_type": "ControlNetApplyAdvanced",
+    "inputs": {
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "control_net": [
+        "71",
+        0
+      ],
+      "image": [
+        "70",
+        0
+      ],
+      "strength": 0.7,
+      "start_percent": 0.0,
+      "end_percent": 0.85,
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "12",
+        0
+      ],
+      "positive": [
+        "72",
+        0
+      ],
+      "negative": [
+        "72",
+        1
+      ],
+      "latent_image": [
+        "5",
+        0
+      ],
+      "seed": 2026110101,
+      "steps": 22,
+      "cfg": 7.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1.0
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixA/A02_Species_w0.8_s2026110101"
+    }
+  }
+}

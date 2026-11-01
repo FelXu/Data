@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-01",
+  "schema_and_json": "pass",
+  "budget_and_single_transformation_lora": "pass",
+  "per_family_prompts_equal": "pass",
+  "B_inheritance_and_unresolved_weights_block": "pass",
+  "required_negative_terms": "pass",
+  "conflicting_old_prompts_removed": "pass",
+  "bound_local_files_exist": {
+    "species": true,
+    "mid": true,
+    "byil": true,
+    "style": true,
+    "checkpoint": true,
+    "pose": true
+  },
+  "new_images_submitted": 0,
+  "old_workflow_count_unchanged": 119,
+  "old_A_png_count_unchanged": 8,
+  "legacy_runner_disabled_by_missing_old_keys": "pass",
+  "local_reader_links": "pass",
+  "spec_sha256": "7d205ed0725c59f0d69cd2cb96c25b1dd3667569ab3e526a2a086324703044ea",
+  "v1_backup_sha256": "8df89189ca1c2006d755848d5f82310d7d0c4ae61966190434c827a98324f09f"
+}

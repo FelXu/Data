@@ -1,0 +1,239 @@
+{
+  "kind": "robot_local_method_transfer_spec",
+  "schema_version": 4,
+  "workflow_family": "Jack V3",
+  "revision": "V3_local_method_transfer_20261101",
+  "date": "2026-11-01",
+  "status": "method_prepared_not_submitted",
+  "purpose": "方法迁移：把明确的中期轮廓/配色/身份转为本机可复用输入，以新墨线与赛璐璐层次重画；不承诺等同image_gen模型能力。",
+  "formal_endpoint": {
+    "character": "Jack",
+    "sequence_type": "TGTF",
+    "target": "adult female anthropomorphic Anubis",
+    "appearance_details": "not finalized",
+    "inherit_old_queen_design": false
+  },
+  "current_stage_subject": "adult male Jack in the supplied early-stage structural draft; do not inject the terminal female Anubis design into this method test",
+  "checkpoint": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors",
+  "style": {
+    "alias": "ILstyle",
+    "filename": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+    "strength_model": 0.8,
+    "strength_clip": 0.8,
+    "trigger_words": [
+      "blackrat_style",
+      "blackrat"
+    ],
+    "BRIL_enabled": false
+  },
+  "inputs": {
+    "color": {
+      "source_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\input_V3\\Jack_TF_V3_mid_color.png",
+      "comfy_input_relative": "Jack_TF_V3/mid_color_draft.png",
+      "sha256": "71878694b9192416a8b48423a049e373f415c58f334df1c5698373e041feece2",
+      "role": "layout/color draft, never the finished output"
+    },
+    "lineart": {
+      "source_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\input_V3\\Jack_TF_V3_mid_lineart.png",
+      "comfy_input_relative": "Jack_TF_V3/mid_lineart.png",
+      "sha256": "898ee08810ef0afff30dbc0549dda02dd77047835846c2c1a3a75d6f64cab714",
+      "role": "spatial outline condition; same coordinates as color draft"
+    }
+  },
+  "sampling_defaults": {
+    "width": 832,
+    "height": 1216,
+    "batch_size": 1,
+    "steps": 28,
+    "cfg": 5.0,
+    "sampler": "euler_ancestral",
+    "scheduler": "normal",
+    "seed": 2026110101,
+    "ui_control_after_generate": "fixed",
+    "clip_last_layer": -2,
+    "denoise_tiers": [
+      0.65,
+      0.75
+    ],
+    "OpenPose_enabled": false,
+    "IPAdapter_enabled": false
+  },
+  "lineart": {
+    "model": "noob-sdxl-controlnet-lineart_realistic.fp16.safetensors",
+    "strength_default": 0.5,
+    "strength_range": [
+      0.45,
+      0.55
+    ],
+    "start": 0.0,
+    "end": 0.75,
+    "input": "inputs.lineart",
+    "input_preprocessing": "provided lineart is used directly, same-size scale only; do not re-extract or automatically invert",
+    "end_semantics": "model-noise-time percentage, not an exact count of this img2img run steps"
+  },
+  "selected_mode": "lineart_ablation",
+  "selection_reason": "已查看历史R01/R02，出现霓虹描边/异常肤色，未通过。默认先以同降噪做CN关/开排查，不能把旧两图当成成功迁移。根因尚未确认。",
+  "modes": {
+    "lineart_ablation": {
+      "purpose": "当前建议：固定denoise0.65，先关CN再开CN，只有CN变量不同",
+      "jobs": [
+        {
+          "id": "M01_CN_OFF_D065",
+          "denoise": 0.65,
+          "lineart_enabled": false,
+          "lineart_strength": 0.0
+        },
+        {
+          "id": "M02_CN_ON_D065",
+          "denoise": 0.65,
+          "lineart_enabled": true,
+          "lineart_strength": 0.5
+        }
+      ]
+    },
+    "denoise_pair": {
+      "purpose": "色彩管线正常后使用：固定CN0.50，只比较0.65/0.75",
+      "jobs": [
+        {
+          "id": "D01_D065_CN050",
+          "denoise": 0.65,
+          "lineart_enabled": true,
+          "lineart_strength": 0.5
+        },
+        {
+          "id": "D02_D075_CN050",
+          "denoise": 0.75,
+          "lineart_enabled": true,
+          "lineart_strength": 0.5
+        }
+      ]
+    }
+  },
+  "prompts": {
+    "positive_full": "blackrat_style, blackrat, a freshly redrawn finished illustration, clean expressive ink contours, developed cel shading and coherent form shadows, solo adult male Jack in an early canine transformation, golden-yellow shaggy medium-length hair with thick bangs, blue eyes, black rectangular glasses worn normally, an incomplete very short muzzle only beginning at the nose tip and front jaw, recognizable human cheeks and lips, the same original pair of ears partly lengthening, sparse fine short hairs scattered over mostly visible human skin, one single newly grown short charcoal claw on each visible fingertip, no separate rounded human nail plate, moderately expanding shoulders and chest, opaque purple cotton T-shirt and khaki shorts BOTH showing taut seams and fabric tension, startled expression, mouth slightly open, body recoiling, knees slightly bent, both hands at chest height checking the change, closed sneakers, full-body three-quarter view, simple light background, preserve identity and the readable intermediate anatomy while rebuilding rough draft contours, hair strands, garment folds and shading",
+    "negative_full": "low quality, blurry, bad anatomy, extra characters, extra limbs, extra fingers, fused fingers, fully transformed Anubis, complete canine head, long muzzle, lost human cheeks, full fur coat, dense furry gloves, double nail plates, rounded human nails under claws, long hooked talons, extra ears, tail, missing glasses, broken glasses, different hair color, changed outfit, missing clothing, transparent fabric, calm greeting pose, waving, confident smile, horns, crown, jewelry, near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, neon outlines, rainbow contour lines, fluorescent skin, false colors, color posterization, unrequested handheld object, phone, book, text, watermark, collage, cropped head, cropped feet",
+    "append_again": false
+  },
+  "transformation_loras": {
+    "species": {
+      "enabled": false,
+      "strength_model": 0.0,
+      "strength_clip": 0.0,
+      "filename": "Species_Transformation_Concept_Illustrious.safetensors"
+    },
+    "mid": {
+      "enabled": false,
+      "strength_model": 0.0,
+      "strength_clip": 0.0,
+      "filename": "Mid_transformation.safetensors"
+    },
+    "byil": {
+      "enabled": false,
+      "strength_model": 0.0,
+      "strength_clip": 0.0,
+      "filename": "transformation：LoraBYIL_transformation.safetensors"
+    }
+  },
+  "transformation_lora_reactivation": [
+    "先同时通过重绘、正常配色、身份和中期结构验收；未通过时不能靠开启TF LoRA修复。",
+    "之后另立新预算，仅当某处转化特征缺失时，先编辑该处线稿/色稿，再做局部的单一TF LoRA与关闭对照。",
+    "Species、Mid、BYIL只选一种；沿用确切版本的已核实触发配置，不合并触发词，不用权重代替阶段百分比。",
+    "本方法不在运行末尾自动开启任意TF LoRA，终态具体外观未定前不把旧女王细节写回。"
+  ],
+  "budget_scope": "one explicitly selected mode per run; previous samples are historical, not a new allowance",
+  "maximum_total_images": 2,
+  "maximum_remaining_comfy_sampler_images": 2,
+  "B_enabled": false,
+  "parameter_guards": {
+    "forbidden_expression": "denoise <= 0.5 AND effective_lineart_strength >= 0.75",
+    "on_violation": "abort_before_enqueue",
+    "never_chain_generated_outputs": true,
+    "never_save_color_draft_as_finished_result": true
+  },
+  "execution_policy": [
+    "只选一个mode编译并运行其jobs，最多2张，不能把两个mode当四张连跑；编译不提交。",
+    "两张都从原始color输入独立开始，固定相同seed、style、steps/CFG/采样器和文本；不得使用旧S01或第一张输出作第二张源。",
+    "每次只提交一个job，保存prompt_id与完整graph，查看结果后才决定是否进入该mode第二张。",
+    "任何hard_failure出现立即停止整轮；若只是重绘不足而无硬失败，可在上限内完成另一项预设对照，仍不能算验收通过。",
+    "两张后没有合格结果就停止，保留记录；不自动加seed、不加第三张、不切另一个mode、不启用TF LoRA。"
+  ],
+  "hard_failures": [
+    "霓虹/红黄彩色描边、明显绿灰异常肤色或严重颜色破坏。",
+    "完整犬头/长吻、全身毛皮，或直接跳到完整女性阿努比斯终态，中期结构消失。",
+    "黄发/蓝眼/正常眼镜身份锁明显丢失，原衣物覆盖消失，角色数量错误。",
+    "明显手指/肢体/耳连接错误，或凭空拿手机、书本等未要求物体。"
+  ],
+  "acceptance": {
+    "new_drawing": "并排对比源色稿：可见新组织的墨线，头发/五官或衣褶确有重建，出现成熟赛璐璐明暗层次；仅换色、锐化或PNG/hash不同不算通过。",
+    "structure": "仍可读出人类颊部＋未完成的短吻、原耳过渡、稀疏初期短毛/短尖爪、衣裤受力和惊慌查看双手。",
+    "source_is_not_final": true,
+    "all_hard_checks_required": true
+  },
+  "robot_contract": {
+    "compiler": "tools/compile_local_method.py",
+    "compiler_modes": "--mode lineart_ablation OR --mode denoise_pair; compile only, never submits",
+    "jobs": "Only current top-level jobs are executable; modes are alternative recipes, never traverse both.",
+    "api_submission": "POST http://127.0.0.1:8188/prompt with {\"prompt\": <parsed job.api_graph_file>, \"client_id\": \"jack-local-method\"}",
+    "history": "Use returned prompt_id to read /history/{prompt_id}; unknown submission status must be checked before retry.",
+    "output": "SaveImage prefixes are relative to ComfyUI/output; new unique REVIEW run tag prevents overwriting old results.",
+    "legacy_runner_compatible": false,
+    "quality_review": "No auto-pass based on queue success or image hash; require recorded visual checks before next job."
+  },
+  "prior_evidence": {
+    "archived_spec": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\verification\\method_transfer_20261101\\matrix_before_method_transfer.json",
+    "R01_R02_status": "executed; observed neon edge/false-color defects, not accepted",
+    "pipeline_equivalence_claimed": false,
+    "new_jobs_submitted_this_turn": 0
+  },
+  "sources": [
+    {
+      "url": "https://docs.comfy.org/tutorials/basic/image-to-image",
+      "supports": "VAE img2img及降噪对输入保持程度的影响"
+    },
+    {
+      "url": "https://blog.comfy.org/p/preprocessor-and-frame-interpolation",
+      "supports": "Lineart为轮廓信息，颜色/材质需要其他条件"
+    },
+    {
+      "local": "_ops_V3/graph_V3_S01_R01_T03.json and 场景实操模板/api/T03_草图定稿_角色参考加线稿.json",
+      "supports": "接线和旧T03内容按本机核对；参数是待验起点而非质量保证"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "M01_CN_OFF_D065",
+      "denoise": 0.65,
+      "lineart_enabled": false,
+      "lineart_strength": 0.0,
+      "status": "prepared_not_submitted",
+      "batch_size": 1,
+      "images": 1,
+      "seed": 2026110101,
+      "source": "inputs.color",
+      "transformation_lora": null,
+      "output_prefix": "Jack_Test/REVIEW_20261101_Jack_METHOD_266936f4/M01_CN_OFF_D065",
+      "positive_text": "blackrat_style, blackrat, a freshly redrawn finished illustration, clean expressive ink contours, developed cel shading and coherent form shadows, solo adult male Jack in an early canine transformation, golden-yellow shaggy medium-length hair with thick bangs, blue eyes, black rectangular glasses worn normally, an incomplete very short muzzle only beginning at the nose tip and front jaw, recognizable human cheeks and lips, the same original pair of ears partly lengthening, sparse fine short hairs scattered over mostly visible human skin, one single newly grown short charcoal claw on each visible fingertip, no separate rounded human nail plate, moderately expanding shoulders and chest, opaque purple cotton T-shirt and khaki shorts BOTH showing taut seams and fabric tension, startled expression, mouth slightly open, body recoiling, knees slightly bent, both hands at chest height checking the change, closed sneakers, full-body three-quarter view, simple light background, preserve identity and the readable intermediate anatomy while rebuilding rough draft contours, hair strands, garment folds and shading",
+      "negative_text": "low quality, blurry, bad anatomy, extra characters, extra limbs, extra fingers, fused fingers, fully transformed Anubis, complete canine head, long muzzle, lost human cheeks, full fur coat, dense furry gloves, double nail plates, rounded human nails under claws, long hooked talons, extra ears, tail, missing glasses, broken glasses, different hair color, changed outfit, missing clothing, transparent fabric, calm greeting pose, waving, confident smile, horns, crown, jewelry, near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, neon outlines, rainbow contour lines, fluorescent skin, false colors, color posterization, unrequested handheld object, phone, book, text, watermark, collage, cropped head, cropped feet",
+      "api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\api\\REVIEW_20261101_Jack_METHOD_266936f4\\M01_CN_OFF_D065.json",
+      "api_graph_sha256": "e41c9596dbf2dddce0738b0572563e7304ad2ba481c4c949e322f2fee2204933"
+    },
+    {
+      "id": "M02_CN_ON_D065",
+      "denoise": 0.65,
+      "lineart_enabled": true,
+      "lineart_strength": 0.5,
+      "status": "prepared_not_submitted",
+      "batch_size": 1,
+      "images": 1,
+      "seed": 2026110101,
+      "source": "inputs.color",
+      "transformation_lora": null,
+      "output_prefix": "Jack_Test/REVIEW_20261101_Jack_METHOD_266936f4/M02_CN_ON_D065",
+      "positive_text": "blackrat_style, blackrat, a freshly redrawn finished illustration, clean expressive ink contours, developed cel shading and coherent form shadows, solo adult male Jack in an early canine transformation, golden-yellow shaggy medium-length hair with thick bangs, blue eyes, black rectangular glasses worn normally, an incomplete very short muzzle only beginning at the nose tip and front jaw, recognizable human cheeks and lips, the same original pair of ears partly lengthening, sparse fine short hairs scattered over mostly visible human skin, one single newly grown short charcoal claw on each visible fingertip, no separate rounded human nail plate, moderately expanding shoulders and chest, opaque purple cotton T-shirt and khaki shorts BOTH showing taut seams and fabric tension, startled expression, mouth slightly open, body recoiling, knees slightly bent, both hands at chest height checking the change, closed sneakers, full-body three-quarter view, simple light background, preserve identity and the readable intermediate anatomy while rebuilding rough draft contours, hair strands, garment folds and shading",
+      "negative_text": "low quality, blurry, bad anatomy, extra characters, extra limbs, extra fingers, fused fingers, fully transformed Anubis, complete canine head, long muzzle, lost human cheeks, full fur coat, dense furry gloves, double nail plates, rounded human nails under claws, long hooked talons, extra ears, tail, missing glasses, broken glasses, different hair color, changed outfit, missing clothing, transparent fabric, calm greeting pose, waving, confident smile, horns, crown, jewelry, near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, neon outlines, rainbow contour lines, fluorescent skin, false colors, color posterization, unrequested handheld object, phone, book, text, watermark, collage, cropped head, cropped feet",
+      "api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\api\\REVIEW_20261101_Jack_METHOD_266936f4\\M02_CN_ON_D065.json",
+      "api_graph_sha256": "8b865c8c3dff862bcbd3a4d14f84f376d1dad415ab725635c463988020d63991"
+    }
+  ],
+  "active_run_tag": "REVIEW_20261101_Jack_METHOD_266936f4"
+}

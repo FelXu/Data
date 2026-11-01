@@ -1,0 +1,86 @@
+﻿B｜Jack 初期结构准确 — ComfyUI手操卡（2026-11-01）
+本卡与A_机器人规格_初期结构准确.json描述同一规则。目标不是完整狼人或阿努比斯，而是七项初期变化。
+正式终点：Jack TGTF→成年女性阿努比斯；细节not finalized，inherit_old_queen_design=false。本步仍是成年男性Jack。
+
+一、先看清需要画对的是什么
+E1 同一对人耳，仅上缘刚尖，耳长/耳根基本仍人类。
+E2 鼻头轻微犬形化但仍肤色，不是黑鼻皮。
+E3 鼻梁/颊骨/上唇/下颌不伸长，没有吻突或面骨推进。
+E4 稀疏细短毛分散在可见皮肤，大面积人皮仍清楚，不是成片毛皮。
+E5 肩胸大腿开始增大，两件原衣物同时绷紧，但紫T/卡其短裤布面和缝线完整。
+E6 人类短指甲整体仍在，仅远端一小部分甲尖发黑，不是整枚黑甲，更不是突出尖爪。
+E7 黄发厚刘海、蓝眼、正常眼镜、成年男性、原衣鞋，慌张查看双手。
+现有input_V3两张旧图仅可复用构图/配色：整枚黑爪和较长尖耳不合格。不能继续低噪复制后声称初期通过。
+
+二、输入是否还要image_gen
+不需要每次调用。已有图缓存后可完全离线推理；但必须先符合E1–E7。
+你可选：①本地Klein指令修母图；②在绘图软件精确改耳/鼻/甲尖；③自己画出正确色稿和线稿。
+修改了甲爪/耳轮廓后，最终线稿必须从新色稿同坐标重提，不能继续用旧尖爪/长耳线稿。
+批准母图后存为ComfyUI/input/Jack_TF_EARLY/approved_color.png与approved_lineart.png；两张同构图832×1216。
+机器人须记录逐项检查和文件hash，source_semantic_pass=true后才能进T03。不能只改布尔值而不检查图。
+
+三、T03：用正确母图重画新线条和赛璐璐层次
+1. 载入随包EARLY_T03_初期结构重绘.json，或复制原T03另存新名字。
+   原T03有V33、另一套BlackRat和旧女王/IP内容，不能只改一句提示词就直接用。
+2. Checkpoint下拉框选indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors。
+3. Checkpoint.CLIP→CLIPSetLastLayer；点stop_at_clip_layer填-2；再接LoRA.clip。
+   Checkpoint.MODEL→LoRA.model。
+4. LoRA下拉框选blackrat_style：IllustriousBlackRat_Style.safetensors。
+   点strength_model=0.80，strength_clip=0.80。Power加载器同样只开ILstyle这一行；Species/Mid/BYIL全关，不用BRIL。
+5. LoRA.MODEL→KSampler.model；LoRA.CLIP同时接正、负两个CLIP Text Encode。
+   正负全文用本目录POS_方法验证.txt与NEG_方法验证.txt，旧字符串整段替换。
+6. 色稿LoadImage选approved_color.png→ImageScale（832×1216，lanczos，crop=disabled）→普通VAEEncode→KSampler.latent_image。
+   Checkpoint.VAE同时接VAEEncode与VAEDecode。不能用EmptyLatent替代色稿，也不用整图Inpaint编码。
+7. 线稿LoadImage选approved_lineart.png→相同ImageScale→Apply ControlNet Advanced.image。
+   ControlNetLoader选noob-sdxl-controlnet-lineart_realistic.fp16.safetensors。
+   点Apply的strength：起点0.50，可比较0.45–0.55；start_percent=0.00，end_percent=0.75。
+   正/负CLIP编码分别进Apply正/负，再进KSampler。现有白底黑线先不自动反相，不重复提线。
+8. 历史有霓虹描边，因此先关CN验证基本重绘：strength=0；或KSampler正负直连两个CLIP编码器。
+   关CN仍保留色稿VAE latent，不是纯文生图。机器人CN_OFF图会真正绕过CN分支。
+9. KSampler点sampler_name=euler_ancestral，scheduler=normal，steps=28，cfg=5.0，denoise=0.65。
+   seed=2026110101，control_after_generate=fixed，batch=1。
+10. 如选两档降噪对照：两张均从同一approved_color开始，只改0.65→0.75，其他全不改。
+    如选CN开/关对照：两张denoise都0.65，只改CN0→0.50。每轮只选一种对照，最多2张，不自动连跑4张。
+11. KSampler→VAEDecode→SaveImage；prefix填Jack_Test/REVIEW_20261101_EARLY_<新编号>/<任务名>。
+    SaveImage必须接重绘解码图，不能接色稿本身或用原图回贴覆盖重绘结果。
+
+四、T06：已经大部分满意时，修一处小细节
+1. 原图LoadImage右键→Open in MaskEditor（在遮罩编辑器打开）。只画需要改的区域，保存蒙版。
+   这里用LoadImage的MASK：编辑器内部白=改；如果另用灰度PNG，LoadImageMask选red，白改黑留，别混alpha反相语义。
+2. 用70/71/72改X/Y/正方形边长；73改工作边长（通常1024）。图、mask、缩回和回贴必须同一组裁框。
+   先看T06c裁框/白区预览；不要凭原图目测跳过。
+3. 甲尖只是局部变色，普通T06即可：点denoise从0.30起（0.25–0.40），CN关闭，ILstyle0.60/0.60。
+   只遮远端甲尖一小块，保留自然近端甲片；POS用local_prompt_cards.nail_tip_POS。手部裁图不要写full body/全套五官。
+4. 若源图已经是突出尖爪或长耳，需要先消去旧突出轮廓：用T06b denoise0.60（0.55–0.65）、局部CN0.45–0.55，或直接手绘正确边线。
+   mask要覆盖旧突出部分、目标新边线与其间背景。T06b白区预画线会被重建处理，不能把它当独立线稿控制。
+   局部正确线稿必须按相同裁框缩放后，独立接CN；原T06b没有这条线稿支路，需按API接法加，不能假装已有。
+5. 眼镜、黄发、未改指甲根部设置保护区；外扩/羽化后再次扣保护，最终回贴别越出允许区。
+6. 每次从最新通过版开始，只修一处；验收通过才升版本，失败不继续链式重绘。
+
+五、数值禁区和验收
+任何T03/T06/T06b都禁止denoise≤0.50且有效Lineart≥0.75同时出现；普通T06低降噪在CN关闭时允许。
+E1–E7任一结构提前完成、衣服撕裂、身份丢失、假色霓虹、明显解剖错，立即停。
+T03成品还须有新组织的墨线和赛璐璐层次；仅变色/锐化/hash不同不算重绘通过。
+每轮最多2张，所有AI母图编辑也计数。两张失败不堆更多权重，切换下述路线；不跑B、不自动开TF LoRA。
+
+六、下一次一键加载
+第一次把母图、模型和数值设好后：点左上工作流名称/Workflow菜单→Save As（另存为），命名Jack_初期结构_已验母图。
+再用Export（导出）保存界面Workflow JSON到本资料夹；不要选API格式当作可视工作流。
+旧版界面可能显示Save按钮；也可Ctrl+S保存当前工作流。以实际菜单里的Save/Save As/Export为准。
+下次把保存的界面JSON拖进ComfyUI画布，或Workflow→Open/Load打开。仍核对种子fixed、输入路径和LoRA文件是否存在。
+API JSON供机器人POST /prompt；UI workflow JSON供你Load，两个格式不能混用。
+模板会记住参数与输入路径，不会自动保证新姿势/新视角的语义正确；换姿势需新的合格结构输入。
+
+七、纯V35做不到时的本地分界
+本机有RTX5080 16GB和约64GB内存，已装Klein4B，优先零下载试本地指令编辑。
+载入EARLY_Klein_甲尖单点编辑.json：只改甲尖指令，4步、CFG1、euler，ILstyle不加载（它是SDXL LoRA不能套Klein）。
+一条局部指令最多两个预定seed都不服从，就判这个模型在此细节不可靠，转精确mask＋手绘/回贴，而不是继续改一长串提示。
+Krita等绘图工具可以精确决定黑色只占甲尖、鼻头色仍为人皮；扩散只负责后续融合，不能覆盖必须精确保留的像素。
+Qwen-Image-2.1可作为另一个本地指令编辑候选；官方INT8核心约17.3GB下载，可选提示增强另约9.47GB，本机未装且当前节点需核实/更新，16GB速度/显存未实测，不自动下载安装。
+长期要让纯提示也常出这种初期，可考虑专门的初期概念LoRA；必须有一批验收过的多姿态样本和留出测试，单张母图训练不等于迁移语义推理。
+只有重绘/颜色/结构都过关后才另测Species/Mid/BYIL：一次一种、局部明确目标，不用权重表示进度，不在本轮自动启用。
+
+八、真实验证状态
+当前“初期源图”尚不符合新版甲尖/耳尖要求，source_semantic_pass=false，semantic_transfer_validated=false。
+接线与固定seed可复演配置，不代表V35已继承image_gen的理解力。当前文档/模板已准备，没有提交新图或声称稳定复现已通过。
+后续稳定性只在已验母图、具体模型hash/graph/seed范围评估；新角度/新姿势不能外推保证。

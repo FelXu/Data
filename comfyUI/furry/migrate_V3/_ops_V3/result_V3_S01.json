@@ -1,0 +1,13 @@
+{
+  "job_id": "V3_S01",
+  "prompt_id": "b8544764-c610-4014-a5cd-00f580dd265f",
+  "output_file": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_00001_.png",
+  "output_dir": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3",
+  "params": "ckpt=indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors; ILstyle=blackrat_style：IllustriousBlackRat_Style.safetensors@0.40/0.40; TF_LoRA=OFF; 832x1216; steps=28; CFG=5; euler_ancestral/normal; clip=-2; denoise=0.45; seed=2026110101; lineart_CN=noob-sdxl-controlnet-lineart_realistic.fp16.safetensors@0.80/0-0.90; OpenPose=OFF; IP=OFF",
+  "graph": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops_V3\\graph_V3_S01_T03.json",
+  "lineart_sha256": "898ee08810ef0afff30dbc0549dda02dd77047835846c2c1a3a75d6f64cab714",
+  "color_sha256": "71878694b9192416a8b48423a049e373f415c58f334df1c5698373e041feece2",
+  "stopped_after": "S01",
+  "S02_S06": "not_run_awaiting_Fel_QC",
+  "T11": "untouched"
+}

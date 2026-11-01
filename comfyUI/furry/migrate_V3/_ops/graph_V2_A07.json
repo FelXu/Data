@@ -1,0 +1,168 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors"
+    }
+  },
+  "10": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "stop_at_clip_layer": -2
+    }
+  },
+  "11": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "10",
+        0
+      ],
+      "lora_name": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+      "strength_model": 1.2,
+      "strength_clip": 1.2
+    }
+  },
+  "12": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "11",
+        0
+      ],
+      "clip": [
+        "11",
+        1
+      ],
+      "lora_name": "transformation：LoraBYIL_transformation.safetensors",
+      "strength_model": 0.8,
+      "strength_clip": 0.8
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "12",
+        1
+      ],
+      "text": "blackrat_style, blackrat, transformation, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest."
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "12",
+        1
+      ],
+      "text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 832,
+      "height": 1216,
+      "batch_size": 1
+    }
+  },
+  "70": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "OC_advanced/pose_wave.png"
+    }
+  },
+  "71": {
+    "class_type": "ControlNetLoader",
+    "inputs": {
+      "control_net_name": "noobaiXLControlnet_openposeModel.safetensors"
+    }
+  },
+  "72": {
+    "class_type": "ControlNetApplyAdvanced",
+    "inputs": {
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "control_net": [
+        "71",
+        0
+      ],
+      "image": [
+        "70",
+        0
+      ],
+      "strength": 0.7,
+      "start_percent": 0.0,
+      "end_percent": 0.85,
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "12",
+        0
+      ],
+      "positive": [
+        "72",
+        0
+      ],
+      "negative": [
+        "72",
+        1
+      ],
+      "latent_image": [
+        "5",
+        0
+      ],
+      "seed": 2026110101,
+      "steps": 22,
+      "cfg": 7.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1.0
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixV2A/V2_A07_BYIL_w0.8_s2026110101"
+    }
+  }
+}

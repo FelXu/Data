@@ -1,0 +1,85 @@
+﻿历史V2说明：已由矩阵V3取代，请看Jack_男性犬科TF_矩阵V3说明.txt。以下保留旧稿供失败诊断。
+
+Jack 男性犬科TF — 中期诊断矩阵 V2
+更新：2026-11-01；未提交图片；正式终点继续留空。
+
+一、使用哪个文件
+覆盖更新同名 Jack_男性犬科TF_最小测试矩阵.json；schema_version=2。
+这是机器人执行规格，不能直接Load到ComfyUI当workflow。T02/T11节点与连线未修改。
+旧矩阵备份：verification/matrix_v1_failed_20261101/；原A图与_ops执行记录保留。
+旧_ops/run_matrix_A.py不支持新字段，也硬编码旧前缀与参数，不能原样运行V2。
+
+二、为什么改
+抽看A01/A04/A05/A08（用户报告全部8张失败）；连无转化LoRA的A01也偏完整拟兽。
+移除旧POS的slim slender build、unchanged clothing、upper arms and torso retain the human stage。
+移除旧NEG的torn clothing、huge muscles。只限制终态巨兽与完全缺衣，不禁止本轮必需的增壮和局部缝线损伤。
+不再把furry/anthro jackal作为全局主体，转而描述同一人类脸上的短吻、同一对耳的过渡、皮肤到短毛的边界。
+
+三、执行字段（必须整体替换旧文本）
+jobs[].positive_text：该行完整POS，直接写入CLIP正向；不要再加旧前缀或额外补丁。
+jobs[].negative_text：该行完整NEG，直接写入CLIP负向。
+jobs[].trigger_words：当前唯一转化LoRA的触发配置，已经含在该行全文中。
+jobs[].pos_patch：本行一句方向，已经含在全文；12行刻意相同，不能按权重分配不同阶段。
+jobs[].transformation_lora：null表示无转化LoRA；其余从models读取本机文件。
+jobs[].strength_model/strength_clip：同一权重；B02–B04的null须从copy_best_passing_from通过项解析，否则跳过。
+prompt_blocks：给人阅读和修改的公共块；运行权威是逐行全文，改公共块时要同步重建所有行。
+input_profile：固定采样与骨架参数；执行器须读字段，不可沿用硬编码值。
+jobs[].output_prefix：独立V2目录与编号；禁止删改上一轮原图。
+
+四、固定参数和LoRA
+V35 fp32；ILstyle=blackrat_style：IllustriousBlackRat_Style.safetensors；Model=Clip=1.20。
+画风只用已绑定的blackrat_style, blackrat；不混BRIL或其他BlackRat变体。
+Species：species_transformation；0.80/1.00。暂不再测1.30，权重不等于变化百分比。
+Mid v2：transformation, mid transformation, transfur；0.60/0.80。0.60是探索值，0.80为原建议起点。
+BYIL：transformation；0.60/0.80/1.00。
+同族内仅变权重；跨族因专用触发不同，称为“模型+触发方案比较”。基线没有转化LoRA触发前缀。
+保留T02+OpenPose，同一pose_wave.png，强度0.70、截止0.85，IP=0；骨架只管姿态，不保证肌肉与衣料形状。
+832×1216，22步，CFG7，Euler a/normal，denoise1，batch1；全行Clip Skip2=-2。
+不提高步数/CFG作为过程感修复；Species训练记录clip_skip1，本轮统一2是固定比较设置，非最优宣称。
+
+五、共同POS（风格词+当前族触发词+以下主体块+补丁；各行全文已生成）
+主体块：
+clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible
+
+每行POS补丁P：
+An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+
+六、完整NEG
+low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage
+
+七、矩阵（A共8张；B最多4张；不执行完整六格）
+V2_A01 | seed=2026110101 | 无转化LoRA | Model=Clip=0
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_A02 | seed=2026110101 | species | Model=Clip=0.8
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_A03 | seed=2026110101 | species | Model=Clip=1.0
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_A04 | seed=2026110101 | mid | Model=Clip=0.6
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_A05 | seed=2026110101 | mid | Model=Clip=0.8
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_A06 | seed=2026110101 | byil | Model=Clip=0.6
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_A07 | seed=2026110101 | byil | Model=Clip=0.8
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_A08 | seed=2026110101 | byil | Model=Clip=1.0
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_B01 | seed=2026110102 | 无转化LoRA | Model=Clip=0
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_B02 | seed=2026110102 | species | Model=Clip=继承同族合格赢家
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_B03 | seed=2026110102 | mid | Model=Clip=继承同族合格赢家
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+V2_B04 | seed=2026110102 | byil | Model=Clip=继承同族合格赢家
+POS补丁：An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.
+
+八、验收与停机规则
+G1：短吻形成+人类脸仍可辨；同时至少可见耳过渡或皮肤—毛发边界。
+G2：肩背胸较瘦弱起点明显扩大，但不是终态巨兽。
+G3：原紫T/卡其短裤明显受力，有拉力褶/绷紧缝线；轻度局部开线允许，完全合身兽人衣服失败。
+G4：男性、黄发厚刘海、蓝眼、正常佩戴的黑框眼镜、同姿势和全身画面。
+G5：单人、同一对耳、解剖连接无硬错；衣鞋覆盖保持，无尾/面具/兽装。
+所有硬条件先通过，再打分。漂亮但没有中期不算通过。
+A全失败则整组B跳过；有通过才运行B01，每族B仍须本族有通过赢家。B与赢家全文/参数一致，只换种子。
+两种子仅是初筛，不证明长期稳定。最多12张，不能偷偷补抽。
+V2若仍全失败，下一步改为T03明确中期草图或T06从确认的人类母图分区重建结构；本轮不追加新测试。

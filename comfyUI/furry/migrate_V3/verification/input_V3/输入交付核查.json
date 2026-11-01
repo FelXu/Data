@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-01",
+  "final_images": {
+    "Jack_TF_V3_mid_lineart.png": {
+      "size": [
+        832,
+        1216
+      ],
+      "mode": "RGB",
+      "sha256": "898ee08810ef0afff30dbc0549dda02dd77047835846c2c1a3a75d6f64cab714"
+    },
+    "Jack_TF_V3_mid_color.png": {
+      "size": [
+        832,
+        1216
+      ],
+      "mode": "RGB",
+      "sha256": "71878694b9192416a8b48423a049e373f415c58f334df1c5698373e041feece2"
+    }
+  },
+  "lineart_grayscale": "pass",
+  "same_coordinate_source": "both branch from same scaled color, no reposing or alignment warp",
+  "input_aliases_hash_match": "pass",
+  "prompt_and_spec_latest_overrides": "pass",
+  "external_images_generated": 7,
+  "Comfy_KSampler_executions_this_turn": 0,
+  "remaining_cumulative_budget": 1,
+  "formal_endpoint": null,
+  "saved_workflows_unchanged": 119,
+  "old_PNGs_unchanged": 16,
+  "limitations": [
+    "结构稿中前颌变化较轻，保留人脸优先；惊慌后缩/屈膝程度较轻。",
+    "稀疏线条可能被扩散模型解读为普通体毛，S01仍需验收。",
+    "手指甲为单一深色短尖形；不能以文件核查代替用户对局部画法的判断。"
+  ]
+}

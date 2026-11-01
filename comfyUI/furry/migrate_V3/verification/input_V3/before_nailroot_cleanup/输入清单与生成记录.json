@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-01",
+  "generator": "built-in image_gen",
+  "selected_color_source": "C:\\Users\\Xu.DESKTOP-SPAQC9J\\.codex\\generated_images\\01a0d96b-3727-7393-b623-0c7a1db997d9\\exec-17d720f8-a5c8-43d0-98ee-dad95561d64f.png",
+  "generated_image_calls": 6,
+  "generation_history": [
+    {
+      "role": "lineart_initial",
+      "path": "C:\\Users\\Xu.DESKTOP-SPAQC9J\\.codex\\generated_images\\01a0d96b-3727-7393-b623-0c7a1db997d9\\exec-e853151f-2fc1-42ee-ad5b-4fd44132389e.png",
+      "sha256": "bdd342dd13927c409863de19a2a3082a9277f61751123653b2d8305304b20252"
+    },
+    {
+      "role": "lineart_ear_bangs",
+      "path": "C:\\Users\\Xu.DESKTOP-SPAQC9J\\.codex\\generated_images\\01a0d96b-3727-7393-b623-0c7a1db997d9\\exec-3305ada5-4695-46e1-b7a6-436c2297b31a.png",
+      "sha256": "8870e271630acbc01af8abf71f0214232049af57c56519665d202dd49b6f3fca"
+    },
+    {
+      "role": "color_dense_rejected",
+      "path": "C:\\Users\\Xu.DESKTOP-SPAQC9J\\.codex\\generated_images\\01a0d96b-3727-7393-b623-0c7a1db997d9\\exec-b6750021-c11c-49a5-a6ad-3ceebf2c4454.png",
+      "sha256": "58b3fc7cefbf4655666a905976ace3c2b76000e25727d6c42e90f2626ede3c3c"
+    },
+    {
+      "role": "color_sparse",
+      "path": "C:\\Users\\Xu.DESKTOP-SPAQC9J\\.codex\\generated_images\\01a0d96b-3727-7393-b623-0c7a1db997d9\\exec-af959f86-a456-480e-b3fb-0c76f7ff6b02.png",
+      "sha256": "6aa44148e91fe6a505360f60c95b98b534aabcc2ce4867394edc4958253bb938"
+    },
+    {
+      "role": "pointed_human_plate_rejected",
+      "path": "C:\\Users\\Xu.DESKTOP-SPAQC9J\\.codex\\generated_images\\01a0d96b-3727-7393-b623-0c7a1db997d9\\exec-72361475-be0f-41f1-b050-5458f52981b1.png",
+      "sha256": "de7ab94bcc02e6b1e3d65a2270444b1202378f00040d090acaa30e9002ec5870"
+    },
+    {
+      "role": "single_short_claws_selected",
+      "path": "C:\\Users\\Xu.DESKTOP-SPAQC9J\\.codex\\generated_images\\01a0d96b-3727-7393-b623-0c7a1db997d9\\exec-17d720f8-a5c8-43d0-98ee-dad95561d64f.png",
+      "sha256": "6388331d1e5fc3cff6d0694aa8b0f5bd0ccc362fa3f2df36431a8e88121d2ea2"
+    }
+  ],
+  "final_color": "Jack_TF_V3_mid_color.png",
+  "final_lineart": "Jack_TF_V3_mid_lineart.png",
+  "width": 832,
+  "height": 1216,
+  "alignment_method": "最终色稿同一ImageScale输出直接送LineartStandardPreprocessor→ImageInvert；没有独立重画/裁切/仿射移动。",
+  "lineart_extraction_graph": "../verification/input_V3/non_sampling_export_graph_final.json",
+  "KSampler_executions_this_turn": 0,
+  "remaining_cumulative_budget": 2,
+  "formal_endpoint": null,
+  "latest_user_overrides": [
+    "稀疏短毛分散于全身可见皮肤，不再只集中手/前臂；绝大部分人皮可见。",
+    "每个可见指尖一枚新生短尖爪，去掉原圆人类甲片与双层甲。"
+  ],
+  "Jack_TF_V3_mid_color.png_sha256": "5e30ec8c7f099c65580ca160e10e15058571f04b1338f5316cf82eb65bef717e",
+  "Jack_TF_V3_mid_lineart.png_sha256": "99a773933efbb594380a94ebe5dd6ad26839721b2f2b7cd77e10ed731d434d7d"
+}

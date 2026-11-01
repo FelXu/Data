@@ -1,0 +1,84 @@
+﻿本文件为旧中期设计备查；当前优先使用本机方法迁移_V3/A_机器人规格_初期结构准确.json与B_ComfyUI手操卡_初期结构准确.txt。最新目标保留人甲仅甲尖部分黑、耳刚尖、无吻突，旧整爪母图未通过。
+
+最新结构输入已交付（2026-11-01）：input_V3/内两张832×1216同源图与英文POS/NEG。用户已改为全身可见皮肤稀疏分散短毛＋单一新生短尖爪，取消旧“仅手前臂毛发边界”限制。V3 JSON已同步并绑定ComfyUI/input/Jack_TF_V3输入；状态structural_inputs_prepared_not_sampled。本轮外部生成/修改累计7次，按8张总上限最多剩S01一次，无局修名额、无B；S01未运行。
+请优先看input_V3/输入说明与检查清单.txt。以下保留原六步局修设计作为历史备查，不能覆盖最新JSON与预算。
+
+Jack男性犬科TF V3 — 先定中期结构，再按区修；2026-11-01
+状态：needs_structural_inputs。未出图，草图/色稿/当前人类参考尚未绑定审核。正式终点留空。
+同名JSON是机器人执行规格，不是可Load的ComfyUI workflow。旧执行器不兼容。
+
+路线：T03中期线稿＋色稿图生图 → 通过才按需T06b头/耳 → T06手前臂/胸衣/短裤。
+最大6次采样=1张结构底图+最多5次局修，少于8张；没有B，失败立即停止，没有重抽。合格区域跳过。
+为什么换：骨架不画吻长、人颊、毛发区域或衣褶；线稿定这些形状，色稿限制材质/配色，mask控制局部写入。
+不能直接运行旧T03：其中仍有旧女王提示、V33与女王IP参考；JSON temporary_api_contract列出需整体替换与临时接线。原工作流不改。
+
+准备输入（不使用扩散采样）：
+1. 选符合当前衣装的男性人类Jack作人工身份对照；本轮无IPAdapter输入。记录源文件和SHA256。
+2. 画新姿势：双手在胸前近处张开查看、身体后缩、肩紧张、膝弯、双脚错步踩稳；不是手举到头顶挥手。脸睁大眼、抬内眉、嘴微张。
+3. 草图脸保留人类颊骨与嘴唇，只有鼻端/前颌极短前突；同一对耳半拉长，不能画完整犬头后再靠NEG缩回。
+4. 画出比起点宽的肩胸及大腿；紫T胸袖腋缝、短裤腰带两侧缝和裤口均有受力线，微开线只在外缝且不改变覆盖。
+5. 色稿用人皮色填脸/颈/上臂/小腿，炭灰短毛仅手与前臂局部，界线停在肘下；黄发、紫T、卡其短裤和眼镜均按当前参考。
+6. 线稿与色稿同尺寸同坐标逐像素对齐；线稿不画分区标签、箭头、文字、条纹占位线，以免生成成皮肤花纹。
+7. 必须先实际打开两图检查，记录审核结果及hash；没有文件、未审核或画成全兽就保持needs_structural_inputs，禁止提交S01。
+8. 每次局修前在最新已接受画布上制作edit/protect灰度mask并通过T06c同裁框预览；预览不含KSampler，不消耗采样预算。
+
+采样：V35 fp32；ILstyle确切文件不变但降至Model=Clip=0.40；Species/Mid/BYIL整轮全部关闭且无触发前缀。
+832×1216；28步；CFG5；Euler a/normal；Clip Skip2。OpenPose和IP均关闭。
+Lineart强度0.80、截止0.90。首张色稿img2img denoise0.45，不能再接EmptyLatent或denoise1。以上均为待测起点。
+
+步骤（不是并行网格，前一张验收后才能下一张）：
+V3_S01 | T03_lineart_plus_color_img2img | denoise=0.45 | 最多1次
+运行条件：all_structural_inputs_bound_and_visually_passed
+验收：必须全部通过base_gates；完整吻、全身毛、仅上衣受力或平静挥手任一出现即整轮停止，不进入局修。
+POS：blackrat_style, blackrat, clean illustration, solo, single character, (adult male human Jack in an incomplete mid-transformation:1.3), golden-blond shaggy medium-length hair, thick bangs, blue eyes, (one intact pair of black rectangular glasses worn normally:1.25), (incomplete muzzle, human cheeks still visible:1.35), a tiny forward change at the nose tip and front jaw only, human lips and recognizable human facial planes, one original pair of ears partly lengthening, human-shaped ear bases, (short fur only on hands and forearms with a clear skin boundary:1.35), irregular fur fronts stopping below the elbows, bare human skin on the cheeks, neck, upper arms and lower legs, moderately expanding shoulders, upper back, chest and thighs, (clothes stretching on both shirt and shorts:1.3), his original human-sized opaque purple short-sleeved cotton T-shirt pulling tight across the chest, sleeves and underarm seams, his original khaki shorts pulling tight at the waistband, outer thigh seams and leg hems, fabric tension, radiating pulling folds and straining seams on BOTH garments, slight seam fraying with coverage maintained, (startled expression, mid-transformation panic:1.3), widened blue eyes, raised inner eyebrows, mouth slightly open in alarm, looking down at his changing hands held close in front of his chest, fingers spread, torso recoiling, shoulders tense, knees bent, staggered planted feet, closed sneakers, full body, three-quarter view, neutral gray background, no visible tail
+NEG：low quality, blurry, bad anatomy, extra character, duplicate character, extra limbs, extra fingers, fused fingers, (fully transformed anthro:1.5), (completed canine head:1.5), (long complete canine muzzle:1.5), full snout, dog head replacing the human face, furry cheeks, facial fur, (full fur coat:1.5), (fur-covered body:1.5), furry neck, furred upper arms, furry thighs, furry calves, uniform fur coverage, human face completely lost, completely unchanged human face, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.4), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.4), loose unstressed shorts, relaxed waistband, oversized shirt, newly tailored outfit, (calm pose:1.4), relaxed standing pose, greeting wave, hand waving above the head, calm expression, serene smile, confident grin, snarling wolf face, closed indifferent eyes, extra ears, two pairs of ears, duplicate glasses, falling glasses, bent glasses, broken glasses, wrong hair color, waist-length hair, white shirt, blue shirt, different outfit, long trousers, boots, extreme final-form bulk, missing shirt, missing shorts, disintegrating clothes, transparent clothes, bare torso, uncovered hips, exposed toes, visible tail, wings, horns, crown, necklace, cropped head, cropped feet, text, logo, watermark, multiple panels, collage
+
+V3_S02 | T06b_rebuild | denoise=0.65 | 最多1次
+运行条件：all_previous_executed_jobs_pass AND only_minor_local_defect_in_this_region AND stage_masks_and_ROI_visually_pass
+验收：只优化极短吻及惊慌表情可读性；不接受整个头换成犬头。原脸必须已在S01通过，不能修救硬失败的全犬头。；同时重查全部base_gates和mask外保护。
+POS：blackrat_style, blackrat, clean illustration, a recognizable adult human male face, (incomplete very short muzzle:1.35), human cheeks still visible, human lips, a tiny beginning of forward projection at the nose and front jaw only, bare human facial skin, startled expression, widened blue eyes behind normally worn black rectangular glasses, raised inner eyebrows, mouth slightly open in mid-transformation panic, golden-blond thick bangs retained
+NEG：low quality, blurry, bad anatomy, text, logo, watermark, color mismatch, inconsistent lighting, hard paste edge, complete dog head, long snout, full canine muzzle, furry cheeks, animal mask, calm expression, confident grin, snarling fangs, extra eyes, duplicate glasses, broken glasses, falling glasses, different hair color
+
+V3_S03 | T06b_rebuild | denoise=0.6 | 最多1次
+运行条件：all_previous_executed_jobs_pass AND only_minor_local_defect_in_this_region AND stage_masks_and_ROI_visually_pass
+验收：原有耳根到新耳尖连接连续，数量始终一对；没有独立长出一对兽耳。；同时重查全部base_gates和mask外保护。
+POS：blackrat_style, blackrat, clean illustration, the original single pair of human ears partway through lengthening, human-shaped ear bases, partially tapered ear tips, exposed human skin on the ear bases, incomplete canine ear formation, coherent attachment to the same human head, surrounding golden hair preserved
+NEG：low quality, blurry, bad anatomy, text, logo, watermark, color mismatch, inconsistent lighting, hard paste edge, extra ears, second pair of ears, fully grown tall canine ears, furred head, headwear, jewelry, horns, changed hair
+
+V3_S04 | T06_preserve | denoise=0.4 | 最多1次
+运行条件：all_previous_executed_jobs_pass AND only_minor_local_defect_in_this_region AND stage_masks_and_ROI_visually_pass
+验收：短毛只占指定手/前臂区域，边界可见，近肘人皮保持；不可把肤色手套当作局部变形。；同时重查全部base_gates和mask外保护。
+POS：blackrat_style, blackrat, clean illustration, male hands with five fingers each, short charcoal-gray fur only on the hands and distal forearms, an irregular clear skin-to-fur boundary stopping below the elbows, a visible advancing edge of sparse short fur, proximal forearms retain bare human skin, coherent finger joints and continuous forearm anatomy
+NEG：low quality, blurry, bad anatomy, text, logo, watermark, color mismatch, inconsistent lighting, hard paste edge, fur beyond elbows, furry upper arms, fur sleeves, uniform complete fur coverage, gloves, furry cuffs, extra fingers, fused fingers, missing fingers, full character, miniature person, face, eyes, glasses
+
+V3_S05 | T06_preserve | denoise=0.4 | 最多1次
+运行条件：all_previous_executed_jobs_pass AND only_minor_local_defect_in_this_region AND stage_masks_and_ROI_visually_pass
+验收：可指出胸前拉力褶、袖口/腋缝绷紧位置；不是只随机撕一个洞或换成合身背心。；同时重查全部base_gates和mask外保护。
+POS：blackrat_style, blackrat, clean illustration, the original human-sized opaque purple cotton T-shirt stretched by expanding male shoulders, upper back and chest, taut sleeves, pulling folds radiating across the chest and underarms, fabric tension, seams straining, slight seam fraying, purple fabric still covering the torso, the established enlarged torso silhouette preserved
+NEG：low quality, blurry, bad anatomy, text, logo, watermark, color mismatch, inconsistent lighting, hard paste edge, loose shirt, oversized shirt, relaxed unstressed fabric, perfectly fitted new clothing, white shirt, blue shirt, missing shirt, bare torso, body fur replacing fabric, full character, miniature person, face, eyes, glasses
+
+V3_S06 | T06_preserve | denoise=0.4 | 最多1次
+运行条件：all_previous_executed_jobs_pass AND only_minor_local_defect_in_this_region AND stage_masks_and_ROI_visually_pass
+验收：腰带与至少一侧外缝/裤腿均有明确受力；胸衣与短裤在同一最终画面同时受力，衣物覆盖持续。；同时重查全部base_gates和mask外保护。
+POS：blackrat_style, blackrat, clean illustration, the original human-sized opaque khaki shorts stretched by expanding hips and thighs, taut waistband, diagonal pulling folds, fabric tension along both outer thigh seams and leg hems, shorts seams straining with tiny superficial outer-seam fraying, continuous khaki fabric maintaining coverage, the established enlarged thigh silhouette preserved
+NEG：low quality, blurry, bad anatomy, text, logo, watermark, color mismatch, inconsistent lighting, hard paste edge, loose baggy shorts, relaxed waistband, unstressed leg hems, intact perfectly fitted clothing, newly tailored outfit, long trousers, missing shorts, uncovered hips, exposed skin through large tears, fur replacing fabric, full character, miniature person, face, eyes, glasses
+
+停止条件：
+G1_incomplete_face：缩略图放大可辨同一人脸与人类颊部；仅鼻端/前颌小幅前突，绝不是完整犬吻/犬头。
+G2_limited_fur：毛只在手和部分前臂，界线清楚且肘上/脸/颈/小腿仍人皮；多出的毛身/尾立即失败。
+G3_growth_and_both_garments：肩胸大腿比瘦弱起点扩大；紫T和卡其短裤同时有明确绷紧缝线/拉力褶；只有上衣裂口不通过。
+G4_panic_pose_expression：脸惊讶慌张，身体后缩紧张，双手在身前查看而非挥手；仅加几根抖动线不通过。
+G5_identity：单人、成年男性Jack、黄发厚刘海、蓝眼、同一副正常黑框眼镜、原紫T/卡其短裤/闭合运动鞋，全身在画面内。
+G6_integrity：同一对耳、无多肢/重复五官，衣物覆盖保持，无旧女王形态/饰品/可见尾。
+S01任一条失败即停止；局修若破坏任一条也停止。失败图不能进入下一步。
+
+蒙版与文本要点：
+白改黑留的灰度edit/protect图用LoadImageMask red读取；protect白是保护，和edit含义相反。不要混用LoadImage透明alpha反相语义。
+眼镜框与镜腿、黄发在保护区；要画惊慌眼神时可改镜片内眼睛，但不遮噪正常镜框。不能保护错误几何后强贴成正常眼镜。
+耳mask同时包含同一对原耳根与目标耳尖；手mask不越过肘部人皮边界；上衣mask与短裤mask分别处理。
+图/蒙版/线稿使用完全相同裁框；最终外扩/羽化后再扣保护且夹回原edit域。57外扩8是工作图像素，64羽化4是原图像素，单位不要混。
+手/衣/裤局部POS不放full body、五官、眼镜等全身身份词，防止局部生出小人或脸。全局身份通过源图、未改区域与保护回贴维持。
+若完整犬头、全身毛或全局姿势错误，停止回草图，不能用低噪T06逐处补救。
+
+机器人字段：jobs[].positive_text/negative_text为最终全文；roi null需解析；临时接线参照temporary_api_contract；记录完整graph和全部hash。
+旧V2失败规格/说明/填表已备份至verification/matrix_v2_failed_20261101；V1/V2原图及_ops记录均保留。

@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-01",
+  "formal_target": null,
+  "frames": [
+    {
+      "n": 1,
+      "title": "人类起点",
+      "new": "无转化；建立约175cm、瘦弱成年男性的比较基准。",
+      "retain": "偏长凌乱黄发、厚刘海、蓝眼、正常佩戴同一副黑框眼镜；紫色短袖T、卡其短裤、运动鞋完整。",
+      "not_yet": "兽耳、犬吻、目标色短毛、爪、尾、角、翼，以及明显体型或性别变化。",
+      "lora": "ILstyle Model/Clip=1.20/1.20；全部转化LoRA关闭。",
+      "check": "单人、成年男性、瘦型；衣物不是旧版长裤/靴子；只有一副眼镜、两只人耳。身高为设定值，靠同机位比例比较，不从孤立像素推算米数。",
+      "action": "自然站立，微侧身；建立统一地面线、头顶和鞋底留白。",
+      "mask": "无需局修；保存人类基准图与完整参数。",
+      "glasses": "G0：正常佩戴。",
+      "english": "Jack remains fully human at the start of the transformation, wearing his black rectangular glasses and unchanged clothes, with shaggy blond hair, thick bangs and a relaxed balanced stance."
+    },
+    {
+      "n": 2,
+      "title": "手部初变",
+      "new": "手背小范围出现炭灰色短毛；指甲略尖，掌指体块轻微增厚；暂按五指含拇指。",
+      "retain": "人类脸、耳、鼻口、体型、腿与鞋；黄发厚刘海、蓝眼和眼镜均不变。",
+      "not_yet": "完整兽爪、全身毛色覆盖、兽耳、犬吻、尾；不能因转化标签直接跳终态。",
+      "lora": "ILstyle 1.20/1.20 + Species 0.80/0.80，仅一种转化LoRA；手部蒙版局修。",
+      "check": "变化停在手，五指仍能逐一追踪；不是手套或多长手；衬袖、短裤和鞋保持原样。",
+      "action": "低头观察双手，重心仍在双脚；不突然改变身高和肌肉量。",
+      "mask": "T06先改手背与指甲；若需重建手指轮廓，T06b包含手腕和指尖外的空白，逐手处理。",
+      "glasses": "G0：正常佩戴，镜框不变。",
+      "english": "During an early canine transformation, only Jack’s hands gain small patches of charcoal-gray short fur and slightly pointed nails, while his human face, blond bangs, glasses and clothes remain unchanged."
+    },
+    {
+      "n": 3,
+      "title": "耳与前臂过渡",
+      "new": "原有双耳逐渐拉长并改变耳根位置；前臂出现目标色短毛；鼻口仍接近人类。",
+      "retain": "黄发和厚刘海仍明显；人类鼻口特征、蓝眼、瘦型、原衣鞋及一副眼镜继续保留。",
+      "not_yet": "完整胡狼头、长吻、全身终态、可见尾或明显趾行脚；不额外生成第二对耳。",
+      "lora": "ILstyle 1.20/1.20 + Species 0.80/0.80；由阶段文字/草图推进形态，不靠升权重表示百分比。",
+      "check": "原人耳连续成为犬耳，不能同时保留完整人耳和头顶兽耳；发色不变成黑长发；眼镜还能辨认。",
+      "action": "轻微转头或抬手摸耳；先用侧面/三分之四草图核对耳根。",
+      "mask": "耳与前臂分两次修。耳部裁框带头颈与原耳根，蒙版覆盖耳将长到的背景，黄发刘海尽量保留在未重绘区。",
+      "glasses": "G0→G1前奏：镜腿可略松动，仍佩戴；不提前掉落。",
+      "english": "Jack reaches an early mid-stage canine transformation as his original ears lengthen and his forearms gain short charcoal-gray fur, while his face stays mostly human and his blond bangs, blue eyes, glasses and outfit are retained."
+    },
+    {
+      "n": 4,
+      "title": "头部中期与眼镜事件",
+      "new": "同一个鼻端、上下颌和颊部协同形成短犬吻；耳形更明确，但仍能读出人类与犬科混合状态。",
+      "retain": "成年男性身份、蓝眼、金黄发色及厚刘海的主要轮廓；保持瘦型和原衣鞋；沿用已变化的手臂。",
+      "not_yet": "完整终态犬头、极长吻、完全覆盖的躯干体色、可见尾、角或翼；不能像套狗头面具。",
+      "lora": "ILstyle 1.20/1.20 + Mid v2 0.80/0.80，主要用于头部裁块；若不合格，改测Species或BYIL，不叠加补救。",
+      "check": "鼻、颊、下颌连接自然；还不是完整anthro；黄发和男性身份没有漂移；眼镜事件只发生在这一副眼镜上。",
+      "action": "轻扶镜框、略惊讶；头身比例连续，不改变相机或全图站位。",
+      "mask": "T03先画混合头轮廓，再T06b重建头颈局部；不要紧贴鼻尖裁框。完成脸后再用小蒙版单独做镜框变化。",
+      "glasses": "G1（草案）：镜腿/鼻梁轻微撑开、眼镜下滑，不碎裂；备选G_keep为镜框适配后继续佩戴，两方案不混用。",
+      "english": "In a controlled mid-stage transformation, Jack’s nose, cheeks and jaw form a short canine muzzle while human facial traits and blond bangs remain visible, and his single black rectangular frame bends slightly and slips down his nose."
+    },
+    {
+      "n": 5,
+      "title": "接近男性犬科终态",
+      "new": "犬科头更明确；外露颈、前臂、小腿逐渐统一为暂定短毛材质；仅在尾方案确认且遮挡草图合理后，加入身后可见的短尾轮廓。",
+      "retain": "偏长黄发、蓝眼、男性瘦型、约原身高和同一套完整衣鞋；已变化部位保持原配色。",
+      "not_yet": "与末格完全相同的所有细节；不出现女王体型、黑长发、首饰或四足姿态；鞋里不强行露出脚趾。",
+      "lora": "ILstyle 1.20/1.20 + Species 0.80/0.80；只处理尚未统一的局部，不全图反复重绘。",
+      "check": "仍为瘦型成年男性；材质不在短毛/黑皮间随机切换；短裤不撕裂，尾不穿透布面；一副眼镜的位置连续。",
+      "action": "恢复站稳、观察自己的手；保持双足站立和穿鞋轮廓。",
+      "mask": "分开处理头颈、前臂、小腿。尾出口未确认时不生成可见尾根；不能凭空给短裤开洞。",
+      "glasses": "G2（草案）：同一副眼镜已经落在左侧鞋旁；鼻梁上不再有第二副。不要同一格既戴着又掉在地上。",
+      "english": "Jack is nearly a male jackal anthro with a clearer canine head and matching short charcoal-gray fur on exposed areas, retaining his blond hair, blue eyes and unchanged clothes, with his glasses now resting beside his left shoe."
+    },
+    {
+      "n": 6,
+      "title": "终态草案而非定稿",
+      "new": "完整男性犬科/阿努比斯风anthro：暂定细长直立胡狼耳、适度犬吻、炭灰短毛；保留黄发、蓝眼、瘦型和原衣鞋；尾与指趾按最终拍板方案落实。",
+      "retain": "同一个男性Jack，约175cm的比较尺度；紫T、卡其短裤、运动鞋原样；若走掉落方案，眼镜保持在同一地面位置。",
+      "not_yet": "本格应无未完成的过渡补丁；仍不增加角、翼、巨大肌肉、女王造型、额外人物或首饰。",
+      "lora": "ILstyle 1.20/1.20；转化LoRA优先关闭，防止卡在mid状态。终态由明确外型和确认后的终态参考负责。",
+      "check": "终态选项未拍板前标为草案；只有一对耳和一套肢体；手指按暂定五指；脚趾在运动鞋内，不作可见趾数/肉垫验收。",
+      "action": "平静站立或看向观众；与起点对照同一地面线和画幅。",
+      "mask": "通过身份与结构验收后再T13导出；不对满意部分持续全图降噪。",
+      "glasses": "G3：沿用G2地面位置；若选择G_keep，4—6格整体改成同一副适配后佩戴的眼镜。",
+      "english": "Jack settles into a slender adult male Anubis-inspired jackal anthro with upright ears and a moderate canine muzzle, keeping his shaggy blond hair, thick bangs, blue eyes, original outfit and the established glasses position."
+    }
+  ],
+  "method_sources": [
+    "R01",
+    "R02",
+    "R04"
+  ],
+  "status": "draft_pending_character_choices"
+}

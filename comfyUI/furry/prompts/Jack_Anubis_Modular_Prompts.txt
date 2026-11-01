@@ -1,0 +1,187 @@
+# Jack 角色 Prompt - 模块化整理（清晰版）
+# 适用模型：Indigo Void Furry Fused XL / Furry NoobAI fp32
+# 整理日期：2026-10-21
+
+==================================================
+## 一、怎么用（先看这里）
+
+正面 Prompt 由 4 部分按顺序拼起来：
+
+1. 起手式（第1节，选一个）
+2. 角色专属外观（第3/4/5节）
+3. 阿努比斯共用核心（第2节）← 只有 F 和 M 需要加，Human 不加
+4. 姿势/动作（第6节，或自己写）
+
+**拼接顺序固定为：**
+
+```
+起手式
+角色专属外观
+阿努比斯共用核心（仅F/M）
+姿势
+```
+
+Human 只需要：起手式 + 第5节整段 + 姿势。
+
+下面第7节有完整拼好的示例，可以直接复制去跑图。
+
+==================================================
+## 1. 起手式（放在最前面，选一个）
+
+# 推荐本模型优先用 Style A 或 Style B。
+# 采样建议：Euler / Euler a，步数 15-25，CFG 约 3-5，Clip Skip 1-2。
+
+### Style A：Indigo Void / NoobAI 官方推荐（干净、色彩鲜明）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+
+### Style B：更强质量强调
+masterpiece, best quality, amazing quality, very aesthetic, high resolution, ultra-detailed, absurdres, newest, vibrant colors, perfect anatomy, source_furry,
+
+### Style C：带 blackrat_style（你之前用过的风格）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry, blackrat_style,
+
+### Style D：Score 标签版（更偏 Pony / 人类，纯 furry 时慎用）
+score_9, score_8_up, score_7_up, source_artwork, source_furry, masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, blackrat_style,
+
+### Style E：极简干净版
+masterpiece, best quality, absurdres, newest, very aesthetic, source_furry,
+
+==================================================
+## 2. 阿努比斯共用核心（F 和 M 都必须加在「角色专属外观」后面）
+
+# 这段包含：头、头发、无毛黑色皮肤、手脚、尾巴。
+# 使用位置：放在第3节或第4节的内容之后、姿势之前。
+
+anubis head, anubis ears, golden inner ears only, (uniform skin tone on ears:1.25), clean smooth forehead, beautiful detailed face, deep blue eyes, detailed eyes, sharp pupils,
+(shoulder-length black hair:1.4), messy tousled slicked back hair, exposed forehead, (individual hair strands:1.3),
+(completely furless body:1.5), (hairless body except head:1.45), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine, no leather texture, flawless black skin texture,
+detailed perfect hands, five fingers, hand claws, black claws, sharp claws, anatomically correct hands,
+digitigrade legs, furless paw feet, 4 toes, black paw pads, black claws,
+short hairless anubis tail,
+
+==================================================
+## 3. Jack F Anubis 专属外观（只写差异部分）
+
+# 使用位置：放在「起手式」后面、「第2节共用核心」前面。
+
+1girl, solo, female anubis, anthro anubis, completely nude, bare body, NSFW,
+huge breasts, black nipples, vagina, lewd body,
+mature female, voluptuous athletic body, tall, long legs, defined muscles, subtle six pack abs, feminine muscle tone, slender waist, hourglass figure, toned arms and legs, athletic thighs,
+
+==================================================
+## 4. Jack M Anubis 专属外观（只写差异部分）
+
+# 使用位置：放在「起手式」后面、「第2节共用核心」前面。
+
+1boy, solo, male anubis, anthro anubis, completely nude, bare body, NSFW,
+black nipples, red canine penis,
+extremely muscular male, very tall 2 meters, broad shoulders, massive chest, huge pectorals, defined eight pack abs, powerful arms, thick muscular thighs, wide back, masculine athletic build,
+mature male, powerful masculine body, long strong legs,
+
+==================================================
+## 5. Jack Human 专属外观（完整，不需要第2节）
+
+# Seed 参考：805940093834699
+# 使用位置：放在「起手式」后面、「姿势」前面。推荐起手式用 Style D。
+
+1boy, solo, completely human male, no tail,
+175cm tall, slim lean build, skinny weak physique,
+ordinary medium short male hairstyle, typical short men's haircut, back and sides, yellow hair, prominent thick bangs covering forehead, slightly messy short yellow hair, hair not long at the back, short hair overall,
+blue eyes, wearing black-framed glasses, black glasses frames, black rimmed glasses,
+purple t-shirt, casual purple tee,
+(casual khaki shorts:1.65), regular knee-length khaki shorts, simple plain khaki shorts, normal casual shorts, straight leg khaki shorts, no bib, no suspenders, no straps, no harness, no overalls,
+sneakers, athletic shoes,
+detailed human face, handsome young man, soft expression, light skin tone, completely human appearance,
+
+==================================================
+## 6. 姿势 / 动作（放在最后）
+
+standing straight, relaxed natural standing posture, arms naturally at sides, looking at viewer, full body,
+
+# 后续可自己改成 sitting, kneeling, from behind, lying on back 等。
+
+==================================================
+## 7. 完整拼好的示例（推荐先直接复制这些去测试）
+
+### F Anubis 站立（Style A + 第3节 + 第2节 + 第6节）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1girl, solo, female anubis, anthro anubis, completely nude, bare body, NSFW,
+huge breasts, black nipples, vagina, lewd body,
+mature female, voluptuous athletic body, tall, long legs, defined muscles, subtle six pack abs, feminine muscle tone, slender waist, hourglass figure, toned arms and legs, athletic thighs,
+anubis head, anubis ears, golden inner ears only, (uniform skin tone on ears:1.25), clean smooth forehead, beautiful detailed face, deep blue eyes, detailed eyes, sharp pupils,
+(shoulder-length black hair:1.4), messy tousled slicked back hair, exposed forehead, (individual hair strands:1.3),
+(completely furless body:1.5), (hairless body except head:1.45), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine, no leather texture, flawless black skin texture,
+detailed perfect hands, five fingers, hand claws, black claws, sharp claws, anatomically correct hands,
+digitigrade legs, furless paw feet, 4 toes, black paw pads, black claws,
+short hairless anubis tail,
+standing straight, relaxed natural standing posture, arms naturally at sides, looking at viewer, full body,
+
+### M Anubis 站立（Style A + 第4节 + 第2节 + 第6节）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, solo, male anubis, anthro anubis, completely nude, bare body, NSFW,
+black nipples, red canine penis,
+extremely muscular male, very tall 2 meters, broad shoulders, massive chest, huge pectorals, defined eight pack abs, powerful arms, thick muscular thighs, wide back, masculine athletic build,
+mature male, powerful masculine body, long strong legs,
+anubis head, anubis ears, golden inner ears only, (uniform skin tone on ears:1.25), clean smooth forehead, beautiful detailed face, deep blue eyes, detailed eyes, sharp pupils,
+(shoulder-length black hair:1.4), messy tousled slicked back hair, exposed forehead, (individual hair strands:1.3),
+(completely furless body:1.5), (hairless body except head:1.45), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine, no leather texture, flawless black skin texture,
+detailed perfect hands, five fingers, hand claws, black claws, sharp claws, anatomically correct hands,
+digitigrade legs, furless paw feet, 4 toes, black paw pads, black claws,
+short hairless anubis tail,
+standing straight, relaxed natural standing posture, arms naturally at sides, looking at viewer, full body,
+
+==================================================
+## 8. 负面 Prompt
+
+### 基础负面（F 和 M 都用）
+worst quality, low quality, bad anatomy, deformed, blurry, lowres, bad hands, mutated hands, extra limbs, extra fingers,
+(fur:1.5), body fur, fluffy fur, hairy skin, fluffy tail, bushy tail,
+(jewelry:1.45), (ear jewelry:1.45), golden accessories, earrings, egyptian headdress, nemes headdress, headcloth, headwear, clothes, fabric, clothing,
+human ears, round ears, cat ears, human nose, human-like face, plastic skin, barbie skin, glossy skin, shiny skin,
+flat chest, loli, child, bald head, exaggerated proportions, bangs, neat hair, hair over face,
+
+### 男性阿努比斯额外负面（只给 M 加）
+(golden skin:1.5), (golden patches:1.5), (golden color on chest:1.45), (golden torso:1.45), (golden on body:1.45),
+(lighter skin on torso:1.45), (discolored skin:1.4), (uneven skin tone:1.35),
+(stretch marks:1.5), (skin stretch marks:1.5), (skin lines:1.4),
+female, breasts, pussy,
+
+### Human 负面
+score_6, score_5, score_4, source_pony,
+overalls, bib overalls, suspender pants, harness pants, bib pants, strap pants, dungarees,
+long hair, very long hair, shoulder length hair,
+hands on head, hand on head, arms raised to head, hands behind head,
+anthro, furry, jackal, anubis, animal ears, long muzzle, tail, black skin, dark skin, fur, body hair,
+huge breasts, female features, feminine body,
+deformed, bad anatomy, extra limbs, bad hands, blurry, low quality, worst quality,
+
+### 本模型建议额外负面（可加到任何角色）
+shiny skin, shiny clothing, signature, username, logo, watermark, text,
+
+==================================================
+## 9. 面部与手部细节（可选，用于 Adetailer）
+
+### 面部正面（女）
+beautiful detailed face, deep blue eyes, detailed eyes, sharp pupils, perfect eye reflection, clean smooth forehead, beautiful mature female face, seductive expression, detailed eyelashes, detailed eyebrows, flawless black skin texture, no blur
+
+### 面部负面
+deformed face, ugly, bad anatomy, blurry face, lowres face, extra eyes, fused eyes, plastic skin, shiny skin, human nose, human-like face, bangs, hair over face, makeup, marks
+
+### 面部正面（男）
+beautiful detailed masculine face, deep blue eyes, detailed eyes, sharp pupils, perfect eye reflection, clean smooth forehead, seductive masculine expression, flawless uniform matte black skin texture, no golden on face
+
+### 手部正面
+detailed perfect hands, five fingers, anatomically correct hands, hand claws, black claws, sharp claws, perfect finger anatomy, no fusion, detailed paw-like hands, flawless black skin texture
+
+### 手部负面
+bad hands, mutated hands, extra fingers, missing fingers, fused fingers, deformed hands, extra limbs, poorly drawn hands, blurry hands, lowres hands, shiny skin
+
+==================================================
+## 优化说明
+1. 无毛黑色皮肤最难控制，已加重权重并写了 no gloss / no shine。如果还偏亮，可再加强负面 glossy/shiny，或略降 CFG。
+2. 头发用 messy tousled slicked back + exposed forehead 比较稳定，负面已排除 bangs。
+3. 耳朵只写 golden inner ears only + uniform skin tone on ears，防止金色跑到身上。
+4. 纯无毛 anthro 建议用 source_furry。换其他模型时优先只换起手式再测试。
+5. 全身建议先用较高分辨率（如 1024x1536），再 Hires 放大。
+
+# 整理结束

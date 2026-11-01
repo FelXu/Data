@@ -1,0 +1,101 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "Jack_TF_V3/source_no_human_plate_native.png"
+    }
+  },
+  "2": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 832,
+      "height": 1216,
+      "crop": "disabled"
+    }
+  },
+  "3": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ],
+      "filename_prefix": "Jack_Test/INPUT_V3_SPARSE_20261101/color_no_human_plate"
+    }
+  },
+  "4": {
+    "class_type": "LineartStandardPreprocessor",
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "guassian_sigma": 6.0,
+      "intensity_threshold": 8,
+      "resolution": 832
+    }
+  },
+  "5": {
+    "class_type": "ImageInvert",
+    "inputs": {
+      "image": [
+        "4",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "5",
+        0
+      ],
+      "filename_prefix": "Jack_Test/INPUT_V3_SPARSE_20261101/line_soft_no_human_plate"
+    }
+  },
+  "7": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "5",
+        0
+      ],
+      "channel": "red"
+    }
+  },
+  "8": {
+    "class_type": "ThresholdMask",
+    "inputs": {
+      "mask": [
+        "7",
+        0
+      ],
+      "value": 0.75
+    }
+  },
+  "9": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "8",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ],
+      "filename_prefix": "Jack_Test/INPUT_V3_SPARSE_20261101/line_binary_no_human_plate"
+    }
+  }
+}

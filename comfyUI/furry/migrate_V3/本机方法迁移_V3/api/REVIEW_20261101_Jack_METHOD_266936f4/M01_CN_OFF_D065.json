@@ -1,0 +1,136 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors"
+    }
+  },
+  "990": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "stop_at_clip_layer": -2
+    }
+  },
+  "2": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "990",
+        0
+      ],
+      "lora_name": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+      "strength_model": 0.8,
+      "strength_clip": 0.8
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "blackrat_style, blackrat, a freshly redrawn finished illustration, clean expressive ink contours, developed cel shading and coherent form shadows, solo adult male Jack in an early canine transformation, golden-yellow shaggy medium-length hair with thick bangs, blue eyes, black rectangular glasses worn normally, an incomplete very short muzzle only beginning at the nose tip and front jaw, recognizable human cheeks and lips, the same original pair of ears partly lengthening, sparse fine short hairs scattered over mostly visible human skin, one single newly grown short charcoal claw on each visible fingertip, no separate rounded human nail plate, moderately expanding shoulders and chest, opaque purple cotton T-shirt and khaki shorts BOTH showing taut seams and fabric tension, startled expression, mouth slightly open, body recoiling, knees slightly bent, both hands at chest height checking the change, closed sneakers, full-body three-quarter view, simple light background, preserve identity and the readable intermediate anatomy while rebuilding rough draft contours, hair strands, garment folds and shading"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "low quality, blurry, bad anatomy, extra characters, extra limbs, extra fingers, fused fingers, fully transformed Anubis, complete canine head, long muzzle, lost human cheeks, full fur coat, dense furry gloves, double nail plates, rounded human nails under claws, long hooked talons, extra ears, tail, missing glasses, broken glasses, different hair color, changed outfit, missing clothing, transparent fabric, calm greeting pose, waving, confident smile, horns, crown, jewelry, near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, neon outlines, rainbow contour lines, fluorescent skin, false colors, color posterization, unrequested handheld object, phone, book, text, watermark, collage, cropped head, cropped feet"
+    }
+  },
+  "900": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "Jack_TF_V3/mid_color_draft.png"
+    }
+  },
+  "901": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "900",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 832,
+      "height": 1216,
+      "crop": "disabled"
+    }
+  },
+  "902": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "901",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "902",
+        0
+      ],
+      "seed": 2026110101,
+      "steps": 28,
+      "cfg": 5.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 0.65
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "Jack_Test/REVIEW_20261101_Jack_METHOD_266936f4/M01_CN_OFF_D065"
+    }
+  }
+}

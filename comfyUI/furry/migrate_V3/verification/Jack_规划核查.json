@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-01",
+  "status": "pass",
+  "storyboard_panels": 6,
+  "formal_target_unfilled": true,
+  "test_max_images": 12,
+  "test_status": "not_run",
+  "ILstyle_filename_binding": "pending_user_mapping",
+  "mid_version_verified": "v2.0 / Illustrious, full-file SHA256 matched Civitai",
+  "negative_default_gender_tags_removed": true,
+  "normal_guide_rebuild_preserves_plan": true,
+  "workflow_json_unchanged": 119,
+  "T11_topology_changed": false
+}

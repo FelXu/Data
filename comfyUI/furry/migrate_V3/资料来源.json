@@ -1,0 +1,129 @@
+{
+  "title": "Furry TF 序列参考资料",
+  "updated": "2026-11-01",
+  "scope": "人类到兽人、兽人到其他拟兽形态的插画序列；结构设计、作者经验与ComfyUI工具分开阅读。",
+  "sources": [
+    {
+      "id": "R01", "category": "TF设计", "priority": 1,
+      "title": "How I Draw Anthros, Hybrids, and Monsters",
+      "author": "MsRedNebula / Sarrah Wilkinson", "date": "2024-03-30", "language": "英文，有配图与视频",
+      "url": "https://tips.clip-studio.com/en-us/articles/9115",
+      "extra_url": "https://www.rednebulastudios.com/artwork/how-i-draw-anthros-hybrids-monsters", "extra_label": "作者官网同名条目",
+      "evidence": "作者的TF中间态构思解析",
+      "read": "优先看 Skulls, Heads, and Muzzles，再看 Other Hybrid Features。作者以人类和狼的侧面骨架为两端，构思混合头部，并明确将其用于TF中间态；也举了手指和后腿的例子。",
+      "practice": "给Jack先画人形、半兽、终态三张侧面轮廓，标出鼻口、耳根、下颌如何对应，再将选定轮廓放进T03线稿控制。",
+      "limit": "这是结构构思，不是ComfyUI生成教程；半兽不等于把两张图按50%透明度叠加。"
+    },
+    {
+      "id": "R02", "category": "TF设计", "priority": 2,
+      "title": "How to Draw Werewolf Transformations",
+      "author": "Dawn / DragoArt", "date": "2020-10-25", "language": "英文，分阶段绘画图解",
+      "url": "https://dragoart.com/tut/how-to-draw-werewolf-transformations-24730",
+      "evidence": "作者的人到狼人分阶段绘画教程",
+      "read": "看头、手和整体形态怎样分阶段组织，观察每阶段有哪些清楚可见的差别，以及服装如何保持叙事连续。",
+      "practice": "先列每格的新增特征、沿用特征与尚未出现的特征；同一格只推进少数明确变化，差异过大时补过渡格。",
+      "limit": "狼人毛量、痛苦表现和服装变化属于作者设计，不必照搬到Jack。本站直接访问可能受限；本轮可读取其搜索索引中的教程正文。"
+    },
+    {
+      "id": "R03", "category": "TF设计", "priority": 4,
+      "title": "How to make a werewolf",
+      "author": "Dirk Tiede / Paradigm Shift", "date": "2023-05-03", "language": "英文，作者制作解析",
+      "url": "https://paradigmshiftmanga.com/how-to-make-a-werewolf/",
+      "evidence": "漫画作者的3D狼人TF制作经验",
+      "read": "作者以DAZ人形为起点，在Blender中制作形变；强调人形与兽形的对应部位必须对齐，例如人鼻对应未来的兽吻。",
+      "practice": "跨格追踪同一个鼻、耳、腕、踝与尾根。即使每格由AI独立生成，也先用草图确定这些部位的连续位置。",
+      "limit": "这是3D形变经验，不能直接作为二维AI节点流程；公开文章可读，完整视频与付费画集未纳入本次内容概括。"
+    },
+    {
+      "id": "R04", "category": "TF设计", "priority": 3,
+      "title": "TF sequence 制作讨论中的图生图方法",
+      "author": "FaceDeer，r/tf_irl 技术评论", "date": "2022-11-08", "language": "英文，作者经验讨论",
+      "url": "https://www.reddit.com/r/tf_irl/comments/ypn105/comment/ivlgzrh/",
+      "evidence": "作者实际使用SD进行拟兽生成的经验",
+      "read": "作者先生成处于目标姿势的人类图，再用img2img添加动物特征，反复迭代并筛选候选。",
+      "practice": "先把Jack的姿势和构图确定，再处理本格的拟兽部位。每一步保存候选和参数，验收后才继续下一格。",
+      "limit": "原经验使用SD1.4，不能照搬其年代的权重、步数或模型；这条评论也没有提供完整ComfyUI JSON。"
+    },
+    {
+      "id": "R05", "category": "结构参考", "priority": 5,
+      "title": "Drawing Anthropomorphic Animals",
+      "author": "HeroDraws / CLIP STUDIO TIPS", "date": "页面未明确标注日期", "language": "英文，配图步骤",
+      "url": "https://tips.clip-studio.com/en-us/articles/2393",
+      "evidence": "作者的兽人头、手、腿绘画教学",
+      "read": "优先看 Anthro Hands 和 Drawing a Canine Head：手指与掌垫的体块，犬科头的口鼻、颊部和耳朵如何连成整体。",
+      "practice": "把不清楚的手或吻部先拆成简单体块，画出朝向再做局部重绘；建立固定的头部比例及配色参照。",
+      "limit": "这是风格化绘画方法。毛发、光泽和尾巴范例不适用于女王的无毛哑光黑皮设定；真实关节结构另看R07。"
+    },
+    {
+      "id": "R06", "category": "结构参考", "priority": 6,
+      "title": "How to draw a dragon, with Monika Zagrobelna",
+      "author": "Monika Zagrobelna / Wacom", "date": "2024-06-30", "language": "英文，详细绘画步骤",
+      "url": "https://community.wacom.com/en-us/how-to-draw-dragon-monika-zagrobelna/",
+      "evidence": "作者的龙体块与翼结构设计教程",
+      "read": "看整体骨架、翼臂、长指和翼膜的连接。作者区分四足加双翼的龙，与两足加双翼的wyvern。",
+      "practice": "绿龙仍保留双手时，把双翼明确作为额外一对肢体；先固定翼根和关节，再设计每格的轮廓与展开程度。",
+      "limit": "幻想生物可以有不同设计。这里的绘画构造顺序不是TF必然顺序，也不规定Jack的翼指、手指或脚趾数量。"
+    },
+    {
+      "id": "R07", "category": "结构参考", "priority": 7,
+      "title": "Designed For Running / Canine Skeleton",
+      "author": "T. F. Fletcher / University of Minnesota Veterinary Anatomy", "date": "2019版课程资料", "language": "英文，骨架线图与说明",
+      "url": "https://vanat.ahc.umn.edu/run/index.html",
+      "extra_url": "https://vanat.ahc.umn.edu/run/plate4.html", "extra_label": "直接看犬骨架线图",
+      "evidence": "兽医学院支持的真实动物结构资料",
+      "read": "看 Digitigrade 与犬骨架配页，区分膝、踝和趾。趾行涉及掌骨或跖骨区域抬起，不是额外长出一个反向膝。",
+      "practice": "在脚部变化草图上始终标出髋—膝—踝—趾，再检查接地位置和重心；不要仅画一条锯齿状小腿。",
+      "limit": "资料讲真实四足兽。兽人的双足平衡和体型、以及Jack的指趾数，仍由角色设计决定。"
+    },
+    {
+      "id": "R08", "category": "分镜", "priority": 8,
+      "title": "5 Key Steps for Effective Blocking",
+      "author": "Shawn Kelly / Animation Mentor", "date": "2018-08-22", "language": "英文，动画师制作方法",
+      "url": "https://www.animationmentor.com/blog/5-key-steps-for-effective-blocking/",
+      "evidence": "动画师的关键姿势与过渡规划经验",
+      "read": "看缩略草图、主要姿势、重心变化和重要过渡姿势的安排。",
+      "practice": "先用小草图排起点、中期、终态，再补观众理解变化所需的格子；每格兼顾一个形态信息和一个可读反应。",
+      "limit": "动画帧数不能直接换成漫画格数。静态过渡格会被停留阅读，需要独立检查结构。"
+    },
+    {
+      "id": "R09", "category": "ComfyUI工具", "priority": 9,
+      "title": "IPAdapter Plus Nodes reference",
+      "author": "cubiq / ComfyUI_IPAdapter_plus", "date": "持续维护文档，核查于2026-11-01", "language": "英文，作者节点文档",
+      "url": "https://github.com/cubiq/ComfyUI_IPAdapter_plus/blob/main/NODES.md",
+      "evidence": "参考图预处理与区域影响的功能说明",
+      "read": "看 IPAdapter Advanced 的 image、attn_mask、weight 与 start_at/end_at。非方形参考图会居中裁切；区域蒙版限定参考影响范围。",
+      "practice": "先确认耳、尾、翼没有在参考编码前被裁掉；长条母图可先补成方图。中间格可尝试限定目标参考作用区域。",
+      "limit": "IP强度不是转化百分比，区域影响也不是精确复制。普通人脸FaceID不能直接当作兽吻一致性的已验证方案。"
+    },
+    {
+      "id": "R10", "category": "ComfyUI工具", "priority": 10,
+      "title": "ComfyUI Inpaint CropAndStitch",
+      "author": "lquesada", "date": "持续维护文档，核查于2026-11-01", "language": "英文，作者README",
+      "url": "https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch",
+      "evidence": "蒙版裁切、上下文与回贴工具说明",
+      "read": "看裁框上下文、蒙版扩张、工作分辨率与回贴混合；理解为何局部修图需要带上邻接结构。",
+      "practice": "长耳、尾、翼的蒙版要覆盖新结构将占据的空间，并保留相应头颈、骨盆或肩背上下文。可先用现有T06c检查裁框。",
+      "limit": "工具负责裁图和合成，不负责正确解剖。你现有T06系列已采用裁框回贴思路，阅读此资料不要求另装插件。"
+    },
+    {
+      "id": "R11", "category": "ComfyUI工具", "priority": 11,
+      "title": "ControlNet 1.1 作者说明",
+      "author": "lllyasviel / ControlNet", "date": "ControlNet 1.1 文档，核查于2026-11-01", "language": "英文，控制方式与例图",
+      "url": "https://github.com/lllyasviel/ControlNet-v1-1-nightly#controlnet-11-lineart",
+      "evidence": "OpenPose与Lineart控制方法说明",
+      "read": "比较身体姿势控制与手绘轮廓控制的作用；文档含狼的Lineart例子。",
+      "practice": "身体重心与关节先用T02；新增耳、吻、尾、翼画进T03阶段草图。以已安装的SDXL配套控制模型尝试。",
+      "limit": "此页列出的权重属于SD1.5，不能直接接入Indigo的SDXL链。狼的单图例子不构成连续TF效果验证。"
+    },
+    {
+      "id": "R12", "category": "ComfyUI工具", "priority": 12,
+      "title": "ComfyUI FLUX.2 Klein 指南",
+      "author": "ComfyUI 官方文档", "date": "持续更新指南，核查于2026-11-01", "language": "英文，模型与编辑模板",
+      "url": "https://docs.comfy.org/tutorials/flux/flux-2-klein",
+      "evidence": "Base与Distilled模型及图像编辑功能说明",
+      "read": "核对4B Base与4B Distilled的不同文件和模板，再看图像编辑输入。FP8只表示精度，不代表Base或Distilled。",
+      "practice": "用本机Klein分支尝试编辑一格，检查画风、身份和背景保持；满意的局部再通过蒙版回贴进原图。",
+      "limit": "通用编辑能力不保证furry TF阶段连续，文字指令也不保证未改区域像素不变。SDXL BlackRat LoRA不能直接用于Klein。"
+    }
+  ]
+}
