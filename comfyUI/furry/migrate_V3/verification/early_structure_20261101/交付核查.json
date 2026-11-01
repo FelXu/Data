@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-01",
+  "A_B_same_latest_contract": "pass",
+  "UI_workflows": {
+    "EARLY_T03_初期结构重绘.json": {
+      "nodes": 18,
+      "links": 22,
+      "static_link_integrity": "pass"
+    },
+    "EARLY_Klein_甲尖单点编辑.json": {
+      "nodes": 21,
+      "links": 25,
+      "static_link_integrity": "pass"
+    }
+  },
+  "Klein_API_required_models_and_input": "local_present",
+  "submission_gate_cases": {
+    "reject_unapproved_source": false,
+    "reject_forbidden_pair": false,
+    "reject_exhausted_budget": false,
+    "allow_selected_source_edit_numeric_gate": true
+  },
+  "original_workflows_unchanged": 119,
+  "original_Klein_unchanged": true,
+  "source_semantic_pass": false,
+  "semantic_transfer_validated": false,
+  "new_images_sampled": 0,
+  "T03_approved_inputs": "intentionally_unbound_until_E1_E7_pass",
+  "UI_render_and_image_quality": "not_run"
+}

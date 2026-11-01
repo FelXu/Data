@@ -1,0 +1,37 @@
+{
+  "ran": [
+    "V3_S01_R01",
+    "V3_S01_R02"
+  ],
+  "count": 2,
+  "outputs": {
+    "V3_S01_R01": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_R01_d065.png",
+    "V3_S01_R02": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_R02_d075.png"
+  },
+  "expected": [
+    "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_R01_d065.png",
+    "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_R02_d075.png"
+  ],
+  "params": {
+    "ILstyle": "0.8/0.8",
+    "lineart_CN": "0.5 end 0.75",
+    "denoise": {
+      "R01": 0.65,
+      "R02": 0.75
+    },
+    "steps": 28,
+    "cfg": 5.0,
+    "sampler": "euler_ancestral",
+    "seed": 2026110101,
+    "TF_LoRA": "OFF",
+    "OpenPose": "OFF",
+    "IP": "OFF",
+    "size": "832x1216",
+    "ckpt": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors"
+  },
+  "chain": false,
+  "T11": "untouched",
+  "stopped_after": 2,
+  "lineart_sha256": "898ee08810ef0afff30dbc0549dda02dd77047835846c2c1a3a75d6f64cab714",
+  "color_sha256": "71878694b9192416a8b48423a049e373f415c58f334df1c5698373e041feece2"
+}

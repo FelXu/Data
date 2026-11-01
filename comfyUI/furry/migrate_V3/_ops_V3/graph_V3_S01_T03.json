@@ -1,0 +1,198 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors"
+    }
+  },
+  "990": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "stop_at_clip_layer": -2
+    }
+  },
+  "2": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "990",
+        0
+      ],
+      "lora_name": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+      "strength_model": 0.4,
+      "strength_clip": 0.4
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "blackrat_style, blackrat, clean illustration, solo, single character, (adult male human Jack in an early canine transformation:1.3), golden-blond shaggy medium-length hair, thick bangs, blue eyes, (one intact pair of black rectangular glasses worn normally:1.25), (incomplete muzzle, human cheeks still visible:1.35), a tiny forward change at the nose tip and front jaw only, human lips and recognizable human facial planes, one original pair of ears partly lengthening, human-shaped ear bases, (sparse fine short hairs scattered over visible human skin:1.25), small separated groups on the hands, forearms, upper arms, neck sides and lower legs, mostly bare human-colored skin between strands, (one single newly grown short charcoal pointed claw replacing each visible rounded human fingernail:1.25), no separate human nail plate underneath, moderately expanding shoulders, upper back, chest and thighs, (clothes stretching on both shirt and shorts:1.3), his original human-sized opaque purple short-sleeved cotton T-shirt pulling tight across the chest, sleeves and underarm seams, his original khaki shorts pulling tight at the waistband, outer thigh seams and leg hems, fabric tension, radiating pulling folds and straining seams on BOTH garments, slight seam fraying with coverage maintained, (startled expression, mid-transformation panic:1.3), widened blue eyes, raised inner eyebrows, mouth slightly open in alarm, looking down at his changing hands held close in front of his chest, fingers spread, torso recoiling, shoulders tense, knees bent, staggered planted feet, closed sneakers, full body, three-quarter view, neutral gray background, no visible tail"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "low quality, blurry, bad anatomy, extra character, duplicate character, extra limbs, extra fingers, fused fingers, (fully transformed anthro:1.5), (completed canine head:1.5), (long complete canine muzzle:1.5), full snout, dog head replacing the human face, furry cheeks, facial fur, (full fur coat:1.5), (fur-covered body:1.5), uniform fur coverage, human face completely lost, completely unchanged human face, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.4), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.4), loose unstressed shorts, relaxed waistband, oversized shirt, newly tailored outfit, (calm pose:1.4), relaxed standing pose, greeting wave, hand waving above the head, calm expression, serene smile, confident grin, snarling wolf face, closed indifferent eyes, extra ears, two pairs of ears, duplicate glasses, falling glasses, bent glasses, broken glasses, wrong hair color, waist-length hair, white shirt, blue shirt, different outfit, long trousers, boots, extreme final-form bulk, missing shirt, missing shorts, disintegrating clothes, transparent clothes, bare torso, uncovered hips, exposed toes, visible tail, wings, horns, crown, necklace, cropped head, cropped feet, text, logo, watermark, multiple panels, collage, dense gray furry gloves, continuous solid fur patches, fur cuffs, separate oval human nail plates, duplicate nails, claws overlaid on human nails, long hooked claws"
+    }
+  },
+  "50": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "Jack_TF_V3/mid_lineart.png"
+    }
+  },
+  "51": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "50",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 832,
+      "height": 1216,
+      "crop": "disabled"
+    }
+  },
+  "52": {
+    "class_type": "ControlNetLoader",
+    "inputs": {
+      "control_net_name": "noob-sdxl-controlnet-lineart_realistic.fp16.safetensors"
+    }
+  },
+  "53": {
+    "class_type": "ControlNetApplyAdvanced",
+    "inputs": {
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "control_net": [
+        "52",
+        0
+      ],
+      "image": [
+        "51",
+        0
+      ],
+      "strength": 0.8,
+      "start_percent": 0.0,
+      "end_percent": 0.9,
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "900": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "Jack_TF_V3/mid_color_draft.png"
+    }
+  },
+  "901": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "900",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 832,
+      "height": 1216,
+      "crop": "disabled"
+    }
+  },
+  "902": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "901",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "53",
+        0
+      ],
+      "negative": [
+        "53",
+        1
+      ],
+      "latent_image": [
+        "902",
+        0
+      ],
+      "seed": 2026110101,
+      "steps": 28,
+      "cfg": 5.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 0.45
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixV3/S01"
+    }
+  },
+  "199": {
+    "class_type": "PreviewImage",
+    "inputs": {
+      "images": [
+        "51",
+        0
+      ]
+    }
+  }
+}

@@ -1,0 +1,1559 @@
+{
+  "id": "67a92df6-871d-543d-8287-a392be0b7e7e",
+  "revision": 1,
+  "last_node_id": 9110,
+  "last_link_id": 20,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        30,
+        600
+      ],
+      "size": [
+        500,
+        360
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "indigoVoidFurryFusedXL_noobaiV33.safetensors"
+      ],
+      "title": "01 底模｜Indigo V33"
+    },
+    {
+      "id": 2,
+      "type": "Power Lora Loader (rgthree)",
+      "pos": [
+        30,
+        -890
+      ],
+      "size": [
+        500,
+        270
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1,
+          "shape": 7
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            12,
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Power Lora Loader (rgthree)",
+        "Show Strengths": "Separate Model & Clip"
+      },
+      "widgets_values": [
+        {
+          "on": true,
+          "lora": "Black-rat-furry,anthro,tranform,human：Black_Rat_StyleIllustrious.safetensors",
+          "strength": 0.5,
+          "strengthTwo": 0.5
+        },
+        {
+          "on": false,
+          "lora": "None",
+          "strength": 0.3,
+          "strengthTwo": 0.3
+        },
+        {
+          "on": false,
+          "lora": "None",
+          "strength": 0.3,
+          "strengthTwo": 0.3
+        }
+      ],
+      "title": "多LoRA｜第1行 0.5/0.5，备用行关闭"
+    },
+    {
+      "id": 20,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        2330,
+        600
+      ],
+      "size": [
+        500,
+        550
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "masterpiece, best quality, black-rat-human, clean illustration, solo"
+      ],
+      "title": "A｜画风与质量"
+    },
+    {
+      "id": 21,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        30,
+        1370
+      ],
+      "size": [
+        500,
+        550
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "adult human male, fair skin, slim build, short tousled golden-blond hair, layered hair, long uneven bangs, black rectangular-framed glasses, ordinary small rounded human ears"
+      ],
+      "title": "B｜固定外型"
+    },
+    {
+      "id": 22,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        1180,
+        1370
+      ],
+      "size": [
+        500,
+        550
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "wearing a (muted mauve short-sleeved crew-neck T-shirt:1.25), grayish purple shirt, khaki cargo pants with large thigh pockets, rolled-up pant cuffs, brown lace-up ankle boots, dark toe caps and soles"
+      ],
+      "title": "C｜服装"
+    },
+    {
+      "id": 23,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        2330,
+        1370
+      ],
+      "size": [
+        500,
+        550
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "relaxed upright three-quarter stance, arms relaxed at sides, calm expression, closed mouth"
+      ],
+      "title": "D｜动作与表情"
+    },
+    {
+      "id": 24,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        30,
+        2140
+      ],
+      "size": [
+        500,
+        550
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "(wide full-body shot:1.2), entire character silhouette fully inside the image, zoomed out, ample empty space above the head and ears and below the feet, plain light gray background, even soft lighting"
+      ],
+      "title": "E｜镜头构图与场景"
+    },
+    {
+      "id": 30,
+      "type": "StringConcatenate",
+      "pos": [
+        30,
+        3730
+      ],
+      "size": [
+        420,
+        190
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 3,
+          "widget": {
+            "name": "string_a"
+          }
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 4,
+          "widget": {
+            "name": "string_b"
+          }
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "delimiter"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ", "
+      ],
+      "title": "自动拼接｜无需修改"
+    },
+    {
+      "id": 31,
+      "type": "StringConcatenate",
+      "pos": [
+        510,
+        3730
+      ],
+      "size": [
+        420,
+        190
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 5,
+          "widget": {
+            "name": "string_a"
+          }
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 6,
+          "widget": {
+            "name": "string_b"
+          }
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "delimiter"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ", "
+      ],
+      "title": "自动拼接｜无需修改"
+    },
+    {
+      "id": 32,
+      "type": "StringConcatenate",
+      "pos": [
+        990,
+        3730
+      ],
+      "size": [
+        420,
+        190
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 7,
+          "widget": {
+            "name": "string_a"
+          }
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 8,
+          "widget": {
+            "name": "string_b"
+          }
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "delimiter"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ", "
+      ],
+      "title": "自动拼接｜无需修改"
+    },
+    {
+      "id": 33,
+      "type": "StringConcatenate",
+      "pos": [
+        1470,
+        3730
+      ],
+      "size": [
+        420,
+        190
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_a",
+          "type": "STRING",
+          "link": 9,
+          "widget": {
+            "name": "string_a"
+          }
+        },
+        {
+          "name": "string_b",
+          "type": "STRING",
+          "link": 10,
+          "widget": {
+            "name": "string_b"
+          }
+        },
+        {
+          "name": "delimiter",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "delimiter"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringConcatenate"
+      },
+      "widgets_values": [
+        "",
+        "",
+        ", "
+      ],
+      "title": "自动拼接｜无需修改"
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1950,
+        3730
+      ],
+      "size": [
+        420,
+        190
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 11,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "title": "03 正面编码｜自动接收 A–E"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1180,
+        2140
+      ],
+      "size": [
+        500,
+        550
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "low quality, lowres, blurry, bad anatomy, extra limbs, missing limbs, fused limbs, malformed hands, text, watermark, signature, cropped ears, cropped feet, cropped hands, out of frame, nude, naked, nipples, genitals, transparent clothing, erotic, animal ears, animal muzzle, tail, wings, horns, pointed ears, elf ears, elven ears, elf, white shirt"
+      ],
+      "title": "04 负面｜画质与外型纠偏"
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2330,
+        2140
+      ],
+      "size": [
+        500,
+        360
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "batch_size"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        832,
+        1216,
+        1
+      ],
+      "title": "05 画幅｜每次一张"
+    },
+    {
+      "id": 6,
+      "type": "KSampler",
+      "pos": [
+        30,
+        2910
+      ],
+      "size": [
+        500,
+        360
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 14
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "steps"
+          }
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "cfg"
+          }
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "sampler_name"
+          }
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": null,
+          "widget": {
+            "name": "scheduler"
+          }
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 15
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 16
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 17
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "link": null,
+          "widget": {
+            "name": "denoise"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1371064355,
+        "fixed",
+        28,
+        5.0,
+        "euler_ancestral",
+        "normal",
+        1.0
+      ],
+      "title": "06 采样｜固定种子便于对照"
+    },
+    {
+      "id": 7,
+      "type": "VAEDecode",
+      "pos": [
+        2430,
+        3730
+      ],
+      "size": [
+        420,
+        190
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 18
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "title": "07 解码｜使用底模自带 VAE"
+    },
+    {
+      "id": 8,
+      "type": "SaveImage",
+      "pos": [
+        1180,
+        2910
+      ],
+      "size": [
+        500,
+        600
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 20
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Jack_Scene_Templates/T01A_人类Jack_单人自由出图/output_8"
+      ],
+      "title": "08 保存成图"
+    },
+    {
+      "id": 9000,
+      "type": "Note",
+      "pos": [
+        30,
+        30
+      ],
+      "size": [
+        1050,
+        470
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "用途：T01A_人类Jack_单人自由出图\n\n1. 从左上开始查看可编辑模块；每个模块右侧都有操作说明。\n2. 先替换角色与图片输入，检查画幅，再运行一张。\n3. 不满意先找对应问题：身份→B/参考；动作→D/控制图；构图→E/画幅；清晰度→T06；亮度→T12。\n4. 固定输入和seed，每次只改一个参数。先验收完整构图，再修细节，最后T13导出。\n5. 本模板使用本机已有模型。Note只供阅读，不参与采样。"
+      ],
+      "title": "从这里开始｜本模板怎么用",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9100,
+      "type": "Note",
+      "pos": [
+        560,
+        600
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 1
+      },
+      "widgets_values": [
+        "对应节点 ID 1\n\n用途：决定基础绘画能力与架构。\n默认：indigoVoidFurryFusedXL_noobaiV33.safetensors。\n先保持默认，把构图和身份调对。换模型时一次换一个；同为SDXL也会改变脸、颜色与LoRA效果。\n换成Z-Image/Qwen/FLUX需要它们自己的加载器和配套模型，不能只改这里。若缺文件，用下拉框选本机相同模型。"
+      ],
+      "title": "操作说明 → 01 底模｜Indigo V33",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9101,
+      "type": "Note",
+      "pos": [
+        560,
+        -890
+      ],
+      "size": [
+        650,
+        850
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 2
+      },
+      "widgets_values": [
+        "对应节点 ID 2｜多LoRA操作\n\n默认：第1行开启，保留原文件与强度：Model=0.5，Clip=0.5。\nBlack-rat-furry,anthro,tranform,human：Black_Rat_StyleIllustrious.safetensors\n第2/3行是关闭的备用槽，Model/Clip预填0.30；不是已经加载了3个LoRA。\n\n① 点击备用行的None/文件名选择文件，再点本行最左开关开启。换文件不会自动开。关掉某行即可对比或停用，无需删线。\n② 已预设Separate Model & Clip：Model是模型强度，Clip是文字编码器强度。点击数字输入；左右小箭头每次0.05。没有文字编码权重的LoRA可能不响应Clip。\n③ 新辅助行先试0.30/0.30；固定seed、文字与参考，一次只改一行，每次0.10。特征弱就增加；外型、颜色、线条被带偏就减弱或关闭新增行。各行不必相加等于1。\n④ 超过3行点底部“➕ Add Lora”。新加行默认开启且1/1，先关闭，改为0.30/0.30后再开启。行右键可Toggle、Move Up/Down、Remove。\n⑤ 触发词按作者说明写进正面文字；<lora:...>不能代替这里加载。文件须与底模架构匹配；本套SDXL优先Illustrious/NoobAI适配版。\n\n范围：影响这一生成分支的整幅图；双人/三人区域与IP蒙版不会自动把某行LoRA分配给某个人。\n线路已接好：MODEL仍经原IP模块（若有）去采样，CLIP仍到原文字编码；不用重连，VAE保持原路。\n\n本模板补充：\n对应节点 ID 2\n\n用途：Black-rat画风。人物身份仍由B框及图片参考负责。\n实际默认：model=0.5，clip=0.5。\n画风太弱：同seed先把两项各加0.10比较；脸/肢体容易变形、颜色太强：各减0.10。建议先比较0.55/0.70/0.85，不要同时改CFG和模型。\n人类与furry分支LoRA名称不同；用T01A/B/C对应起点。CLIP文字里写<lora:...>不会代替此节点加载。"
+      ],
+      "title": "操作说明 → 多LoRA",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9102,
+      "type": "Note",
+      "pos": [
+        2860,
+        600
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 20
+      },
+      "widgets_values": [
+        "对应节点 ID 20\n\nA 画风：只写画法与少量质量要求。solo只适用于本单人模板。\n例：blackrat_style, clean ink lines, cel shading。\n画风已经满意就保持。8K/ultra detailed不能补回手部缺失结构；先修输入、裁框或线稿。不要把角色颜色和另一人的特征塞进这里。"
+      ],
+      "title": "操作说明 → A｜画风与质量",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9103,
+      "type": "Note",
+      "pos": [
+        560,
+        1370
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 21
+      },
+      "widgets_values": [
+        "对应节点 ID 21\n\nB 固定外型：只保留这一形态的物种、体型、耳/角、发型和配色。\n每次换角色要替换整段，不能在女王外型后追加human或green dragon。\n像同一人但颜色错：先检查这里和参考图是否矛盾；动作不对通常改D/骨架，不先改B。\nJack只是名字，未经训练的名字不会锁定身份。女王长耳=耳朵、金色只在内耳；绿龙的角和长尾不要用女王禁词压掉。"
+      ],
+      "title": "操作说明 → B｜固定外型",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9104,
+      "type": "Note",
+      "pos": [
+        1710,
+        1370
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 22
+      },
+      "widgets_values": [
+        "对应节点 ID 22\n\nC 服装：写本张实际衣服、颜色、布料与长度。\n例：plain opaque white athletic top and mid-thigh shorts。\n衣服出现图案：只追加plain, no logo并在负面选logo/print；不必重写人物脸。\n服装换了之后，参考图也可能拉回旧衣服，必要时降低IP权重做对照。模板为普通着装成人OC插画。\n\n【本机试跑观察】本机试跑：可能仍出现衣服Logo或腕饰。先在C明确plain solid-color shirt，再在负面选logo/print/wristbands；若大部分已满意，蒙版只修衣片和腕饰，别为小图案重抽整个人。"
+      ],
+      "title": "操作说明 → C｜服装",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9105,
+      "type": "Note",
+      "pos": [
+        2860,
+        1370
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 23
+      },
+      "widgets_values": [
+        "对应节点 ID 23\n\nD 动作/表情：每张最常改这里。写身体怎么动、看哪里、表情与手在做什么。\n例：one arm raised in a friendly wave, looking to the left, relaxed expression。\n换侧面时删掉旧的facing viewer。手势精确时用T02骨架或T03线稿；普通骨架不控制手指、长耳、尾巴与翅膀。\n一次先改动作，再单独改背景。"
+      ],
+      "title": "操作说明 → D｜动作与表情",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9106,
+      "type": "Note",
+      "pos": [
+        560,
+        2140
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 24
+      },
+      "widgets_values": [
+        "对应节点 ID 24\n\nE 构图/镜头/场景：写全身或半身、视角、背景、光照。\n全身：full body, entire ears and paws inside frame, clear margin around the silhouette。\n要近景就删除full body，改portrait/upper body/close-up并考虑T04/T05。\n人物顶边：先收缩骨架或改构图，不能只放大。明暗不一时先查彩光/聚光，别一直堆black skin。"
+      ],
+      "title": "操作说明 → E｜镜头构图与场景",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9107,
+      "type": "Note",
+      "pos": [
+        1710,
+        2140
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 4
+      },
+      "widgets_values": [
+        "对应节点 ID 4\n\n负面：排除实际出现的错误。默认保留画质及当前形态禁词。\n先检查正面是否也在要求被禁止的东西；例如侧面图不能一边写profile一边负面禁side view。\n换绿龙时清掉女王的horns/long tail；换成双人不能保留solo冲突。\n不要盲加很长万能表；先选1~3个具体错误，再同输入同seed比较。负面不等于局部蒙版。"
+      ],
+      "title": "操作说明 → 04 负面｜画质与外型纠偏",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9108,
+      "type": "Note",
+      "pos": [
+        2860,
+        2140
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 5
+      },
+      "widgets_values": [
+        "对应节点 ID 5\n\n最终画幅：当前 832×1216，batch=1。\n竖版用于全身，横版给翅膀/互动留空间。先保留本模板尺寸，batch=1。\n改尺寸时保持骨架/线稿与最终长宽比一致，必要时同步控制图缩放节点。832×1216不能直接把方形草图拉长。\n想高清：先通过构图与手脚验收，再用T13。把这里直接翻倍会增加显存和生成负担。"
+      ],
+      "title": "操作说明 → 05 画幅｜每次一张",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9109,
+      "type": "Note",
+      "pos": [
+        560,
+        2910
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 6
+      },
+      "widgets_values": [
+        "对应节点 ID 6\n\n实际默认：seed=1371064355；steps=28；CFG=5.0；denoise=1.0；euler_ancestral/normal。\n比较参数时seed固定，control_after_generate=fixed；比较完再换seed找候选。固定seed不锁身份/角度。\n文字太僵或颜色过冲：CFG减0.5比较；不听文字：先查冲突再加0.5。steps可先比较24/28/32，更多不保证更好。\n本模板从空latent生成时denoise=1，别用低denoise当清晰度旋钮。已有图局修走T06/T06b。一次只改一个参数。"
+      ],
+      "title": "操作说明 → 06 采样｜固定种子便于对照",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    },
+    {
+      "id": 9110,
+      "type": "Note",
+      "pos": [
+        1710,
+        2910
+      ],
+      "size": [
+        550,
+        680
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "scene_note_for": 8
+      },
+      "widgets_values": [
+        "对应节点 ID 8\n\n保存结果：filename_prefix决定ComfyUI/output下的文件夹和前缀。\n改成自己的场景/镜头/版本名，不影响出图内容。例：Jack_Project/scene01/v03。\n先保存一版通过结果，再修下一项。建议同时另存工作流JSON，保留母参考与草稿；不要覆盖唯一满意版。"
+      ],
+      "title": "操作说明 → 08 保存成图",
+      "color": "#284438",
+      "bgcolor": "#365b4b"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      1,
+      1,
+      2,
+      1,
+      "CLIP"
+    ],
+    [
+      3,
+      20,
+      0,
+      30,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      21,
+      0,
+      30,
+      1,
+      "STRING"
+    ],
+    [
+      5,
+      30,
+      0,
+      31,
+      0,
+      "STRING"
+    ],
+    [
+      6,
+      22,
+      0,
+      31,
+      1,
+      "STRING"
+    ],
+    [
+      7,
+      31,
+      0,
+      32,
+      0,
+      "STRING"
+    ],
+    [
+      8,
+      23,
+      0,
+      32,
+      1,
+      "STRING"
+    ],
+    [
+      9,
+      32,
+      0,
+      33,
+      0,
+      "STRING"
+    ],
+    [
+      10,
+      24,
+      0,
+      33,
+      1,
+      "STRING"
+    ],
+    [
+      11,
+      33,
+      0,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      12,
+      2,
+      1,
+      3,
+      1,
+      "CLIP"
+    ],
+    [
+      13,
+      2,
+      1,
+      4,
+      1,
+      "CLIP"
+    ],
+    [
+      14,
+      2,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      15,
+      3,
+      0,
+      6,
+      6,
+      "CONDITIONING"
+    ],
+    [
+      16,
+      4,
+      0,
+      6,
+      7,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      5,
+      0,
+      6,
+      8,
+      "LATENT"
+    ],
+    [
+      18,
+      6,
+      0,
+      7,
+      0,
+      "LATENT"
+    ],
+    [
+      19,
+      1,
+      2,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      20,
+      7,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "01 底模｜Indigo V33",
+      "bounding": [
+        20,
+        555,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "02 人类画风 LoRA｜0.70",
+      "bounding": [
+        1170,
+        555,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "A｜画风与质量",
+      "bounding": [
+        2320,
+        555,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "B｜固定外型",
+      "bounding": [
+        20,
+        1325,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "C｜服装",
+      "bounding": [
+        1170,
+        1325,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "D｜动作与表情",
+      "bounding": [
+        2320,
+        1325,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "E｜镜头构图与场景",
+      "bounding": [
+        20,
+        2095,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "04 负面｜画质与外型纠偏",
+      "bounding": [
+        1170,
+        2095,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "05 画幅｜每次一张",
+      "bounding": [
+        2320,
+        2095,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "06 采样｜固定种子便于对照",
+      "bounding": [
+        20,
+        2865,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "08 保存成图",
+      "bounding": [
+        1170,
+        2865,
+        1110,
+        740
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "自动连接区｜通常不用调整",
+      "bounding": [
+        10,
+        3685,
+        3370,
+        320
+      ],
+      "color": "#485362",
+      "font_size": 22,
+      "flags": {}
+    },
+    {
+      "title": "多LoRA｜从这里增减风格与辅助模型",
+      "bounding": [
+        20,
+        -935,
+        1200,
+        910
+      ],
+      "color": "#376257",
+      "font_size": 22,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6,
+      "offset": [
+        0,
+        950
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "multi_lora_upgrade": {
+      "date": "2026-10-21",
+      "slots": 3,
+      "additional_slots_enabled": false
+    }
+  },
+  "version": 0.4
+}

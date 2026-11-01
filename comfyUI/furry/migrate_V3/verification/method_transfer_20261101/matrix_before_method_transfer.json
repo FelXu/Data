@@ -1,0 +1,410 @@
+{
+  "kind": "robot_staged_control_spec_not_comfy_workflow",
+  "schema_version": 3,
+  "revision": "V3_S01_redraw_retest_20261101",
+  "date": "2026-11-01",
+  "status": "S01_R01_R02_done_awaiting_Fel_QC",
+  "maximum_total_images": 2,
+  "user_budget_cap": 2,
+  "planned_base_images": 1,
+  "maximum_conditional_local_images": 0,
+  "B_enabled": false,
+  "purpose": "本次新增最多两张S01独立重测：目标是可辨的新画，而非对色稿的近似临摹；先验证重绘能力，再切换女性阿努比斯终点。",
+  "formal_endpoint": {
+    "character": "Jack",
+    "direction_confirmed": true,
+    "sequence_type": "TGTF",
+    "target": "adult female anthropomorphic Anubis",
+    "appearance_details": "not finalized",
+    "inherit_old_queen_design": false
+  },
+  "previous_round": {
+    "user_report": "V2_A全部失败：完整犬吻、全身毛、短裤应力不足、平静挥手。",
+    "inspected_images": [
+      "V2_A01",
+      "V2_A05",
+      "V2_A08"
+    ],
+    "observation": "无TF LoRA对照也偏完整兽头/毛身/大尾；不是仅提高负向权重即可确认修复。",
+    "archive": "verification/matrix_v2_failed_20261101",
+    "preserve": "旧A和V2_A的全部PNG/graph/results原样保留，V3独立输出目录。"
+  },
+  "checkpoint": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors",
+  "style": {
+    "alias": "ILstyle",
+    "filename": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+    "strength_model": 0.8,
+    "strength_clip": 0.8,
+    "binding_status": "bound",
+    "trained_words": [
+      "blackrat_style",
+      "blackrat"
+    ],
+    "binding_rule": "确切ILstyle文件和已绑定触发词不变；本轮两张固定Model=Clip=0.80，不测试1.00，不混BRIL。"
+  },
+  "models": {
+    "species": {
+      "filename": "Species_Transformation_Concept_Illustrious.safetensors",
+      "sha256": "8e0e8784a54980f07fb4b8a22d422fca4eaebae86d981398d4ea679416818b69",
+      "civitai_version_id": 2349624,
+      "version": "Illustrious",
+      "historical_trigger_words_not_used_in_v3": "species_transformation",
+      "previous_v2_settings_not_used": {
+        "test_weights_model_equals_clip": [
+          0.8,
+          1.0
+        ],
+        "recommendation_reason": "先测0.8/1.0；旧1.3也未显示中期，增大权重不是增加变化过程，本轮不再占用高权重格。",
+        "recommendation_status": "V2待实测的工程候选；不是作者保证的最优参数"
+      },
+      "v3_enabled": false,
+      "v3_strength_model": 0.0,
+      "v3_strength_clip": 0.0,
+      "v3_trigger_words": "",
+      "v3_decision": "本轮停用且不加载；保留文件与历史触发记录，不做任何权重筛选。"
+    },
+    "mid": {
+      "filename": "Mid_transformation.safetensors",
+      "sha256": "b263135f303a7d154959578f0617579775ca09e6240d09621b4f8fc7bf311010",
+      "civitai_version_id": 1043354,
+      "version": "v2.0 / Illustrious",
+      "historical_trigger_words_not_used_in_v3": "transformation, mid transformation, transfur",
+      "previous_v2_settings_not_used": {
+        "test_weights_model_equals_clip": [
+          0.6,
+          0.8
+        ],
+        "recommendation_reason": "0.8沿用建议起点，0.6探索较弱概念注入是否保留更多人类结构；本轮不额外使用泛化主体词furry。",
+        "recommendation_status": "V2待实测的工程候选；不是作者保证的最优参数"
+      },
+      "v3_enabled": false,
+      "v3_strength_model": 0.0,
+      "v3_strength_clip": 0.0,
+      "v3_trigger_words": "",
+      "v3_decision": "本轮停用且不加载；保留文件与历史触发记录，不做任何权重筛选。"
+    },
+    "byil": {
+      "filename": "transformation：LoraBYIL_transformation.safetensors",
+      "sha256": "6631a2a95804a26fb0e5277ba51d28407810a44d098a63fcab58122ff4bc3535",
+      "civitai_version_id": 1371746,
+      "version": "IL - Transformation",
+      "historical_trigger_words_not_used_in_v3": "transformation",
+      "previous_v2_settings_not_used": {
+        "test_weights_model_equals_clip": [
+          0.6,
+          0.8,
+          1.0
+        ],
+        "recommendation_reason": "保留0.6/0.8/1.0，分别看弱、中、较强概念注入；不是三个预定变化阶段。",
+        "recommendation_status": "V2待实测的工程候选；不是作者保证的最优参数"
+      },
+      "v3_enabled": false,
+      "v3_strength_model": 0.0,
+      "v3_strength_clip": 0.0,
+      "v3_trigger_words": "",
+      "v3_decision": "本轮停用且不加载；保留文件与历史触发记录，不做任何权重筛选。"
+    }
+  },
+  "why_change_route": [
+    "旧T02从空latent/denoise1生成；同一身体骨架没有编码人颊与极短前颌的轮廓、皮毛区域分布、衣褶或惊慌脸。关键词写进行中也无法指定每一处形状。",
+    "Lineart把明确中期轮廓作为空间约束；它不携带可靠颜色/材质分区，所以同时用对齐色稿作为低降噪latent输入。",
+    "局修只在指定像素区域采样及回贴；区域外保持已接受的人皮/衣物/身份，不让毛发由全局文本重新蔓延。",
+    "全身慌张姿态与上下衣应力必须在草图及S01解决；不靠低降噪T06把平静完整兽人重新改姿。"
+  ],
+  "input_assets": {
+    "human_identity_reference": {
+      "input_relative_path": "Jack_TF_V3/Jack_human_original_identity_only.png",
+      "binding_status": "bound_manual_identity_only",
+      "required": "仅人工对照原始人类Jack的黄发/蓝眼/眼镜，不作为IP输入；原图长裤靴子不继承，本次衣装由最终色稿的紫T/卡其短裤/运动鞋覆盖。",
+      "file_exists_at_spec_write": true
+    },
+    "mid_lineart": {
+      "input_relative_path": "Jack_TF_V3/mid_lineart.png",
+      "binding_status": "bound_comfy_input_and_source_v3",
+      "required": "最终832×1216同源线稿；稀疏短毛分散于可见皮肤、新生单一短尖爪。",
+      "file_exists_at_spec_write": true,
+      "sha256": "898ee08810ef0afff30dbc0549dda02dd77047835846c2c1a3a75d6f64cab714",
+      "source_v3_absolute": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\input_V3\\Jack_TF_V3_mid_lineart.png",
+      "comfy_input_absolute": "E:\\ComfyUI-aki-v3\\ComfyUI\\input\\Jack_TF_V3\\mid_lineart.png"
+    },
+    "mid_color_draft": {
+      "input_relative_path": "Jack_TF_V3/mid_color_draft.png",
+      "binding_status": "bound_comfy_input_and_source_v3",
+      "required": "最终832×1216色稿；黄发蓝眼、紫T卡其短裤、人皮底色与稀疏短毛、单一短尖爪。",
+      "file_exists_at_spec_write": true,
+      "sha256": "71878694b9192416a8b48423a049e373f415c58f334df1c5698373e041feece2",
+      "source_v3_absolute": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\input_V3\\Jack_TF_V3_mid_color.png",
+      "comfy_input_absolute": "E:\\ComfyUI-aki-v3\\ComfyUI\\input\\Jack_TF_V3\\mid_color_draft.png"
+    },
+    "stage_edit_mask": {
+      "input_relative_path_pattern": "Jack_TF_V3/masks/{job_id}_edit.png",
+      "binding_status": "create_on_latest_accepted_canvas_before_each_local_job",
+      "required": "同尺寸灰度PNG，白改黑留；仅当前选定小修区域，不用旧“肘下毛发截止”限制；LoadImageMask(red)。",
+      "file_exists_at_spec_write": false
+    },
+    "stage_protect_mask": {
+      "input_relative_path_pattern": "Jack_TF_V3/masks/{job_id}_protect.png",
+      "binding_status": "create_on_latest_accepted_canvas_before_each_local_job",
+      "required": "同尺寸灰度PNG，白色是强制保护区；包含正常眼镜框/镜腿、黄发等与该区不应变化的像素。无保护内容时也须用同尺寸全黑图，不能省略或偷用旧女王mask。",
+      "file_exists_at_spec_write": false
+    }
+  },
+  "sampling_defaults": {
+    "width": 832,
+    "height": 1216,
+    "batch_size": 1,
+    "steps": 28,
+    "cfg": 5.0,
+    "sampler": "euler_ancestral",
+    "scheduler": "normal",
+    "clip_skip": 2,
+    "comfy_clip_last_layer": -2,
+    "OpenPose_enabled": false,
+    "IPAdapter_enabled": false,
+    "lineart_model": "noob-sdxl-controlnet-lineart_realistic.fp16.safetensors",
+    "lineart_strength": 0.5,
+    "lineart_start": 0.0,
+    "lineart_end": 0.75
+  },
+  "parameter_reason": "本轮仅验证可辨的新画：denoise升至0.65/0.75；Lineart降至0.50并提前到0.75截止；ILstyle固定0.80，避免同时测试多档风格。28步/CFG5/Euler a/Clip Skip2保持不变。",
+  "global_mid_only_positive": "blackrat_style, blackrat, clean illustration, solo, single character, (adult male human Jack in an early canine transformation:1.3), golden-blond shaggy medium-length hair, thick bangs, blue eyes, (one intact pair of black rectangular glasses worn normally:1.25), (incomplete muzzle, human cheeks still visible:1.35), a tiny forward change at the nose tip and front jaw only, human lips and recognizable human facial planes, one original pair of ears partly lengthening, human-shaped ear bases, (sparse fine short hairs scattered over visible human skin:1.25), small separated groups on the hands, forearms, upper arms, neck sides and lower legs, mostly bare human-colored skin between strands, (one single newly grown short charcoal pointed claw replacing each visible rounded human fingernail:1.25), no separate human nail plate underneath, moderately expanding shoulders, upper back, chest and thighs, (clothes stretching on both shirt and shorts:1.3), his original human-sized opaque purple short-sleeved cotton T-shirt pulling tight across the chest, sleeves and underarm seams, his original khaki shorts pulling tight at the waistband, outer thigh seams and leg hems, fabric tension, radiating pulling folds and straining seams on BOTH garments, slight seam fraying with coverage maintained, (startled expression, mid-transformation panic:1.3), widened blue eyes, raised inner eyebrows, mouth slightly open in alarm, looking down at his changing hands held close in front of his chest, fingers spread, torso recoiling, shoulders tense, knees bent, staggered planted feet, closed sneakers, full body, three-quarter view, neutral gray background, no visible tail, a freshly redrawn finished illustration, newly articulated clean ink contours, developed cel shading and material detail, redraw the rough source strokes into refined linework while preserving Jack identity, clothing colors, pose intent and readable intermediate anatomy",
+  "global_mid_only_negative": "low quality, blurry, bad anatomy, extra character, duplicate character, extra limbs, extra fingers, fused fingers, (fully transformed anthro:1.5), (completed canine head:1.5), (long complete canine muzzle:1.5), full snout, dog head replacing the human face, furry cheeks, facial fur, (full fur coat:1.5), (fur-covered body:1.5), uniform fur coverage, human face completely lost, completely unchanged human face, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.4), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.4), loose unstressed shorts, relaxed waistband, oversized shirt, newly tailored outfit, (calm pose:1.4), relaxed standing pose, greeting wave, hand waving above the head, calm expression, serene smile, confident grin, snarling wolf face, closed indifferent eyes, extra ears, two pairs of ears, duplicate glasses, falling glasses, bent glasses, broken glasses, wrong hair color, waist-length hair, white shirt, blue shirt, different outfit, long trousers, boots, extreme final-form bulk, missing shirt, missing shorts, disintegrating clothes, transparent clothes, bare torso, uncovered hips, exposed toes, visible tail, wings, horns, crown, necklace, cropped head, cropped feet, text, logo, watermark, multiple panels, collage, dense gray furry gloves, continuous solid fur patches, fur cuffs, separate oval human nail plates, duplicate nails, claws overlaid on human nails, long hooked claws, near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, unprocessed source draft",
+  "local_prompt_rule": "只有S01使用全身全文；S02–S06使用各自短POS/NEG，不把全身、眼镜、五官等不属于当前裁区的描述塞入手/衣裤裁图。身份由当前画布和保护回贴维持。",
+  "jobs": [
+    {
+      "id": "V3_S01_R01",
+      "operation": "T03_lineart_plus_color_img2img",
+      "source": "input_assets.mid_color_draft",
+      "lineart": "input_assets.mid_lineart",
+      "seed": 2026110101,
+      "denoise": 0.65,
+      "transformation_lora": null,
+      "strength_model": 0.0,
+      "strength_clip": 0.0,
+      "positive_text": "blackrat_style, blackrat, clean illustration, solo, single character, (adult male human Jack in an early canine transformation:1.3), golden-blond shaggy medium-length hair, thick bangs, blue eyes, (one intact pair of black rectangular glasses worn normally:1.25), (incomplete muzzle, human cheeks still visible:1.35), a tiny forward change at the nose tip and front jaw only, human lips and recognizable human facial planes, one original pair of ears partly lengthening, human-shaped ear bases, (sparse fine short hairs scattered over visible human skin:1.25), small separated groups on the hands, forearms, upper arms, neck sides and lower legs, mostly bare human-colored skin between strands, (one single newly grown short charcoal pointed claw replacing each visible rounded human fingernail:1.25), no separate human nail plate underneath, moderately expanding shoulders, upper back, chest and thighs, (clothes stretching on both shirt and shorts:1.3), his original human-sized opaque purple short-sleeved cotton T-shirt pulling tight across the chest, sleeves and underarm seams, his original khaki shorts pulling tight at the waistband, outer thigh seams and leg hems, fabric tension, radiating pulling folds and straining seams on BOTH garments, slight seam fraying with coverage maintained, (startled expression, mid-transformation panic:1.3), widened blue eyes, raised inner eyebrows, mouth slightly open in alarm, looking down at his changing hands held close in front of his chest, fingers spread, torso recoiling, shoulders tense, knees bent, staggered planted feet, closed sneakers, full body, three-quarter view, neutral gray background, no visible tail, a freshly redrawn finished illustration, newly articulated clean ink contours, developed cel shading and material detail, redraw the rough source strokes into refined linework while preserving Jack identity, clothing colors, pose intent and readable intermediate anatomy",
+      "negative_text": "low quality, blurry, bad anatomy, extra character, duplicate character, extra limbs, extra fingers, fused fingers, (fully transformed anthro:1.5), (completed canine head:1.5), (long complete canine muzzle:1.5), full snout, dog head replacing the human face, furry cheeks, facial fur, (full fur coat:1.5), (fur-covered body:1.5), uniform fur coverage, human face completely lost, completely unchanged human face, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.4), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.4), loose unstressed shorts, relaxed waistband, oversized shirt, newly tailored outfit, (calm pose:1.4), relaxed standing pose, greeting wave, hand waving above the head, calm expression, serene smile, confident grin, snarling wolf face, closed indifferent eyes, extra ears, two pairs of ears, duplicate glasses, falling glasses, bent glasses, broken glasses, wrong hair color, waist-length hair, white shirt, blue shirt, different outfit, long trousers, boots, extreme final-form bulk, missing shirt, missing shorts, disintegrating clothes, transparent clothes, bare torso, uncovered hips, exposed toes, visible tail, wings, horns, crown, necklace, cropped head, cropped feet, text, logo, watermark, multiple panels, collage, dense gray furry gloves, continuous solid fur patches, fur cuffs, separate oval human nail plates, duplicate nails, claws overlaid on human nails, long hooked claws, near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, unprocessed source draft",
+      "batch_size": 1,
+      "images": 1,
+      "run_if": "current_retest_sample_count < 2 AND no_previous_identity_or_anatomy_hard_failure",
+      "acceptance": "可辨的新线条与更成熟的明暗/材质，角色身份、原衣色、动作意图及中期结构仍成立；仅色偏/轻微锐化/PNG差异不算重绘通过。",
+      "failure_action": "identity_or_anatomy_hard_failure: stop; insufficient_redraw_only: allow_the_other_predeclared_test_then_stop",
+      "status": "done",
+      "output_prefix": "Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixV3/S01_R01_d065",
+      "lineart_strength": 0.5,
+      "lineart_start": 0.0,
+      "lineart_end": 0.75,
+      "style_strength_model": 0.8,
+      "style_strength_clip": 0.8,
+      "prompt_id": "843ed9a9-7372-477a-8b5d-867877ec33cf",
+      "output_file": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_R01_d065.png",
+      "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops_V3\\graph_V3_S01_R01_T03.json",
+      "ran_at_hk": "2026-11-01 16:30:56 Asia/Hong_Kong"
+    },
+    {
+      "id": "V3_S01_R02",
+      "operation": "T03_lineart_plus_color_img2img",
+      "source": "input_assets.mid_color_draft",
+      "lineart": "input_assets.mid_lineart",
+      "seed": 2026110101,
+      "denoise": 0.75,
+      "transformation_lora": null,
+      "strength_model": 0.0,
+      "strength_clip": 0.0,
+      "positive_text": "blackrat_style, blackrat, clean illustration, solo, single character, (adult male human Jack in an early canine transformation:1.3), golden-blond shaggy medium-length hair, thick bangs, blue eyes, (one intact pair of black rectangular glasses worn normally:1.25), (incomplete muzzle, human cheeks still visible:1.35), a tiny forward change at the nose tip and front jaw only, human lips and recognizable human facial planes, one original pair of ears partly lengthening, human-shaped ear bases, (sparse fine short hairs scattered over visible human skin:1.25), small separated groups on the hands, forearms, upper arms, neck sides and lower legs, mostly bare human-colored skin between strands, (one single newly grown short charcoal pointed claw replacing each visible rounded human fingernail:1.25), no separate human nail plate underneath, moderately expanding shoulders, upper back, chest and thighs, (clothes stretching on both shirt and shorts:1.3), his original human-sized opaque purple short-sleeved cotton T-shirt pulling tight across the chest, sleeves and underarm seams, his original khaki shorts pulling tight at the waistband, outer thigh seams and leg hems, fabric tension, radiating pulling folds and straining seams on BOTH garments, slight seam fraying with coverage maintained, (startled expression, mid-transformation panic:1.3), widened blue eyes, raised inner eyebrows, mouth slightly open in alarm, looking down at his changing hands held close in front of his chest, fingers spread, torso recoiling, shoulders tense, knees bent, staggered planted feet, closed sneakers, full body, three-quarter view, neutral gray background, no visible tail, a freshly redrawn finished illustration, newly articulated clean ink contours, developed cel shading and material detail, redraw the rough source strokes into refined linework while preserving Jack identity, clothing colors, pose intent and readable intermediate anatomy",
+      "negative_text": "low quality, blurry, bad anatomy, extra character, duplicate character, extra limbs, extra fingers, fused fingers, (fully transformed anthro:1.5), (completed canine head:1.5), (long complete canine muzzle:1.5), full snout, dog head replacing the human face, furry cheeks, facial fur, (full fur coat:1.5), (fur-covered body:1.5), uniform fur coverage, human face completely lost, completely unchanged human face, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.4), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.4), loose unstressed shorts, relaxed waistband, oversized shirt, newly tailored outfit, (calm pose:1.4), relaxed standing pose, greeting wave, hand waving above the head, calm expression, serene smile, confident grin, snarling wolf face, closed indifferent eyes, extra ears, two pairs of ears, duplicate glasses, falling glasses, bent glasses, broken glasses, wrong hair color, waist-length hair, white shirt, blue shirt, different outfit, long trousers, boots, extreme final-form bulk, missing shirt, missing shorts, disintegrating clothes, transparent clothes, bare torso, uncovered hips, exposed toes, visible tail, wings, horns, crown, necklace, cropped head, cropped feet, text, logo, watermark, multiple panels, collage, dense gray furry gloves, continuous solid fur patches, fur cuffs, separate oval human nail plates, duplicate nails, claws overlaid on human nails, long hooked claws, near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, unprocessed source draft",
+      "batch_size": 1,
+      "images": 1,
+      "run_if": "current_retest_sample_count < 2 AND no_previous_identity_or_anatomy_hard_failure",
+      "acceptance": "可辨的新线条与更成熟的明暗/材质，角色身份、原衣色、动作意图及中期结构仍成立；仅色偏/轻微锐化/PNG差异不算重绘通过。",
+      "failure_action": "identity_or_anatomy_hard_failure: stop; insufficient_redraw_only: allow_the_other_predeclared_test_then_stop",
+      "status": "done",
+      "output_prefix": "Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixV3/S01_R02_d075",
+      "lineart_strength": 0.5,
+      "lineart_start": 0.0,
+      "lineart_end": 0.75,
+      "style_strength_model": 0.8,
+      "style_strength_clip": 0.8,
+      "prompt_id": "c57b6c7c-74f7-403a-a120-c364349c3b2a",
+      "output_file": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_R02_d075.png",
+      "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops_V3\\graph_V3_S01_R02_T03.json",
+      "ran_at_hk": "2026-11-01 16:31:39 Asia/Hong_Kong"
+    }
+  ],
+  "base_gates": {
+    "G1_incomplete_face": "缩略图放大可辨同一人脸与人类颊部；仅鼻端/前颌小幅前突，绝不是完整犬吻/犬头。",
+    "G3_growth_and_both_garments": "肩胸大腿比瘦弱起点扩大；紫T和卡其短裤同时有明确绷紧缝线/拉力褶；只有上衣裂口不通过。",
+    "G4_panic_pose_expression": "脸惊讶慌张，身体后缩紧张，双手在身前查看而非挥手；仅加几根抖动线不通过。",
+    "G5_identity": "单人、成年男性Jack、黄发厚刘海、蓝眼、同一副正常黑框眼镜、原紫T/卡其短裤/闭合运动鞋，全身在画面内。",
+    "G6_integrity": "同一对耳、无多肢/重复五官，衣物覆盖保持，无旧女王形态/饰品/可见尾。",
+    "G2_sparse_hair_and_short_claws": "可见皮肤分布少量稀疏短毛，人皮底色大面积保留；没有灰毛手套、毛袖、全身毛皮。每个可见指尖只有单一短尖爪，无圆人类甲片叠爪或长钩爪。",
+    "G7_visible_redraw": "与原色稿并排查看，能看出线条重建及明暗/材质发展；仍只像原稿的锐化/色偏版本则判重绘不足。"
+  },
+  "execution_policy": [
+    "本次最多两张，是用户新授权的独立S01重测预算；历史7次结构图生成及旧S01一张另记run_history，不重置或覆盖历史。",
+    "两项固定原始色稿、原始线稿、seed、style、CN、步数及CFG，仅denoise分别0.65/0.75；不能使用失败S01或R01输出作为R02输入。",
+    "逐张验收；身份/解剖硬失败立即停止。若第一张仅重绘不足，可继续另一项预定对照；第二项后结束，无B、无补抽、无局修。",
+    "对比原色稿检查头发/面部线条、衣褶及明暗/材质是否真正重画，同时检查身份和中期结构。文件hash变化不代表通过。",
+    "相对旧S01是降噪、CN和style的联合配方调整；只有本轮两图之间是降噪对照，不把效果单独归因于某一参数。",
+    "本轮先不使用Lineart-off分支；不在这两张之外添加新试验。"
+  ],
+  "temporary_api_contract": {
+    "saved_workflows_unchanged": true,
+    "templates": {
+      "T03": "E:\\CODEX\\ComfyUI\\教学总手册\\场景实操模板\\api\\T03_草图定稿_角色参考加线稿.json",
+      "T06": "E:\\CODEX\\ComfyUI\\教学总手册\\场景实操模板\\api\\T06_已有图局部微调_统一裁框回贴.json",
+      "T06b": "E:\\CODEX\\ComfyUI\\教学总手册\\场景实操模板\\api\\T06b_已有图局部重建_统一裁框回贴.json",
+      "T06c": "E:\\CODEX\\ComfyUI\\教学总手册\\场景实操模板\\api\\T06c_裁框与蒙版检查_不采样.json"
+    },
+    "shared_patch": [
+      "仅复制成临时API；1.ckpt_name=本规格V35；2仅开启已绑定ILstyle0.80/0.80，TF及其他行关闭；增加990 CLIPSetLastLayer(-2)接1.CLIP到2.clip。",
+      "3.text直接用job.positive_text，4.text直接用job.negative_text；删除未使用的20–24/30–33旧字符串链，彻底移除旧角色POS/NEG。",
+      "6使用28步/CFG5/Euler a/normal/单batch及job.denoise；8.SaveImage采用本行独立V3前缀。"
+    ],
+    "T03_patch": [
+      "50.image=mid_lineart，51=832×1216；53.image直接接51.IMAGE，52用所列Lineart模型；53强度0.50/起0/止0.75。",
+      "删除旧60–64 IP支路，6.model直接接2.MODEL；不加载旧参考图。删除空latent5及不用的190/191反相支路，199.images改接51.IMAGE。",
+      "新增900 LoadImage(mid_color_draft)→901 ImageScale(832×1216,crop=disabled)→902 VAEEncode(vae=1.VAE)；6.latent_image接902.LATENT。每行denoise按job取0.65或0.75。"
+    ],
+    "T06_patch": [
+      "50.image读最新已接受RGB全图副本，不用旧alpha。新增900 LoadImageMask(edit,channel=red)；52.mask改接900.MASK。70/71/72同步写本行ROI，73=1024。",
+      "57.expand由24改8工作像素；64.blur_radius=4、sigma=1为原图像素；仅T06b的58.grow_mask_by保持0，避免双重外扩；普通T06的58没有此输入。",
+      "新增901 LoadImageMask(protect,red)→902 CropMask(同X/Y/side)→903 MaskToImage→904 ImageScale(1024²,bilinear)→905 ImageToMask(red)。",
+      "906 MaskComposite(destination=57.MASK,source=905.MASK,operation=subtract,x0,y0)作为采样mask；T06b接58.mask，T06接59.mask。",
+      "907 MaskComposite(destination=65.MASK,source=902.MASK,operation=subtract,x0,y0)；908 MaskComposite(destination=907.MASK,source=52.MASK,operation=multiply,x0,y0)；67.mask=908.MASK。最终羽化后扣保护，再夹回原edit域，禁止毛色越界回贴。",
+      "新增910 LoadImage(mid_lineart)→911 ImageCrop(同X/Y/side)→912 ImageScale(1024²)→913 ControlNetLoader(同Lineart模型)→914 ControlNetApplyAdvanced(positive=3,negative=4,image=912,strength=.80,start0,end.90,vae=1.VAE)；6.positive/negative改接914。",
+      "T06b白区内容会被重建编码处理，不把预画在白区里的短吻线当成天然锁；必须使用上述局部Lineart条件。",
+      "输出仍是832×1216完整画布；67按原坐标回贴，resize_source=false。保留原图与中间版本，不覆盖V1/V2结果。"
+    ],
+    "T06c_patch": "同源RGB、相同70–72与edit灰度mask输入；增加采样mask/最终回贴mask/保护mask预览，不带KSampler。",
+    "no_auto_enqueue": "R01+R02 submitted once each from mid_color_draft; no chain; no third image; T11 untouched.",
+    "runtime_graph_override": {
+      "2.inputs.strength_model": 0.8,
+      "2.inputs.strength_clip": 0.8,
+      "53.inputs.strength": 0.5,
+      "53.inputs.start_percent": 0.0,
+      "53.inputs.end_percent": 0.75,
+      "6.inputs.denoise": "current job.denoise",
+      "6.inputs.seed": 2026110101,
+      "6.inputs.steps": 28,
+      "6.inputs.cfg": 5.0,
+      "6.inputs.latent_image": [
+        "902",
+        0
+      ],
+      "8.inputs.filename_prefix": "current job.output_prefix"
+    }
+  },
+  "field_contract": {
+    "schema_version": "3；旧run_matrix_A及V2执行器均不兼容，禁止直接重用。",
+    "status": "S01_R01_R02_done_awaiting_Fel_QC; T11 untouched.",
+    "jobs[].positive_text/negative_text": "已保留完整当前中间态提示并合入重绘补丁，整体替换CLIP文本；不要再次追加prompt_patch。",
+    "jobs[].roi": "局修前根据最新接受图和mask解析，null未解析就不能运行；X/Y/side在图、mask、lineart与回贴全路径一致。",
+    "jobs[].operation": "T03为新姿势及全幅结构，T06b为局部重建，T06为保留原像素的小修；不互换职责。",
+    "latest_accepted_full_canvas": "运行指针，只有验收通过才更新；跳过保持原值，失败停止，不按前一ID盲取文件。",
+    "maximum_total_images": "仅本次新重测最多2张，历史累计由run_history保留；所有run_if按current_retest_sample_count计数。"
+  },
+  "output_record_fields": [
+    "job_id",
+    "prompt_id",
+    "full_api_graph_file",
+    "actual_positive_text",
+    "actual_negative_text",
+    "actual_model_and_lora_weights",
+    "seed",
+    "denoise",
+    "source_canvas_file_and_hash",
+    "lineart_and_color_draft_hash",
+    "edit_protect_mask_hash",
+    "resolved_roi",
+    "base_gates_pass",
+    "local_acceptance",
+    "outside_edit_and_protect_pixel_check",
+    "output_file",
+    "accepted_canvas_pointer",
+    "stop_reason"
+  ],
+  "sources": [
+    {
+      "url": "https://blog.comfy.org/p/preprocessor-and-frame-interpolation",
+      "supports": "Pose是关节/骨架，Lineart是轮廓；线稿不保留颜色材质。"
+    },
+    {
+      "url": "https://docs.comfy.org/tutorials/basic/image-to-image",
+      "supports": "色稿经VAE latent参与img2img；denoise小于1保留更多原图条件。"
+    },
+    {
+      "url": "https://docs.comfy.org/tutorials/basic/inpaint",
+      "supports": "mask指定局部重绘区域。"
+    },
+    {
+      "local": "场景实操模板/api/T03、T06、T06b、T06c及本机nodes.py/nodes_mask.py",
+      "supports": "节点映射、alpha反相、MaskComposite扣保护等按本机代码核查。"
+    }
+  ],
+  "notes": [
+    "正式终态仍未确认；局部犬科结构不确认耳长、最终毛色、尾或指趾设定。",
+    "这轮三种TF LoRA全部0且不加载，也不写它们的触发词；先用结构输入验证mid-only，不承诺提示词必然成功。",
+    "若S01失败，停止并回到草图/色稿审查；新的绘制或采样方案须另立规格，不在本轮偷偷扩张。",
+    "2026-11-01后续用户更正覆盖旧局部毛发边界：全身可见皮肤为稀疏分散短毛，并新增单一短尖爪。",
+    "2026-11-01 S01 done: script E:\\ComfyUI-aki-v3\\scripts\\run_matrix_V3_S01_T03.py; out Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixV3/S01_*.png; STOP — do not run S02–S06 until Fel QC. T11 untouched. See Jack_TF notes pointer.",
+    "2026-11-01最新方向：Jack→成年女性阿努比斯TGTF；方向已确认，具体终态外观待定。本轮保留男性中间结构，只测重绘能力，不继承旧女王外观。",
+    "2026-11-01 S01 redraw retest done: V3_S01_R01+R02 only; out Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixV3/S01_R01_d065.png + S01_R02_d075.png; STOP; T11 untouched; no chain."
+  ],
+  "latest_user_overrides": [
+    "稀疏短毛分散于全身可见皮肤，不再只集中手/前臂；绝大部分人皮可见。",
+    "每个可见指尖一枚新生短尖爪，去掉原圆人类甲片与双层甲。"
+  ],
+  "asset_preparation_record_and_checks": [
+    "脸：仍明显是成年男性人脸，颊骨、脸颊、嘴唇保留；鼻端/前颌仅轻微前突，不能画成完整短版狗头。",
+    "耳：同一对原耳从原耳根部分拉长；近侧可见，远侧可按透视遮挡，不能另添头顶兽耳。",
+    "毛：按最新要求，少量细短毛散布在手、前臂、上臂、颈侧与露出的小腿，绝大多数人皮仍可见；取消旧版只到前臂的硬界线及灰毛手套。衣服上不长毛。",
+    "爪：每个可见指尖只有一枚刚长出的短尖爪，圆形人类甲片由它替换，不能保留旧甲片再叠第二枚爪；不要求看见背向镜头的指甲。",
+    "衣料：分开指出紫T的胸/袖/腋缝，及卡其短裤的腰带/外缝/裤腿拉力褶，两件同时受力而非只撕上衣。",
+    "动作：遮住脸仍能读出后缩、屈膝、双手在胸前查看；不能靠几根抖动线替代慌张重心。",
+    "身份：成年男性、黄发厚刘海、蓝眼、正常黑框眼镜；闭合运动鞋包住脚趾，单角色，无尾，无旧女王设定。",
+    "对齐：最终A从最终B经同尺寸Control map提取，未独立重画；镜框、耳尖、鼻尖、指尖、衣缝和鞋底保持相同坐标。"
+  ],
+  "external_image_generation_images_used": 0,
+  "maximum_remaining_comfy_sampler_images": 0,
+  "run_history": [
+    {
+      "archived_spec": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\verification\\S01_redraw_retest_20261101\\matrix_before_S01_redraw_retest.json",
+      "previous_S01": {
+        "id": "V3_S01",
+        "operation": "T03_lineart_plus_color_img2img",
+        "source": "input_assets.mid_color_draft",
+        "lineart": "input_assets.mid_lineart",
+        "seed": 2026110101,
+        "denoise": 0.45,
+        "transformation_lora": null,
+        "strength_model": 0.0,
+        "strength_clip": 0.0,
+        "positive_text": "blackrat_style, blackrat, clean illustration, solo, single character, (adult male human Jack in an early canine transformation:1.3), golden-blond shaggy medium-length hair, thick bangs, blue eyes, (one intact pair of black rectangular glasses worn normally:1.25), (incomplete muzzle, human cheeks still visible:1.35), a tiny forward change at the nose tip and front jaw only, human lips and recognizable human facial planes, one original pair of ears partly lengthening, human-shaped ear bases, (sparse fine short hairs scattered over visible human skin:1.25), small separated groups on the hands, forearms, upper arms, neck sides and lower legs, mostly bare human-colored skin between strands, (one single newly grown short charcoal pointed claw replacing each visible rounded human fingernail:1.25), no separate human nail plate underneath, moderately expanding shoulders, upper back, chest and thighs, (clothes stretching on both shirt and shorts:1.3), his original human-sized opaque purple short-sleeved cotton T-shirt pulling tight across the chest, sleeves and underarm seams, his original khaki shorts pulling tight at the waistband, outer thigh seams and leg hems, fabric tension, radiating pulling folds and straining seams on BOTH garments, slight seam fraying with coverage maintained, (startled expression, mid-transformation panic:1.3), widened blue eyes, raised inner eyebrows, mouth slightly open in alarm, looking down at his changing hands held close in front of his chest, fingers spread, torso recoiling, shoulders tense, knees bent, staggered planted feet, closed sneakers, full body, three-quarter view, neutral gray background, no visible tail",
+        "negative_text": "low quality, blurry, bad anatomy, extra character, duplicate character, extra limbs, extra fingers, fused fingers, (fully transformed anthro:1.5), (completed canine head:1.5), (long complete canine muzzle:1.5), full snout, dog head replacing the human face, furry cheeks, facial fur, (full fur coat:1.5), (fur-covered body:1.5), uniform fur coverage, human face completely lost, completely unchanged human face, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.4), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.4), loose unstressed shorts, relaxed waistband, oversized shirt, newly tailored outfit, (calm pose:1.4), relaxed standing pose, greeting wave, hand waving above the head, calm expression, serene smile, confident grin, snarling wolf face, closed indifferent eyes, extra ears, two pairs of ears, duplicate glasses, falling glasses, bent glasses, broken glasses, wrong hair color, waist-length hair, white shirt, blue shirt, different outfit, long trousers, boots, extreme final-form bulk, missing shirt, missing shorts, disintegrating clothes, transparent clothes, bare torso, uncovered hips, exposed toes, visible tail, wings, horns, crown, necklace, cropped head, cropped feet, text, logo, watermark, multiple panels, collage, dense gray furry gloves, continuous solid fur patches, fur cuffs, separate oval human nail plates, duplicate nails, claws overlaid on human nails, long hooked claws",
+        "batch_size": 1,
+        "images": 1,
+        "run_if": "bound structural inputs reviewed AND cumulative generation count below 8 AND cumulative_generation_count_below_8",
+        "acceptance": "必须全部通过base_gates；完整吻、全身毛、仅上衣受力或平静挥手任一出现即整轮停止，不进入局修。",
+        "failure_action": "stop_entire_run_no_retry_no_B",
+        "status": "S01_done",
+        "output_prefix": "Jack_Test/REVIEW_20261101_TF_MidDiag_MatrixV3/S01",
+        "prompt_id": "b8544764-c610-4014-a5cd-00f580dd265f",
+        "output_file": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV3\\S01_00001_.png",
+        "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops_V3\\graph_V3_S01_T03.json",
+        "ran_at_hk": "2026-11-01 16:18:07 Asia/Hong_Kong"
+      },
+      "previous_round_external_generated_images": 7,
+      "previous_round_Comfy_samples": 1,
+      "user_QC": "failed: output almost identical to color draft; little visible redraw",
+      "previous_round_budget_closed": true
+    }
+  ],
+  "budget_scope": "this_new_S01_redraw_retest_only",
+  "external_generation_count_scope": "current retest only; previous 7 structural image generations preserved in run_history",
+  "current_stage_subject": "current adult male Jack early-stage structural input; terminal female Anubis design is not injected in this redraw test",
+  "prompt_patch": {
+    "positive_append_once": "a freshly redrawn finished illustration, newly articulated clean ink contours, developed cel shading and material detail, redraw the rough source strokes into refined linework while preserving Jack identity, clothing colors, pose intent and readable intermediate anatomy",
+    "negative_append_once": "near-identical tracing, copied sketch strokes, unfinished color blocking, rough underpainting, unprocessed source draft",
+    "already_resolved_in_jobs": true
+  }
+}

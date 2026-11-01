@@ -1,0 +1,410 @@
+[
+  {
+    "id": "V2_A01",
+    "prompt_id": "4cc95610-1588-4935-a88c-6032a59b3216",
+    "tag": "V2_A01_BASE_w0_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A01_BASE_w0_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "4cc95610-1588-4935-a88c-6032a59b3216",
+            "timestamp": 1793517707122
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "4cc95610-1588-4935-a88c-6032a59b3216",
+            "timestamp": 1793517707189
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "4cc95610-1588-4935-a88c-6032a59b3216",
+            "timestamp": 1793517721114
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": null,
+    "strength_model": 0,
+    "strength_clip": 0,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A01.json"
+  },
+  {
+    "id": "V2_A02",
+    "prompt_id": "cb87ff91-40d4-4f58-94f8-ee3174dbed09",
+    "tag": "V2_A02_Species_w0.8_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A02_Species_w0.8_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "cb87ff91-40d4-4f58-94f8-ee3174dbed09",
+            "timestamp": 1793517722295
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "cb87ff91-40d4-4f58-94f8-ee3174dbed09",
+            "timestamp": 1793517722300
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "cb87ff91-40d4-4f58-94f8-ee3174dbed09",
+            "timestamp": 1793517736020
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, species_transformation, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": "Species_Transformation_Concept_Illustrious.safetensors",
+    "strength_model": 0.8,
+    "strength_clip": 0.8,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A02.json"
+  },
+  {
+    "id": "V2_A03",
+    "prompt_id": "7b316ba1-0d54-4def-837d-aaf5116af562",
+    "tag": "V2_A03_Species_w1.0_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A03_Species_w1.0_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "7b316ba1-0d54-4def-837d-aaf5116af562",
+            "timestamp": 1793517737490
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "7b316ba1-0d54-4def-837d-aaf5116af562",
+            "timestamp": 1793517737546
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "7b316ba1-0d54-4def-837d-aaf5116af562",
+            "timestamp": 1793517750852
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, species_transformation, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": "Species_Transformation_Concept_Illustrious.safetensors",
+    "strength_model": 1.0,
+    "strength_clip": 1.0,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A03.json"
+  },
+  {
+    "id": "V2_A04",
+    "prompt_id": "01572db2-fe88-4d7a-887a-2753ab369350",
+    "tag": "V2_A04_Mid_w0.6_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A04_Mid_w0.6_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "01572db2-fe88-4d7a-887a-2753ab369350",
+            "timestamp": 1793517751193
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "01572db2-fe88-4d7a-887a-2753ab369350",
+            "timestamp": 1793517751252
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "01572db2-fe88-4d7a-887a-2753ab369350",
+            "timestamp": 1793517765414
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, transformation, mid transformation, transfur, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": "Mid_transformation.safetensors",
+    "strength_model": 0.6,
+    "strength_clip": 0.6,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A04.json"
+  },
+  {
+    "id": "V2_A05",
+    "prompt_id": "dc47ec49-2dff-4d52-a6b4-4a247a6abf49",
+    "tag": "V2_A05_Mid_w0.8_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A05_Mid_w0.8_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "dc47ec49-2dff-4d52-a6b4-4a247a6abf49",
+            "timestamp": 1793517766340
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "dc47ec49-2dff-4d52-a6b4-4a247a6abf49",
+            "timestamp": 1793517766401
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "dc47ec49-2dff-4d52-a6b4-4a247a6abf49",
+            "timestamp": 1793517779740
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, transformation, mid transformation, transfur, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": "Mid_transformation.safetensors",
+    "strength_model": 0.8,
+    "strength_clip": 0.8,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A05.json"
+  },
+  {
+    "id": "V2_A06",
+    "prompt_id": "d996ea92-326c-480b-9f95-4a03fe2935f1",
+    "tag": "V2_A06_BYIL_w0.6_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A06_BYIL_w0.6_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "d996ea92-326c-480b-9f95-4a03fe2935f1",
+            "timestamp": 1793517780064
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "d996ea92-326c-480b-9f95-4a03fe2935f1",
+            "timestamp": 1793517780119
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "d996ea92-326c-480b-9f95-4a03fe2935f1",
+            "timestamp": 1793517793737
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, transformation, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": "transformation：LoraBYIL_transformation.safetensors",
+    "strength_model": 0.6,
+    "strength_clip": 0.6,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A06.json"
+  },
+  {
+    "id": "V2_A07",
+    "prompt_id": "afa2bc50-3b9c-4d7e-a3dd-e6d3a07be7d6",
+    "tag": "V2_A07_BYIL_w0.8_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A07_BYIL_w0.8_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "afa2bc50-3b9c-4d7e-a3dd-e6d3a07be7d6",
+            "timestamp": 1793517795240
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "afa2bc50-3b9c-4d7e-a3dd-e6d3a07be7d6",
+            "timestamp": 1793517795295
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "afa2bc50-3b9c-4d7e-a3dd-e6d3a07be7d6",
+            "timestamp": 1793517808621
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, transformation, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": "transformation：LoraBYIL_transformation.safetensors",
+    "strength_model": 0.8,
+    "strength_clip": 0.8,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A07.json"
+  },
+  {
+    "id": "V2_A08",
+    "prompt_id": "3e920305-a360-4b65-8a65-ca01e8b9feaf",
+    "tag": "V2_A08_BYIL_w1.0_s2026110101",
+    "files": [
+      "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_TF_MidDiag_MatrixV2A\\V2_A08_BYIL_w1.0_s2026110101.png"
+    ],
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "3e920305-a360-4b65-8a65-ca01e8b9feaf",
+            "timestamp": 1793517808937
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "10",
+              "11",
+              "5",
+              "70",
+              "71"
+            ],
+            "prompt_id": "3e920305-a360-4b65-8a65-ca01e8b9feaf",
+            "timestamp": 1793517808993
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "3e920305-a360-4b65-8a65-ca01e8b9feaf",
+            "timestamp": 1793517822321
+          }
+        ]
+      ]
+    },
+    "actual_positive_text": "blackrat_style, blackrat, transformation, clean illustration, solo, single character, (adult male human Jack undergoing a partial canine transformation:1.25), (golden-blond shaggy medium-length hair with thick bangs:1.2), blue eyes, (one intact pair of black rectangular glasses worn normally:1.2), recognizable human cheekbones and areas of human facial skin, (only the nose tip and front of the jaw beginning to form a very short canine muzzle:1.25), one pair of ears in transition, tapered lengthening ear tips with partially human-shaped ear bases, patches of charcoal-gray short fur on the hands and parts of the forearms, visible skin-to-fur boundaries, remaining exposed skin still human, five fingers on each hand, (moderately broadening shoulders and expanding upper back and chest:1.2), his original human-sized opaque purple cotton short-sleeved T-shirt and khaki shorts becoming undersized, pulling folds across the chest, taut sleeves and underarm seams, strained outer shorts seams, slight seam fraying while the shirt and shorts still cover his torso and hips, closed sneakers covering all toes, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, tail not visible, An uneven mid-stage transformation is visibly reshaping Jack: his short muzzle is forming while his human face remains recognizable, patchy fur is spreading, and his growing body is filling the clothes, with clothes stretching, fabric tension and seams straining across his expanding shoulders, upper back and chest.",
+    "actual_negative_text": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, falling glasses, bent glasses, broken glasses, (fully transformed anthro already in fitted clothes:1.4), (ordinary werewolf costume:1.3), (unchanged slim human proportions:1.3), (intact perfectly fitted clothing:1.3), completed canine head, long fully formed canine muzzle, uniform completed fur coverage, completely unchanged human appearance, costume head, animal mask, newly tailored outfit, oversized loose shirt, relaxed unstressed fabric, extreme final-form bulk, different outfit, white shirt, blue shirt, long trousers, boots, missing shirt, missing shorts, disintegrating clothes, transparent clothing, bare torso, uncovered hips, bare feet, toes sticking through shoes, visible tail, horns, wings, crown, necklace, collar, armband, long black hair, cropped head, cropped feet, text, logo, branding, watermark, multiple panels, collage",
+    "lora_filename": "transformation：LoraBYIL_transformation.safetensors",
+    "strength_model": 1.0,
+    "strength_clip": 1.0,
+    "seed": 2026110101,
+    "pose_input_hash": "d94e873ae1a5589b6428e1e2ad47beecc6238529c4dfb41ea360738e1c1e4bb8",
+    "full_api_graph_file": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\_ops\\graph_V2_A08.json"
+  }
+]

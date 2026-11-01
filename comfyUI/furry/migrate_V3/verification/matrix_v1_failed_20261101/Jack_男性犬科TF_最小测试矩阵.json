@@ -1,0 +1,236 @@
+{
+  "kind": "robot_test_matrix_spec_not_comfy_workflow",
+  "date": "2026-11-01",
+  "status": "A_group_done",
+  "maximum_total_images": 12,
+  "purpose": "只测一种转化LoRA及其权重，对固定中期目标的影响和第二种子敏感性；不生成完整六格。",
+  "checkpoint": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors",
+  "style": {
+    "alias": "ILstyle",
+    "filename": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+    "strength_model": 1.2,
+    "strength_clip": 1.2,
+    "binding_status": "bound",
+    "trained_words": [
+      "blackrat_style",
+      "blackrat"
+    ],
+    "binding_rule": "用户确认确切文件后填写；不得根据BlackRat名称猜选，不得用BRIL或其他变体替换；触发词沿用该ILstyle已确认配置。"
+  },
+  "models": {
+    "species": {
+      "filename": "Species_Transformation_Concept_Illustrious.safetensors",
+      "sha256": "8e0e8784a54980f07fb4b8a22d422fca4eaebae86d981398d4ea679416818b69",
+      "civitai_version_id": 2349624,
+      "version": "Illustrious",
+      "trigger_selected": "species_transformation"
+    },
+    "mid": {
+      "filename": "Mid_transformation.safetensors",
+      "sha256": "b263135f303a7d154959578f0617579775ca09e6240d09621b4f8fc7bf311010",
+      "civitai_version_id": 1043354,
+      "version": "v2.0 / Illustrious",
+      "trigger_selected": "transformation, mid transformation, transfur, furry"
+    },
+    "byil": {
+      "filename": "transformation：LoraBYIL_transformation.safetensors",
+      "sha256": "6631a2a95804a26fb0e5277ba51d28407810a44d098a63fcab58122ff4bc3535",
+      "civitai_version_id": 1371746,
+      "version": "IL - Transformation",
+      "trigger_selected": "transformation"
+    }
+  },
+  "input_profile": {
+    "reuse_template": "T02_单人动作_角色参考加骨架",
+    "execution_mode": "single_output_api_only",
+    "pose_input": "OC_advanced/pose_wave.png",
+    "controlnet": "noobaiXLControlnet_openposeModel.safetensors",
+    "control_strength": 0.7,
+    "control_start": 0.0,
+    "control_end": 0.85,
+    "ip_weight": 0.0,
+    "lineart_enabled": false,
+    "latent": "EmptyLatentImage",
+    "width": 832,
+    "height": 1216,
+    "batch_size": 1,
+    "denoise": 1.0,
+    "sampler": "euler_ancestral",
+    "scheduler": "normal",
+    "steps": 22,
+    "cfg": 7.0,
+    "clip_skip": 2,
+    "comfy_clip_last_layer": -2
+  },
+  "positive_common_to_all_jobs": "species_transformation, transformation, mid transformation, transfur, furry, solo, single character, (adult man:1.25), male, Jack, slim slender build, blue eyes, shaggy medium-length blond hair, thick bangs, opaque purple short-sleeved T-shirt, khaki shorts, intact sneakers, unchanged clothing, clean illustration, a controlled mid-stage human-to-anthro jackal transformation, a short canine muzzle forming while human facial traits remain recognizable, partially lengthened upright ears, charcoal-gray short fur limited to the hands and distal forearms, upper arms and torso retain the human stage, wearing one undamaged pair of black rectangular glasses, one hand raised, balanced standing posture, full body, three-quarter view, simple neutral gray background, soft even lighting, no visible tail yet",
+  "negative_common_to_all_jobs": "low quality, blurry, bad anatomy, extra person, duplicate character, extra arms, extra legs, extra fingers, missing fingers, fused fingers, extra ears, duplicate ears, duplicate glasses, floating eyewear, costume head, animal costume, horns, wings, crown, necklace, collar, armband, long black hair, huge muscles, different outfit, long trousers, boots, torn clothing, missing clothing, transparent clothing, bare feet, cropped head, cropped feet, text, watermark, multiple panels, collage, complete transformation, fully formed jackal head, completely unchanged human appearance, visible tail, falling glasses, bent glasses, broken glasses",
+  "trigger_rule": "固定的温和触发词合集用于所有行，包括无转化LoRA基线；ILstyle自身已确认触发词也必须所有行相同。此轮不比较触发词写法。",
+  "mid_target": "独立诊断中期：短吻正在形成、人脸仍可辨认、耳部分拉长、手/前臂目标色；其余仍人类。眼镜固定正常佩戴，暂停分镜中的掉落事件。",
+  "preflight": [
+    "先绑定用户确认的ILstyle确切文件及触发词；当前alias未能唯一映射，不能自动猜成BRIL、BlackRat v1或其他文件。",
+    "核对三个本机转化LoRA文件与记录的SHA256；若文件不匹配，不冒充已核实版本。",
+    "确认T02的固定骨架图存在；没有则准备一个固定姿势输入后再开始，不在12张之外自动追加生成参考图。",
+    "替换测试用正负面全文，不在旧女王提示后追加；不要读取旧女王参考作为身份条件，IP权重固定0。",
+    "Clip Skip全行统一为2，CLIPSetLastLayer=-2须接到全部文字编码路径；style与转化LoRA仍走原MODEL/CLIP路线。",
+    "每行只开ILstyle与当前一种转化LoRA；BRIL及其余LoRA关闭；T11四输出不用于这次计数。",
+    "临时API任务可以准备；不覆盖用户已保存的工作流JSON，不运行完整六格。",
+    "检查队列空闲后再提交；对未知提交结果先查本次prompt_id，不能盲目重试。"
+  ],
+  "jobs": [
+    {
+      "id": "A01",
+      "seed": 2026110101,
+      "transformation_lora": null,
+      "strength_model": 0,
+      "strength_clip": 0,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "A02",
+      "seed": 2026110101,
+      "transformation_lora": "species",
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "A03",
+      "seed": 2026110101,
+      "transformation_lora": "species",
+      "strength_model": 1.0,
+      "strength_clip": 1.0,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "A04",
+      "seed": 2026110101,
+      "transformation_lora": "species",
+      "strength_model": 1.3,
+      "strength_clip": 1.3,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "A05",
+      "seed": 2026110101,
+      "transformation_lora": "mid",
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "A06",
+      "seed": 2026110101,
+      "transformation_lora": "byil",
+      "strength_model": 0.6,
+      "strength_clip": 0.6,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "A07",
+      "seed": 2026110101,
+      "transformation_lora": "byil",
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "A08",
+      "seed": 2026110101,
+      "transformation_lora": "byil",
+      "strength_model": 1.0,
+      "strength_clip": 1.0,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "B01",
+      "seed": 2026110102,
+      "transformation_lora": null,
+      "strength_model": 0,
+      "strength_clip": 0,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "B02",
+      "seed": 2026110102,
+      "copy_best_passing_from": [
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "skip_if_none_pass": true,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "B03",
+      "seed": 2026110102,
+      "transformation_lora": "mid",
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "batch_size": 1,
+      "images": 1
+    },
+    {
+      "id": "B04",
+      "seed": 2026110102,
+      "copy_best_passing_from": [
+        "A06",
+        "A07",
+        "A08"
+      ],
+      "skip_if_none_pass": true,
+      "batch_size": 1,
+      "images": 1
+    }
+  ],
+  "hard_fail": [
+    "多角色或男性身份明显改变",
+    "瘦型明显变成巨大肌肉体型",
+    "黄发/厚刘海/蓝眼/固定眼镜状态明显丢失",
+    "服装改变、缺衣、长裤/靴子替代原衣鞋",
+    "完全停在人形或直接跳到完整终态",
+    "多一对耳、多肢、多指或明显口鼻连接错误"
+  ],
+  "score_0_to_2_each": [
+    "阶段匹配",
+    "Jack身份保留",
+    "服装与眼镜状态",
+    "耳吻手结构",
+    "画风与中间调保持"
+  ],
+  "selection_rule": "无硬失败后，总分优先；同分选较低权重。A组同类全部不通过就跳过该类B复验，不能挑最好看的失败图硬当赢家。",
+  "replication_rule": "用Seed B对照B01再看各类赢家；只复验固定中期与seed敏感性，不把两个种子称作统计稳定性保证。Mid本轮只测0.8，不声称已找到其最佳权重。",
+  "budget_rule": "最多12个输出图，每任务batch=1，不另加预览采样、重试图、额外seed或组合LoRA；失败提交也须计入已实际生成的图数。",
+  "output_record_fields": [
+    "job_id",
+    "prompt_id",
+    "checkpoint_filename",
+    "style_filename",
+    "lora_filename",
+    "lora_sha256",
+    "seed",
+    "strength_model",
+    "strength_clip",
+    "positive",
+    "negative",
+    "pose_input_hash",
+    "output_file",
+    "hard_fail_reasons",
+    "scores",
+    "review_notes"
+  ],
+  "notes": [
+    "这组steps/CFG/ControlNet为固定工程比较起点，不是已测试的最佳画质参数。",
+    "Species训练元数据写clip_skip=1；本轮为隔离变量统一用2，并非宣称是其最优设置。",
+    "不要复制作者默认NEG；实际NEG没有1girl、female、breasts等性别/体型默认词。"
+  ]
+}

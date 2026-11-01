@@ -1,0 +1,511 @@
+# Jack 性爱 Sequence Prompt（多阶段进度版）
+# 适用模型：Indigo Void Furry Fused XL / Furry NoobAI fp32
+# 整理日期：2026-10-21
+# 角色规则：
+# - 女性全部为 Jack 女性阿努比斯（固定外观核心）
+# - 男性为随机男性阿努比斯（通用肌肉体型，不锁定具体角色）
+# - 镜头以 Jack（女性）为主体，表情、身体、视角优先突出她
+# 外观核心请配合「Jack_Anubis_Modular_Prompts.txt」使用。
+
+==================================================
+## 一、Sequence 书写逻辑
+
+一个完整 Sequence 通常包含 3~4 张图，按时间顺序：
+
+1. **起始阶段**：插入/开始动作，表情抗拒、不适、紧张
+2. **适应阶段**：开始舒服、享受，表情放松
+3. **高潮阶段**：高潮、强烈快感，表情失控
+4. **射精阶段**（可选）：内射/口射/颜射，表情惊讶或满足
+
+**Prompt 结构（每张图都按这个拼）：**
+
+```
+[起手式]
+[人数 + 角色身份]
+[动作 + 姿势]（整套 Sequence 保持一致）
+[本阶段的表情与状态]（只改这一部分）
+[Jack F Anubis 外观核心]（重点）
+[随机男性阿努比斯外观]（简写）
+[可选：体液、汗水等]
+```
+
+**表情阶段参考：**
+- 抗拒/不适：reluctant, resisting, frowning, uncomfortable, tense, closed mouth, looking away, tears
+- 开始享受：blush, soft expression, slightly open mouth, enjoying, relaxed
+- 高潮：orgasm, ahegao, rolling eyes, tongue out, intense pleasure, moaning
+- 射精惊讶：surprised, shocked, open mouth, wide eyes, cum in mouth / creampie
+
+镜头建议：looking at viewer, focus on girl, from front, close-up on face 等，让 Jack 成为视觉中心。
+
+==================================================
+## 二、Jack F Anubis 外观核心（每张都建议带上）
+
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure, mature female, toned arms and legs,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+
+## 随机男性阿努比斯外观（简写，放后面）
+
+extremely muscular male anubis, broad shoulders, massive chest, defined abs, red canine penis, furless matte black skin, anubis ears, golden inner ears, shoulder-length black hair,
+
+==================================================
+## 三、Sequence 1：口交（Jack 给随机男性）
+
+### 第1张：抗拒
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+fellatio, blowjob, oral, sucking penis, on knees, looking at viewer,
+reluctant, resisting, frowning, uncomfortable, closed mouth, looking away, tense,
+huge breasts, black nipples, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+
+### 第2张：开始乳交
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+paizuri, titjob, breasts around penis, on knees, looking at viewer,
+blush, soft expression, slightly open mouth, starting to enjoy,
+huge breasts, black nipples, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+
+### 第3张：享受口交
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+fellatio, blowjob, oral, sucking penis, on knees, saliva, looking at viewer,
+enjoying, pleasure, open mouth, moaning, blush, looking up,
+huge breasts, black nipples, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+
+### 第4张：射精到嘴里（惊讶）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+fellatio, blowjob, oral, cum in mouth, cum on tongue, on knees, looking at viewer,
+surprised, shocked, open mouth, wide eyes, blush,
+huge breasts, black nipples, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+
+==================================================
+## 四、Sequence 2：传教士（随机男性 × Jack）
+
+### 第1张：刚插入（难受）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, missionary position, penetration, penis in pussy, looking at viewer,
+uncomfortable, painful expression, frowning, tense, closed mouth, grimace,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on back, legs spread,
+
+### 第2张：开始舒服享受
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, missionary position, penetration, penis in pussy, pussy juice, looking at viewer,
+enjoying, pleasure, blush, open mouth, soft expression, relaxed, moaning,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on back, legs spread,
+
+### 第3张：高潮
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, missionary position, penetration, penis in pussy, orgasm, looking at viewer,
+orgasm, ahegao, rolling eyes, tongue out, intense pleasure, moaning, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on back, legs spread,
+
+### 第4张：内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, missionary position, penetration, creampie, cum inside, cum overflow, looking at viewer,
+surprised, shocked, open mouth, wide eyes, blush, afterglow,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on back, legs spread,
+
+==================================================
+## 五、Sequence 3：后入（随机男性 × Jack）
+
+### 第1张：刚插入（难受）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, doggystyle, from behind, all fours, ass up, penetration, penis in pussy,
+uncomfortable, painful expression, frowning, tense, closed mouth, grimace,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+all fours, looking back,
+
+### 第2张：开始舒服
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, doggystyle, from behind, all fours, ass up, grabbing hips, penetration, penis in pussy, pussy juice,
+enjoying, pleasure, blush, open mouth, moaning, relaxed,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+all fours, looking back,
+
+### 第3张：高潮
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, doggystyle, from behind, all fours, ass up, grabbing hips, penetration, penis in pussy, orgasm,
+orgasm, ahegao, rolling eyes, tongue out, intense pleasure, moaning, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+all fours, looking back,
+
+### 第4张：内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, doggystyle, from behind, all fours, ass up, penetration, creampie, cum inside, cum overflow,
+surprised, shocked, open mouth, wide eyes, blush, afterglow,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+all fours, looking back,
+
+==================================================
+## 六、Sequence 4：骑乘 Cowgirl（Jack 在上）
+
+### 第1张：刚坐下去（不适）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, cowgirl, girl on top, riding, penetration, penis in pussy, looking at viewer,
+uncomfortable, painful expression, frowning, tense, closed mouth,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting on top,
+
+### 第2张：开始享受骑乘
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, cowgirl, girl on top, riding, bouncing, penetration, penis in pussy, pussy juice, looking at viewer,
+enjoying, pleasure, blush, open mouth, moaning, relaxed,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting on top,
+
+### 第3张：高潮
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, cowgirl, girl on top, riding, bouncing, penetration, penis in pussy, orgasm, looking at viewer,
+orgasm, ahegao, rolling eyes, tongue out, intense pleasure, moaning, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting on top,
+
+### 第4张：内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, cowgirl, girl on top, riding, penetration, creampie, cum inside, cum overflow, looking at viewer,
+surprised, shocked, open mouth, wide eyes, blush, afterglow,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting on top,
+
+==================================================
+## 七、Sequence 5：站立后入 / Against Wall（随机男性 × Jack）
+
+### 第1张：刚插入（不适）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, standing sex, from behind, against wall, penetration, penis in pussy,
+uncomfortable, painful expression, frowning, tense, closed mouth,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+standing, against wall, looking back,
+
+### 第2张：开始享受
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, standing sex, from behind, against wall, penetration, penis in pussy, pussy juice,
+enjoying, pleasure, blush, open mouth, moaning,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+standing, against wall, looking back,
+
+### 第3张：高潮 + 内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, standing sex, from behind, against wall, penetration, orgasm, creampie, cum inside,
+orgasm, ahegao, rolling eyes, tongue out, surprised, open mouth, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+standing, against wall, looking back,
+
+==================================================
+## 八、Sequence 6：反向骑乘 Reverse Cowgirl（Jack 在上，背对）
+
+### 第1张：刚坐下去（不适）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, reverse cowgirl, girl on top, riding, from behind, penetration, penis in pussy,
+uncomfortable, painful expression, frowning, tense, closed mouth,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting on top, looking back,
+
+### 第2张：开始享受
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, reverse cowgirl, girl on top, riding, bouncing, from behind, penetration, penis in pussy, pussy juice,
+enjoying, pleasure, blush, open mouth, moaning,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting on top, looking back,
+
+### 第3张：高潮 + 内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, reverse cowgirl, girl on top, riding, bouncing, penetration, orgasm, creampie, cum inside,
+orgasm, ahegao, rolling eyes, tongue out, surprised, open mouth, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting on top, looking back,
+
+==================================================
+## 九、Sequence 7：侧位 Spooning（随机男性 × Jack）
+
+### 第1张：刚插入（不适）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, spooning, lying on side, from behind, penetration, penis in pussy,
+uncomfortable, painful expression, frowning, tense, closed mouth,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on side, looking at viewer,
+
+### 第2张：开始享受
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, spooning, lying on side, from behind, penetration, penis in pussy, pussy juice,
+enjoying, pleasure, blush, open mouth, moaning, relaxed,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on side, looking at viewer,
+
+### 第3张：高潮 + 内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, spooning, lying on side, from behind, penetration, orgasm, creampie, cum inside,
+orgasm, ahegao, rolling eyes, tongue out, surprised, open mouth, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on side, looking at viewer,
+
+==================================================
+## 十、Sequence 8：交配压制 Mating Press（随机男性 × Jack）
+
+### 第1张：刚插入（不适）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, mating press, legs up, folded, penetration, penis in pussy, looking at viewer,
+uncomfortable, painful expression, frowning, tense, closed mouth,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on back, legs up,
+
+### 第2张：开始享受
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, mating press, legs up, folded, penetration, penis in pussy, pussy juice, looking at viewer,
+enjoying, pleasure, blush, open mouth, moaning,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on back, legs up,
+
+### 第3张：高潮 + 内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, mating press, legs up, folded, penetration, orgasm, creampie, cum inside, looking at viewer,
+orgasm, ahegao, rolling eyes, tongue out, surprised, open mouth, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on back, legs up,
+
+==================================================
+## 十一、Sequence 9：俯卧后入 Prone Bone（随机男性 × Jack）
+
+### 第1张：刚插入（不适）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, prone bone, lying on stomach, from behind, penetration, penis in pussy,
+uncomfortable, painful expression, frowning, tense, closed mouth,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on stomach, looking back,
+
+### 第2张：开始享受
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, prone bone, lying on stomach, from behind, penetration, penis in pussy, pussy juice,
+enjoying, pleasure, blush, open mouth, moaning,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on stomach, looking back,
+
+### 第3张：高潮 + 内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, prone bone, lying on stomach, from behind, penetration, orgasm, creampie, cum inside,
+orgasm, ahegao, rolling eyes, tongue out, surprised, open mouth, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+lying on stomach, looking back,
+
+==================================================
+## 十二、Sequence 10：面对面坐位 Lotus（随机男性 × Jack）
+
+### 第1张：刚插入（不适）
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, sitting, face to face, lotus position, penetration, penis in pussy, looking at viewer,
+uncomfortable, painful expression, frowning, tense, closed mouth,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting, straddling, looking at viewer,
+
+### 第2张：开始享受
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, sitting, face to face, lotus position, penetration, penis in pussy, pussy juice, looking at viewer,
+enjoying, pleasure, blush, open mouth, moaning, kissing,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting, straddling, looking at viewer,
+
+### 第3张：高潮 + 内射
+masterpiece, best quality, perfect quality, absurdres, newest, very aesthetic, vibrant colors, detailed skin texture, perfect anatomy, sharp focus, source_furry,
+1boy, 1girl, female anubis, male anubis, NSFW, focus on girl,
+sex, vaginal sex, sitting, face to face, lotus position, penetration, orgasm, creampie, cum inside, looking at viewer,
+orgasm, ahegao, rolling eyes, tongue out, surprised, open mouth, blush,
+huge breasts, black nipples, vagina, voluptuous athletic body, slender waist, hourglass figure,
+(completely furless body:1.5), (smooth matte black skin:1.4), uniform matte black skin, no gloss, no shine,
+shoulder-length black hair, messy tousled slicked back hair, exposed forehead, deep blue eyes, golden inner ears only,
+digitigrade legs, furless paw feet, short hairless anubis tail,
+extremely muscular male anubis, red canine penis, furless matte black skin,
+sitting, straddling, looking at viewer,
+
+==================================================
+## 十三、负面 Prompt（所有 Sequence 通用）
+
+worst quality, low quality, bad anatomy, deformed, blurry, lowres, bad hands, mutated hands, extra limbs, extra fingers, extra arms, extra legs,
+(fur:1.5), body fur, fluffy fur, hairy skin,
+(jewelry:1.45), golden accessories, egyptian headdress, clothes, clothing,
+human ears, plastic skin, glossy skin, shiny skin,
+(extra penis:1.3), wrong gender, fused bodies, conjoined,
+
+# 男性额外
+(golden skin:1.5), (golden patches:1.5), stretch marks,
+
+# 本模型建议额外
+shiny skin, signature, username, logo, watermark, text,
+
+==================================================
+## 十四、使用建议
+
+1. 每套 Sequence 的动作和姿势标签保持一致，只改表情和少量状态标签。
+2. 已加入 focus on girl / looking at viewer，让镜头以 Jack 为主体。
+3. 男性描述尽量简写，避免抢主体。
+4. 先跑第1张确认外观和姿势，再依次改表情出后续图。
+5. 新增姿势使用的标签（reverse cowgirl, spooning, mating press, prone bone, lotus position 等）均为 NoobAI / Illustrious / e621 系常见稳定标签，实测可用性较高。
+6. 如果某个姿势肢体容易乱，可适当降低 CFG 或加强负面 extra limbs。
+
+# 整理结束

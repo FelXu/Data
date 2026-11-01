@@ -1,0 +1,193 @@
+{
+  "prompt": [
+    17,
+    "23dd20f4-4959-465b-bd9d-11568b8b76ba",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "Jack_TF_V3/source_sparse_shortclaws_native.png"
+        }
+      },
+      "2": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 832,
+          "height": 1216,
+          "crop": "disabled"
+        }
+      },
+      "3": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "2",
+            0
+          ],
+          "filename_prefix": "Jack_Test/INPUT_V3_SPARSE_20261101/color_final"
+        }
+      },
+      "4": {
+        "class_type": "LineartStandardPreprocessor",
+        "inputs": {
+          "image": [
+            "2",
+            0
+          ],
+          "guassian_sigma": 6.0,
+          "intensity_threshold": 8,
+          "resolution": 832
+        }
+      },
+      "5": {
+        "class_type": "ImageInvert",
+        "inputs": {
+          "image": [
+            "4",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "5",
+            0
+          ],
+          "filename_prefix": "Jack_Test/INPUT_V3_SPARSE_20261101/line_soft_final"
+        }
+      },
+      "7": {
+        "class_type": "ImageToMask",
+        "inputs": {
+          "image": [
+            "5",
+            0
+          ],
+          "channel": "red"
+        }
+      },
+      "8": {
+        "class_type": "ThresholdMask",
+        "inputs": {
+          "mask": [
+            "7",
+            0
+          ],
+          "value": 0.75
+        }
+      },
+      "9": {
+        "class_type": "MaskToImage",
+        "inputs": {
+          "mask": [
+            "8",
+            0
+          ]
+        }
+      },
+      "10": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "9",
+            0
+          ],
+          "filename_prefix": "Jack_Test/INPUT_V3_SPARSE_20261101/line_binary_final"
+        }
+      }
+    },
+    {
+      "client_id": "jack_v3_sparse_shortclaws_7bfac332-0a93-4c75-833c-966ce4199207",
+      "create_time": 1793520343517
+    },
+    [
+      "6",
+      "3",
+      "10"
+    ]
+  ],
+  "outputs": {
+    "3": {
+      "images": [
+        {
+          "filename": "color_final_00001_.png",
+          "subfolder": "Jack_Test\\INPUT_V3_SPARSE_20261101",
+          "type": "output"
+        }
+      ]
+    },
+    "6": {
+      "images": [
+        {
+          "filename": "line_soft_final_00001_.png",
+          "subfolder": "Jack_Test\\INPUT_V3_SPARSE_20261101",
+          "type": "output"
+        }
+      ]
+    },
+    "10": {
+      "images": [
+        {
+          "filename": "line_binary_final_00001_.png",
+          "subfolder": "Jack_Test\\INPUT_V3_SPARSE_20261101",
+          "type": "output"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "23dd20f4-4959-465b-bd9d-11568b8b76ba",
+          "timestamp": 1793520343519
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "23dd20f4-4959-465b-bd9d-11568b8b76ba",
+          "timestamp": 1793520343537
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "23dd20f4-4959-465b-bd9d-11568b8b76ba",
+          "timestamp": 1793520343901
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "3": {
+      "node_id": "3",
+      "display_node": "3",
+      "parent_node": null,
+      "real_node_id": "3"
+    },
+    "6": {
+      "node_id": "6",
+      "display_node": "6",
+      "parent_node": null,
+      "real_node_id": "6"
+    },
+    "10": {
+      "node_id": "10",
+      "display_node": "10",
+      "parent_node": null,
+      "real_node_id": "10"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-01",
+  "schema_and_json": "pass",
+  "new_route_T03_color_img2img_plus_masked_regions": "specified_not_executed",
+  "budget_maximum": 6,
+  "user_cap": 8,
+  "B_jobs": 0,
+  "TF_loras_enabled": 0,
+  "style_weight": 0.4,
+  "hard_failure_stops_entire_run": "pass",
+  "local_prompts_do_not_import_global_face_identity": "pass",
+  "structural_asset_binding_status": "needs_structural_inputs",
+  "runtime_graph_and_image_quality": "not_tested",
+  "local_lineart_model_exists": true,
+  "saved_workflows_unchanged": 119,
+  "old_pngs_unchanged": 16,
+  "executed_V2_archive_preserved": "pass",
+  "local_reader_links": "pass",
+  "new_images_submitted": 0,
+  "spec_sha256": "b3d4c26d8707e1b1087f353a7a82d12e2bcf5ed8c2caaaf185dcd3c23b56d95d"
+}

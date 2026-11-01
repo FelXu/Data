@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-01",
+  "new_retest_budget": 2,
+  "denoise": [
+    0.65,
+    0.75
+  ],
+  "same_source_and_seed": true,
+  "same_POS_NEG": true,
+  "style": 0.8,
+  "lineart_strength": 0.5,
+  "lineart_end": 0.75,
+  "old_S01_record_archived": true,
+  "new_image_jobs_submitted": 0,
+  "spec_sha256": "12d61970779e51cd2e48ba109c305f1770e5c7b220f379c2ee2cb22ba2ff8558"
+}
