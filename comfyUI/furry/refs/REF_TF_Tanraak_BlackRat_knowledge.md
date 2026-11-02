@@ -9,6 +9,12 @@
 **Jack clothes lock (project):** purple short-sleeve tee + khaki shorts + sneakers; **no gold jewelry**; end = bipedal female Anubis; 8-frame arc per `tf-sequence-frame-content.md`.  
 **Do not upload full image binaries to GitHub** — this md (+ thin README) only.
 
+> **UPDATE (2026-11-02 HKT):** Fel correction — primary need is **character reactions/actions during TF**, not species taxonomy.  
+> New focused doc: [`REF_TF_reactions_actions.md`](./REF_TF_reactions_actions.md)  
+> Project mirror: `/workspace/tf-deliverables/ref-tf-reactions-actions.md`  
+> Covers: face/gaze/hands/posture, clothes-as-action pipeline, species-agnostic mechanics, Jack 8-frame reaction recipe, oversized Black-rat fine-reads. **This file kept** as pack inventory / species notes (extend, do not delete).
+
+
 ---
 
 ## 1. Pack overview
