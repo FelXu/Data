@@ -209,7 +209,13 @@
     "negative_prompt_policy": "do not copy SDXL NEG recipe; the existing distilled CFG1 workflow uses its reference-conditioning path",
     "prepared_nail_API": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\api\\EARLY_Klein_甲尖单点_API.json",
     "submit_guard": "replace output placeholder with unique run id, inspect layout source, count this as image1; no automatic submission",
-    "prepared_nail_UI": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\EARLY_Klein_甲尖单点编辑.json"
+    "prepared_nail_UI": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\EARLY_Klein_甲尖单点编辑.json",
+    "prepared_ear_UI": "comfyUI/furry/migrate_V3/本机方法迁移_V3/EARLY_Klein_耳尖单点编辑.json",
+    "prepared_ear_API": "comfyUI/furry/migrate_V3/本机方法迁移_V3/api/EARLY_Klein_耳尖单点_API.json",
+    "prepared_nose_UI": "comfyUI/furry/migrate_V3/本机方法迁移_V3/EARLY_Klein_鼻头单点编辑.json",
+    "prepared_nose_API": "comfyUI/furry/migrate_V3/本机方法迁移_V3/api/EARLY_Klein_鼻头单点_API.json",
+    "prepared_nail_UI_repo": "comfyUI/furry/migrate_V3/本机方法迁移_V3/EARLY_Klein_甲尖单点编辑.json",
+    "prepared_nail_API_repo": "comfyUI/furry/migrate_V3/本机方法迁移_V3/api/EARLY_Klein_甲尖单点_API.json"
   },
   "transformation_loras": {
     "Species": {
@@ -306,7 +312,7 @@
   "output_prefix": "Jack_Test/REVIEW_20261101_EARLY_<new_run_id>/<job_id>",
   "archive": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\verification\\early_structure_20261101\\matrix_before_early_structure_contract.json",
   "previous_method_evidence": "R01/R02 already executed with neon/false-color defects; no local semantic success claimed",
-  "robot_next_action": "review/correct source; prepared local Klein nail-tip API is an optional first edit, not a validated result",
+  "robot_next_action": "Repo materials now include empty-latent base + Klein nail/ear/nose graphs. On local ComfyUI only: generate base, then optional Klein nail; do not run T03 this turn; do not treat early_approved/M03 as current pass.",
   "sources": [
     "https://docs.comfy.org/tutorials/flux/flux-2-klein",
     "https://docs.comfy.org/tutorials/basic/image-to-image",
@@ -331,7 +337,10 @@
   ],
   "ui_workflows": {
     "T03": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\EARLY_T03_初期结构重绘.json",
-    "local_Klein_edit": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\EARLY_Klein_甲尖单点编辑.json"
+    "local_Klein_edit": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\EARLY_Klein_甲尖单点编辑.json",
+    "empty_latent_base": "comfyUI/furry/migrate_V3/本机方法迁移_V3/EARLY_底图_空Latent文生图.json",
+    "local_Klein_ear": "comfyUI/furry/migrate_V3/本机方法迁移_V3/EARLY_Klein_耳尖单点编辑.json",
+    "local_Klein_nose": "comfyUI/furry/migrate_V3/本机方法迁移_V3/EARLY_Klein_鼻头单点编辑.json"
   },
   "t03_template_api": "E:\\CODEX\\ComfyUI\\教学总手册\\Furry_TF序列资料\\本机方法迁移_V3\\api\\EARLY_T03_待绑定母图_API.json",
   "T06_node_contract": {
@@ -366,5 +375,14 @@
     "example_T03": "--operation T03 --generated-count 0 --denoise 0.65 --lineart-strength 0 --review-file 初期母图验收_填写.json",
     "source_edit": "numerical/source-edit gate only; output must still be reviewed",
     "local_repair": "requires separate ROI/mask validation; general checker blocks it rather than pretending it checked masks"
+  },
+  "base_txt2img_api": "comfyUI/furry/migrate_V3/本机方法迁移_V3/api/EARLY_底图_空Latent文生图_API.json",
+  "base_txt2img_params_doc": "comfyUI/furry/migrate_V3/本机方法迁移_V3/EARLY_底图冻结参数.md",
+  "mask_conventions_doc": "comfyUI/furry/migrate_V3/本机方法迁移_V3/masks/README.md",
+  "early_mother_compiler": "comfyUI/furry/migrate_V3/tools/compile_early_mother.py",
+  "archival_not_passing_mothers": {
+    "early_approved": "comfyUI/furry/early_approved/ — M03 paint-derived; keep on disk for archive; do NOT use as reproducible passing mother",
+    "review_json_M03": "comfyUI/furry/migrate_V3/本机方法迁移_V3/初期母图验收_填写.json — superseded_as_passing_mother=true",
+    "policy": "New reproducible path: empty-latent base → Klein nail (then ear/nose if needed). T03 still gated off this turn."
   }
 }

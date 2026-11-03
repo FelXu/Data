@@ -71,16 +71,24 @@ T03成品还须有新组织的墨线和赛璐璐层次；仅变色/锐化/hash�
 API JSON供机器人POST /prompt；UI workflow JSON供你Load，两个格式不能混用。
 模板会记住参数与输入路径，不会自动保证新姿势/新视角的语义正确；换姿势需新的合格结构输入。
 
-七、纯V35做不到时的本地分界
+七、先出本机底图（空 Latent），再 Klein
+1. 载入 EARLY_底图_空Latent文生图.json（或 API 同名）。不是 T01A（V33），也不是 image_gen 中期色稿。
+2. 冻结参数见 EARLY_底图冻结参数.md：V35、ILstyle 0.8/0.8、CLIP=-2、832×1216、28/CFG5/euler_a、seed 2026110101、denoise 1.0。
+3. 正负用 POS_方法验证.txt / NEG_方法验证.txt。外形：黄发厚刘海、蓝眼、黑框眼镜、紫T、卡其短裤。
+4. 满意后复制到 input/Jack_TF_EARLY/base_color.png，再进 Klein；不要把 mid_color_draft 当通过源。
+5. early_approved 与历史 M03 涂改母图仅归档，不再当可复现通过样本。本轮不跑 T03。
+
+八、纯V35做不到时的本地分界
 本机有RTX5080 16GB和约64GB内存，已装Klein4B，优先零下载试本地指令编辑。
 载入EARLY_Klein_甲尖单点编辑.json：只改甲尖指令，4步、CFG1、euler，ILstyle不加载（它是SDXL LoRA不能套Klein）。
+耳尖/鼻头另有 EARLY_Klein_耳尖单点编辑.json 与 EARLY_Klein_鼻头单点编辑.json；一次只改一处。
 一条局部指令最多两个预定seed都不服从，就判这个模型在此细节不可靠，转精确mask＋手绘/回贴，而不是继续改一长串提示。
+蒙版命名与本机拷贝路径见 masks/README.md；仓库无蒙版 PNG、无 T06 本体（在本机教学总手册）。
 Krita等绘图工具可以精确决定黑色只占甲尖、鼻头色仍为人皮；扩散只负责后续融合，不能覆盖必须精确保留的像素。
 Qwen-Image-2.1可作为另一个本地指令编辑候选；官方INT8核心约17.3GB下载，可选提示增强另约9.47GB，本机未装且当前节点需核实/更新，16GB速度/显存未实测，不自动下载安装。
 长期要让纯提示也常出这种初期，可考虑专门的初期概念LoRA；必须有一批验收过的多姿态样本和留出测试，单张母图训练不等于迁移语义推理。
 只有重绘/颜色/结构都过关后才另测Species/Mid/BYIL：一次一种、局部明确目标，不用权重表示进度，不在本轮自动启用。
 
-八、真实验证状态
-当前“初期源图”尚不符合新版甲尖/耳尖要求，source_semantic_pass=false，semantic_transfer_validated=false。
-接线与固定seed可复演配置，不代表V35已继承image_gen的理解力。当前文档/模板已准备，没有提交新图或声称稳定复现已通过。
-后续稳定性只在已验母图、具体模型hash/graph/seed范围评估；新角度/新姿势不能外推保证。
+九、真实验证状态
+当前规格 source_semantic_pass=false，semantic_transfer_validated=false。仓库已补底图/耳鼻 Klein/编图脚本；云端未连本机出图。
+接线与固定seed可复演配置，不代表V35语义已稳定。后续稳定性只在已验母图、具体模型hash/graph/seed范围评估；新角度/新姿势不能外推保证。

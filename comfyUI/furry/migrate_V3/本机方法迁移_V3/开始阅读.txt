@@ -2,10 +2,16 @@
 
 A_机器人规格_初期结构准确.json：机器执行契约（同内容也覆盖了上一层最小测试矩阵）。
 B_ComfyUI手操卡_初期结构准确.txt：人的逐步操作，与机器人同一套E1-E7标准。
+EARLY_底图_空Latent文生图.json：界面可加载，从空 Latent 文生 EARLY 底图（V35+ILstyle 0.8）；冻结参数见 EARLY_底图冻结参数.md。
 EARLY_Klein_甲尖单点编辑.json：界面可加载，本地现有Klein编辑一个局部，4步CFG1，不加载ILstyle。
-EARLY_T03_初期结构重绘.json：界面可加载，须先换成已验初期母图；默认approved输入尚不存在，不能直接排队。
+EARLY_Klein_耳尖单点编辑.json / EARLY_Klein_鼻头单点编辑.json：同结构，指令换成耳尖/鼻头。
+EARLY_T03_初期结构重绘.json：界面可加载，须先换成已验初期母图；本轮不跑 T03。
 api/内是机器人API格式，不能当作可视workflow混用。
+masks/README.md：蒙版命名与本机拷贝路径；仓库无真实 ROI PNG，亦无 T06 本体。
+tools/compile_early_mother.py：按现行 kind 组装「底图→甲尖 Klein」API（不提交）。旧 compile_local_method.py 对不上现行 kind。
 
-当前旧input_V3只有布局参考资格，整黑爪/较长尖耳不是本次“初期”标准。没有提交新图，没有声称语义迁移已验证。
-本轮一条路线最多2张：母图编辑也计数，不自动接另一条路线。
+当前旧 input_V3 只有布局参考资格，整黑爪/较长尖耳不是本次“初期”标准。
+early_approved 与 初期母图验收_填写.json 的 M03 涂改结果：留档，不再当可复现通过母图；规格 source_semantic_pass 仍为 false。
+云端本轮只补仓库材料，未连本机、未出图。
+本轮一条路线最多2张：母图编辑也计数，不自动接另一条路线；不跑 T03。
 所有E1-E7过关后才以V35+ILstyle做新画重绘。正式终点是女性阿努比斯TGTF，细节未定，不继承旧女王。

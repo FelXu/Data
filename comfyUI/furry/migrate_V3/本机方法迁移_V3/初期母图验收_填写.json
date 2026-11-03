@@ -1,64 +1,66 @@
-﻿{
-    "source_file":  "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_MOTHER\\M03_00001_.png",
-    "source_sha256":  "E2CF37753429EED48A2FA4DFFAECC1F2DED67D003EE6D633E32FADE97CAE0A1A",
-    "reviewer":  "Grok_Bot_executor",
-    "reviewed_at_Asia_Hong_Kong":  "2026-11-01 17:32:00 +08:00",
-    "source_semantic_pass":  true,
-    "approved_bound":  true,
-    "approved_color_path":  "E:\\ComfyUI-aki-v3\\ComfyUI\\input\\Jack_TF_EARLY\\approved_color.png",
-    "E1_to_E7":  {
-                     "E1_ears":  true,
-                     "E2_nose":  true,
-                     "E3_face_bones":  true,
-                     "E4_hair":  true,
-                     "E5_clothes":  true,
-                     "E6_nails":  true,
-                     "E7_identity_emotion":  true
-                 },
-    "known_failures":  [
-
-                       ],
-    "method_that_worked":  "Klein K01+K02 failed E6 (right index solid black). Attempt3: precise paint/paste ROI on K01 right INDEX nail only — root-deep charcoal to tip-light charcoal gradient; human nail silhouette preserved. No T03.",
-    "budget_override":  "Fel t167u authorized new mother-production goal; prior max-2 repair budget already used by K01. This run treated as new mother goal (K02 Klein + M03 paint). Prefer succeeding E1-E7 mother over old budget halt.",
-    "attempts":  [
-                     {
-                         "id":  "K01",
-                         "method":  "Klein nail edit from mid_color_draft",
-                         "seed":  2026110101,
-                         "E6":  false,
-                         "path":  "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_KLEIN_NAIL\\K01_00001_.png"
-                     },
-                     {
-                         "id":  "K02",
-                         "method":  "Klein right-index-only from K01",
-                         "seed":  2026110102,
-                         "prompt_id":  "05a8b780-8918-40c2-892c-49be0bdc1193",
-                         "E6":  false,
-                         "path":  "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_MOTHER\\K02_00001_.png"
-                     },
-                     {
-                         "id":  "M03",
-                         "method":  "paint/paste ROI on K01 right index only",
-                         "E6":  true,
-                         "path":  "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_MOTHER\\M03_00001_.png",
-                         "sha256":  "E2CF37753429EED48A2FA4DFFAECC1F2DED67D003EE6D633E32FADE97CAE0A1A"
-                     }
-                 ],
-    "notes":  "Fel-corrected E1-E7 all PASS on M03. E1 tip-pointed ears (not shrunk). E6 right INDEX root-deep→tip-light charcoal gradient via paint ROI on K01. approved_color + source_after_review + approved_lineart bound. Lineart export OK prompt_id 9bd3a81b-ab38-4b72-87bb-3e8c7546aacf → Jack_TF_EARLY/approved_lineart.png. No T03 run.",
-    "klein_K01":  {
-                      "counts_toward_budget":  1,
-                      "auto_approved":  false
-                  },
-    "klein_K02":  {
-                      "counts_toward_budget":  1,
-                      "auto_approved":  false,
-                      "E6_still_fail":  true
-                  },
-    "M03_paint":  {
-                      "counts_toward_budget":  1,
-                      "auto_approved":  true,
-                      "base":  "K01"
-                  },
-    "approved_lineart_path":  "E:\\ComfyUI-aki-v3\\ComfyUI\\input\\Jack_TF_EARLY\\approved_lineart.png",
-    "lineart_export_prompt_id":  "9bd3a81b-ab38-4b72-87bb-3e8c7546aacf"
+{
+  "source_file": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_MOTHER\\M03_00001_.png",
+  "source_sha256": "E2CF37753429EED48A2FA4DFFAECC1F2DED67D003EE6D633E32FADE97CAE0A1A",
+  "reviewer": "Grok_Bot_executor",
+  "reviewed_at_Asia_Hong_Kong": "2026-11-01 17:32:00 +08:00",
+  "source_semantic_pass": true,
+  "approved_bound": true,
+  "approved_color_path": "E:\\ComfyUI-aki-v3\\ComfyUI\\input\\Jack_TF_EARLY\\approved_color.png",
+  "E1_to_E7": {
+    "E1_ears": true,
+    "E2_nose": true,
+    "E3_face_bones": true,
+    "E4_hair": true,
+    "E5_clothes": true,
+    "E6_nails": true,
+    "E7_identity_emotion": true
+  },
+  "known_failures": [],
+  "method_that_worked": "Klein K01+K02 failed E6 (right index solid black). Attempt3: precise paint/paste ROI on K01 right INDEX nail only — root-deep charcoal to tip-light charcoal gradient; human nail silhouette preserved. No T03.",
+  "budget_override": "Fel t167u authorized new mother-production goal; prior max-2 repair budget already used by K01. This run treated as new mother goal (K02 Klein + M03 paint). Prefer succeeding E1-E7 mother over old budget halt.",
+  "attempts": [
+    {
+      "id": "K01",
+      "method": "Klein nail edit from mid_color_draft",
+      "seed": 2026110101,
+      "E6": false,
+      "path": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_KLEIN_NAIL\\K01_00001_.png"
+    },
+    {
+      "id": "K02",
+      "method": "Klein right-index-only from K01",
+      "seed": 2026110102,
+      "prompt_id": "05a8b780-8918-40c2-892c-49be0bdc1193",
+      "E6": false,
+      "path": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_MOTHER\\K02_00001_.png"
+    },
+    {
+      "id": "M03",
+      "method": "paint/paste ROI on K01 right index only",
+      "E6": true,
+      "path": "E:\\ComfyUI-aki-v3\\ComfyUI\\output\\Jack_Test\\REVIEW_20261101_EARLY_MOTHER\\M03_00001_.png",
+      "sha256": "E2CF37753429EED48A2FA4DFFAECC1F2DED67D003EE6D633E32FADE97CAE0A1A"
+    }
+  ],
+  "notes": "Fel-corrected E1-E7 all PASS on M03. E1 tip-pointed ears (not shrunk). E6 right INDEX root-deep→tip-light charcoal gradient via paint ROI on K01. approved_color + source_after_review + approved_lineart bound. Lineart export OK prompt_id 9bd3a81b-ab38-4b72-87bb-3e8c7546aacf → Jack_TF_EARLY/approved_lineart.png. No T03 run.",
+  "klein_K01": {
+    "counts_toward_budget": 1,
+    "auto_approved": false
+  },
+  "klein_K02": {
+    "counts_toward_budget": 1,
+    "auto_approved": false,
+    "E6_still_fail": true
+  },
+  "M03_paint": {
+    "counts_toward_budget": 1,
+    "auto_approved": true,
+    "base": "K01"
+  },
+  "approved_lineart_path": "E:\\ComfyUI-aki-v3\\ComfyUI\\input\\Jack_TF_EARLY\\approved_lineart.png",
+  "lineart_export_prompt_id": "9bd3a81b-ab38-4b72-87bb-3e8c7546aacf",
+  "superseded_as_passing_mother": true,
+  "reproducible_mother_status": "archival_only_not_current_pass",
+  "deprecation_note_zh": "Fel 决定：M03 涂改路径与 early_approved 不再当作可复现通过母图。文件留档不删。新路径：空 Latent 底图 → Klein 甲尖（必要时耳/鼻）。规格 source_semantic_pass 仍为 false，直到新母图七项通过。",
+  "current_spec_source_semantic_pass": false
 }

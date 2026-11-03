@@ -1,0 +1,139 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "indigoVoidFurryFusedXL_noobaiV35_fp32.safetensors"
+    },
+    "_meta": {
+      "title": "底模｜V35"
+    }
+  },
+  "990": {
+    "class_type": "CLIPSetLastLayer",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "stop_at_clip_layer": -2
+    },
+    "_meta": {
+      "title": "CLIP 最后一层 = -2"
+    }
+  },
+  "2": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "990",
+        0
+      ],
+      "lora_name": "blackrat_style：IllustriousBlackRat_Style.safetensors",
+      "strength_model": 0.8,
+      "strength_clip": 0.8
+    },
+    "_meta": {
+      "title": "ILstyle｜默认 0.8/0.8"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "blackrat_style, blackrat, a freshly redrawn clean ink and cel-shaded illustration, solo adult male Jack, shaggy golden-yellow hair with thick bangs, blue eyes, black rectangular glasses worn normally, (only the tips of the same human ears are becoming slightly pointed:1.25), normal human ear length and bases, (a subtly canine-shaped nose tip retaining natural skin color:1.25), human nasal bridge, cheeks, upper lip, chin and jaw remain in their original human positions and proportions, flat human facial profile, sparse fine short hairs sprouting separately over visible human skin, large bare spaces between strands, (mostly natural human fingernails with only a small distal tip area beginning to darken charcoal:1.25), normal short human nail length and fingertip silhouettes, natural proximal nail plates retained, moderately enlarging shoulder and chest muscles filling the original opaque purple cotton T-shirt, original khaki shorts also pulled taut over expanding thighs, visible fabric tension and pulling folds on BOTH garments, continuous unbroken fabric, intact seams, startled worried expression, mouth slightly open, body leaning back, knees slightly bent, both hands held near the chest checking the change, closed sneakers, full-body three-quarter view, readable new ink contours, developed cel-shaded form, simple light background"
+    },
+    "_meta": {
+      "title": "正面｜初期结构 POS"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "complete canine head, projecting muzzle, protruding jaw, elongated facial bones, elongated canine ears, black dog nose, dark nose leather, furry face, full fur coat, dense fur patches, opaque furry gloves, fur cuffs, solid black nail plates, complete claws, hooked talons, long pointed nails, loss of natural human nail plates, torn fabric, holes, ripped seams, fraying, missing clothing, transparent fabric, fully transformed female Anubis, extra ears, extra limbs, extra fingers, fused fingers, different hair color, missing glasses, distorted glasses, calm greeting wave, confident smile, neon outlines, rainbow contour lines, fluorescent skin, false colors, unrequested handheld object, near-identical tracing, copied rough sketch strokes, unfinished underpainting, text, watermark, collage"
+    },
+    "_meta": {
+      "title": "负面｜初期结构 NEG"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 832,
+      "height": 1216,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "空 Latent｜832×1216"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ],
+      "seed": 2026110101,
+      "steps": 28,
+      "cfg": 5.0,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "采样｜固定种子文生图"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "解码"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "Jack_Test/REVIEW_20261101_EARLY_BASE/B01"
+    },
+    "_meta": {
+      "title": "保存底图"
+    }
+  }
+}

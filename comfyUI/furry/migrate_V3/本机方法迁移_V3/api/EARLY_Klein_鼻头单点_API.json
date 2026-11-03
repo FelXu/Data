@@ -1,0 +1,271 @@
+{
+  "76": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "Jack_TF_V3/mid_color_draft.png"
+    },
+    "_meta": {
+      "title": "① 上传原图（点击选择文件）"
+    }
+  },
+  "70": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux-2-klein-4b-fp8.safetensors",
+      "weight_dtype": "default"
+    },
+    "_meta": {
+      "title": "模型：Klein 4B FP8（已配好）"
+    }
+  },
+  "71": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen_3_4b.safetensors",
+      "type": "flux2",
+      "device": "default"
+    },
+    "_meta": {
+      "title": "文字编码器：Qwen3 4B（已配好）"
+    }
+  },
+  "72": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "_meta": {
+      "title": "图像编码器：FLUX2 VAE（已配好）"
+    }
+  },
+  "74": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Edit ONLY the nose tip. Give the nasal tip a very subtle canine-like shape while retaining its natural human skin color. Keep the nasal bridge, cheeks, upper lip, jaw, chin and facial-bone proportions unchanged. No forward muzzle, no jaw projection, no black dog nose. Keep the glasses, eyes, hair, expression and every other part unchanged.",
+      "clip": [
+        "71",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "② 在这里填写改图指令（支持中文）"
+    }
+  },
+  "80": {
+    "class_type": "ImageScaleToTotalPixels",
+    "inputs": {
+      "image": [
+        "76",
+        0
+      ],
+      "upscale_method": "nearest-exact",
+      "megapixels": 1.0,
+      "resolution_steps": 16
+    },
+    "_meta": {
+      "title": "自动调整原图尺寸（约100万像素）"
+    }
+  },
+  "99": {
+    "class_type": "GetImageSize",
+    "inputs": {
+      "image": [
+        "80",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "自动读取原图比例"
+    }
+  },
+  "122": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "80",
+        0
+      ],
+      "vae": [
+        "72",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "编码原图作为参考"
+    }
+  },
+  "82": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "74",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "空负面条件（无需填写）"
+    }
+  },
+  "121": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "82",
+        0
+      ],
+      "latent": [
+        "122",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "原图参考（负面分支）"
+    }
+  },
+  "123": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "74",
+        0
+      ],
+      "latent": [
+        "122",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "原图参考（指令分支）"
+    }
+  },
+  "63": {
+    "class_type": "CFGGuider",
+    "inputs": {
+      "model": [
+        "70",
+        0
+      ],
+      "positive": [
+        "123",
+        0
+      ],
+      "negative": [
+        "121",
+        0
+      ],
+      "cfg": 1.0
+    },
+    "_meta": {
+      "title": "指令引导 CFG=1（保持默认）"
+    }
+  },
+  "73": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 2026110101
+    },
+    "_meta": {
+      "title": "固定随机种子（可保持默认）"
+    }
+  },
+  "61": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "_meta": {
+      "title": "采样器 Euler（保持默认）"
+    }
+  },
+  "62": {
+    "class_type": "Flux2Scheduler",
+    "inputs": {
+      "steps": 4,
+      "width": [
+        "99",
+        0
+      ],
+      "height": [
+        "99",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "Klein蒸馏采样：4步（保持默认）"
+    }
+  },
+  "66": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": [
+        "99",
+        0
+      ],
+      "height": [
+        "99",
+        1
+      ],
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "自动匹配原图比例"
+    }
+  },
+  "64": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "73",
+        0
+      ],
+      "guider": [
+        "63",
+        0
+      ],
+      "sampler": [
+        "61",
+        0
+      ],
+      "sigmas": [
+        "62",
+        0
+      ],
+      "latent_image": [
+        "66",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "执行改图"
+    }
+  },
+  "65": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "64",
+        0
+      ],
+      "vae": [
+        "72",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "解码改图结果"
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "65",
+        0
+      ],
+      "filename_prefix": "Jack_Test/REVIEW_20261101_EARLY_KLEIN_NOSE_4c9528e2/K01"
+    },
+    "_meta": {
+      "title": "③ 改图结果（自动保存到 output）"
+    }
+  }
+}
